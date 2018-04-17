@@ -16,6 +16,7 @@ public class ReorganizeString {
          {
 
     		 String input;
+    		 //Creating ArrayList
     		 ArrayList<Character> ch = new ArrayList<>();
     	        Scanner scanner = new Scanner(System.in);
                   int y;
@@ -29,7 +30,7 @@ public class ReorganizeString {
     	        }
     	        
     	        Iterator itr=ch.iterator();  
-    	        
+    	        //Checking if any number is repeating itself more than half of total number digits
     	       while(itr.hasNext())
     	        {  
     	    	  int x= Collections.frequency(ch,itr.next());
@@ -40,6 +41,9 @@ public class ReorganizeString {
                        }
                       
     	        }
+    	       
+    	       
+    	       //Rearranging the characters
                      char[] c=input.toCharArray(); 	       
         	         for(int x=0;x<(j-1);x++)
         	         {  
