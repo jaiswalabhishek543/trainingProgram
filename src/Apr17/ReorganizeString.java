@@ -7,11 +7,9 @@ import java.util.Scanner;
 /*
  * Reorganize String
  * 
- *  
+ *  For given String checking if letters can be rearranged so that characters that are adjacent 
+ *  to each other are not same
  */
-
-
-
 
 public class ReorganizeString {
          public static void main(String[] args)
@@ -19,10 +17,10 @@ public class ReorganizeString {
 
     		 String input;
     		 //Creating ArrayList
-    		 ArrayList<Character> ch = new ArrayList<>();
+    		    ArrayList<Character> ch = new ArrayList<>();
     	        Scanner scanner = new Scanner(System.in);
                   int y;
-                  char temp;
+                  char temp,temp1;
     	        System.out.print("Please enter the string: ");
     	        input = scanner.nextLine();
     	        
@@ -33,6 +31,7 @@ public class ReorganizeString {
     	        
     	        Iterator itr=ch.iterator();  
     	       
+    	        
     	        /*Checking if any number is repeating itself more than half of total number of digits
     	          then we can not arrange the in required order(valid for any range of number)
     	        */
@@ -48,32 +47,43 @@ public class ReorganizeString {
     	        }
     	       
     	       
-    	       //Rearranging the characters
+    	       //Rearranging the characters so that two matching characters do not remain adjacent
+    	       //(Mainly for 3 characters string)
+    	       
                      char[] c=input.toCharArray(); 	       
         	         for(int x=0;x<(j-1);x++)
         	         {  
         	     
-        	        	 if(c[x]==c[x+1])
+        	        	 if(c[x]!=c[x+1])
         	        	 {
-        	        		 continue;
+        	        		 int z=x+2;
+        	        		
+        	        		 if(c[x+1]==c[z])
+        	        		 {
+        	        			 temp1=c[z];
+        	        			 c[z]=c[x];
+        	        			 c[x]=c[z];
+        	        			 
+        	        		 }
+        	        		 String str=String.valueOf(c);    	        	     
+        	      	         System.out.println("String - "+str);
+        	        		 break;
         	        	 }
-        	        	 else
+        	        	 else if(c[x]==c[x+1])
         	        	 {
-        	        		 y=x+1;
-        	        		 temp=c[x];
-        	        		 c[x]=c[y];
+        	        		 y=x+2;
+        	        		 temp=c[x+1];
+        	        		 c[x+1]=c[y];
         	        		 c[y]=temp;
         	        		 
-        	        		 
+        	        		 String str=String.valueOf(c);
+           	      	         System.out.println("String - "+str);
+          	        		 break;
         	        		 
         	        	 }
-        	            
+        	        	 
         	         }
         	
-    	        
-    	        String str=String.valueOf(c);
-    	     
-    	       System.out.println("String - "+str);
-        	 
+    	                	 
          }
 }
