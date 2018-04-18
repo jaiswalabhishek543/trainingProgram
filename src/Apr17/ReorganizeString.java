@@ -41,7 +41,9 @@ public class ReorganizeString {
     	    	  int x= Collections.frequency(ch,itr.next());
                        if(x>((j+1)/2))
                        {
-                         count1++;             	
+                         count1++;
+                         System.out.println(" ");
+                         break;
                        }
                       
     	        }
@@ -87,7 +89,7 @@ public class ReorganizeString {
         	         
                }    
         	
-               System.out.println(" ");
+               
          	 
          }
 }
