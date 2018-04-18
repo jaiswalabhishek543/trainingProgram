@@ -16,6 +16,7 @@ public class ReorganizeString {
          {
 
     		 String input;
+    		 int count1=0;
     		 //Creating ArrayList
     		    ArrayList<Character> ch = new ArrayList<>();
     	        Scanner scanner = new Scanner(System.in);
@@ -40,8 +41,7 @@ public class ReorganizeString {
     	    	  int x= Collections.frequency(ch,itr.next());
                        if(x>((j+1)/2))
                        {
-                         System.out.println(" ");
-                         System.exit(0);               	
+                         count1++;             	
                        }
                       
     	        }
@@ -49,7 +49,8 @@ public class ReorganizeString {
     	       
     	       //Rearranging the characters so that two matching characters do not remain adjacent
     	       //(Mainly for 3 characters string)
-    	       
+    	       if(count1==0)
+    	       {   
                      char[] c=input.toCharArray(); 	       
         	         for(int x=0;x<(j-1);x++)
         	         {  
@@ -83,7 +84,10 @@ public class ReorganizeString {
         	        	 }
         	        	 
         	         }
+        	         
+               }    
         	
-    	                	 
+               System.out.println(" ");
+         	 
          }
 }
