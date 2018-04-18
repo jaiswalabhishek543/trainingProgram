@@ -1,4 +1,9 @@
-
+/*
+ * Lamda Expression
+ * 
+ * Using methods that return lamda expression performing specified action
+ * 
+ */
 public class LamdaExp {
     
 	//Functional Interface
@@ -14,11 +19,12 @@ public class LamdaExp {
   //Functional Interface
     interface PalindromeCheck
     {
-    	public boolean isPalindrome();
+    	public boolean isPalindrome(int num);
     }
 	
+    
 	public static void main(String[] args)
-	{   int n = 14; 
+	{   int n = 33; 
 		
 		//lamda expression for checking odd number
 		OddCheck chk1=(num)->
@@ -29,7 +35,7 @@ public class LamdaExp {
 			}
 			else return true;
 		};
-		System.out.println("n odd : "+chk1.isOdd(n));
+		System.out.println("n is odd : "+chk1.isOdd(n));
 		
 		//lamda expression for checking number is prime or not
 		PrimeCheck prime=(num)->{
@@ -42,33 +48,35 @@ public class LamdaExp {
 			
 		};
 		
-		System.out.println("N prime : "+prime.isPrime(n));
+		System.out.println("n is prime : "+prime.isPrime(n));
 		
 		
 		//lamda expression for checking number is palindrome or not
-	/*	
+		
 		PalindromeCheck palindrome= (num)->
 		{
-			int rem=0,rev=0;
-			while(n>0)
+			int n1,t,rem=0,rev=0;
+			n1=n;
+			t=n1;
+			while(n1>0)
 			{
-				rem=num%10;
-				num=num/10;
+				rem=n1%10;
+				n1=n1/10;
 				rev=rev*10+rem;
-		
-				if(n==rev)
+			}
+				if(t==rev)
 				{
 					return true;
 				}
 				else return false;
 				
-			}
+			
 		
 			
 			
 		};
-      System.out.println("N palindrome :"+palindrome.isPalindrome(n));
-      */		
+      System.out.println("n is palindrome :"+palindrome.isPalindrome(n));
+      		
 	}
 	
 	

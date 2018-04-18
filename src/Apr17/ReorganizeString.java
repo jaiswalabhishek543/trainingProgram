@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 /*
  * Reorganize String
+ * 
+ *  
  */
 
 
@@ -30,7 +32,10 @@ public class ReorganizeString {
     	        }
     	        
     	        Iterator itr=ch.iterator();  
-    	        //Checking if any number is repeating itself more than half of total number digits
+    	       
+    	        /*Checking if any number is repeating itself more than half of total number of digits
+    	          then we can not arrange the in required order(valid for any range of number)
+    	        */
     	       while(itr.hasNext())
     	        {  
     	    	  int x= Collections.frequency(ch,itr.next());
