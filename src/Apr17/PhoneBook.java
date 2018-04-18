@@ -71,11 +71,11 @@ do {
 				System.out.println("Enter your last name");
 				BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
 				String l = br1.readLine();
-			    System.out.println("Enter your mobile no.");
+			    System.out.println("Enter your 10 digits mobile no.");
 			    int b=sc.nextInt();
 			    list.add(new Pbook(a,f,l,b));
 			   // System.out.println(list.size());
-			    System.out.println("Data added and size is "+list.size());
+			    System.out.println("Data added and size of phone book is "+list.size());
 			    break;
 			
 			//Using Mobile number to remove data
@@ -148,7 +148,7 @@ do {
 				break;
 			//Using mobile number to look for data	
 			case 5:
-				System.out.println("Enter mobile number to look for data");
+				System.out.println("Enter 10 digits mobile number to look for data");
 				int l4=0;
 				int n5=sc.nextInt();
 				for(Pbook o4:list)
