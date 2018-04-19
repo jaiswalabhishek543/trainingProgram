@@ -1,6 +1,5 @@
 package training;
 
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,7 +9,7 @@ import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
+import org.apache.log4j.Logger;
 
 /*
  * Phone book
@@ -68,8 +67,9 @@ public class PhoneBook {
 	public static void main(String[] args) throws IOException
 	{   
 		//Creating list of Phonebook
-		Scanner sc=new Scanner(System.in);
-		ArrayList<Pbook> list=new ArrayList<Pbook>();
+		final Scanner sca=new Scanner(System.in);
+		final ArrayList<Pbook> list=new ArrayList<Pbook>();
+		final Logger print=Logger.getLogger(Palindrome.class.getName());
 		int k;
 		
     char a1;
@@ -77,46 +77,46 @@ try {
     do {	
 	  //Printing the menu
 	
-	    System.out.println("Select from menu");
-		System.out.println("1.Add Data");
-		System.out.println("2.Remove Data");
-		System.out.println("3.Search by name");
-		System.out.println("4.Search by id");
-		System.out.println("5.Search by mobile no");
-		System.out.println("6.Sort the list in ascending order of first name");
+    	print.info("Select from menu");
+    	print.info("1.Add Data");
+    	print.info("2.Remove Data");
+    	print.info("3.Search by name");
+    	print.info("4.Search by id");
+    	print.info("5.Search by mobile no");
+    	print.info("6.Sort the list in ascending order of first name");
 		
-		k=sc.nextInt();
+		k=sca.nextInt();
 		switch(k)
 		{
 		
           //Adding details		
 			case 1:
-				System.out.println("Enter your id");
-			    int a=sc.nextInt();
-				System.out.println("Enter your first name");
-				BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+				print.info("Enter your id");
+			    final int a=sca.nextInt();
+				print.info("Enter your first name");
+				final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-				String f = br.readLine();
-				System.out.println("Enter your last name");
-				BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-				String l = br1.readLine();
-			    System.out.println("Enter your 10 digits mobile no.");
-			    int b=sc.nextInt();
+				final String f = br.readLine();
+				print.info("Enter your last name");
+				final BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
+				final String l = br1.readLine();
+				print.info("Enter your 10 digits mobile no.");
+			    final int b=sca.nextInt();
 			    list.add(new Pbook(a,f,l,b));
 			   // System.out.println(list.size());
-			    System.out.println("Data added and size of phone book size is "+list.size());
+			    print.info("Data added and size of phone book size is "+list.size());
 			    break;
 			
 			//Using Mobile number to remove data
 			case 2:
-				System.out.println("Enter the mobile number to remove data");
-				int num=sc.nextInt();
+				print.info("Enter the mobile number to remove data");
+				final int num=sca.nextInt();
 				int l1=0;
 				for(Pbook o:list)
 				{
 					if(o.phoneno==num)
 					{
-						System.out.println("Data removed for "+o.fname+" "+o.lname);
+						print.info("Data removed for "+o.fname+" "+o.lname);
 
 						list.remove(o);
 						l1++;
@@ -125,29 +125,29 @@ try {
 				}
 			if(l1==0)
 			{
-				System.out.println("Data not found");
+				print.info("Data not found");
 				
 			}
 				break;
 			
 			//Using first name or last name to fetch data
 			case 3:
-				System.out.println("Enter the First name or Last name for data");
-				BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
-				String n1 = br2.readLine();		
+				print.info("Enter the First name or Last name for data");
+				final BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+				final String n1 = br2.readLine();		
 				int l2=0;
 				for(Pbook o2:list)
 				{
 					if(o2.lname.equalsIgnoreCase(n1) || o2.fname.equalsIgnoreCase(n1))
 					{
-						System.out.println("First name: "+o2.fname+", "+"Last name: "+o2.lname+", "+"Phone no. : "+o2.phoneno+", "+"Id"+o2.id);
+						print.info("First name: "+o2.fname+", "+"Last name: "+o2.lname+", "+"Phone no. : "+o2.phoneno+", "+"Id"+o2.id);
                         l2++;					
 					}
 				}
 				
 				if(l2==0)
 				{
-					System.out.println("Data not found");
+					print.info("Data not found");
 					
 				}
 				
@@ -156,21 +156,21 @@ try {
 			
 				//Using id to look for data
 			case 4:
-				System.out.println("Enter id to look for data");
-				Integer n4=sc.nextInt();
+				print.info("Enter id to look for data");
+				final Integer n4=sca.nextInt();
 				int l3=0;
 				for(Pbook o3:list)
 				{
 					if(o3.id.equals(n4))
 					{
-						System.out.println("First name: "+o3.fname+", "+"Last name: "+o3.lname+", "+"Phone no. : "+o3.phoneno+", "+"Id : "+o3.id);
+						print.info("First name: "+o3.fname+", "+"Last name: "+o3.lname+", "+"Phone no. : "+o3.phoneno+", "+"Id : "+o3.id);
                         l3++;					
 					}
 				}
 				
 				if(l3==0)
 				{
-					System.out.println("Data not found");
+					print.info("Data not found");
 					
 				}
 				
@@ -178,57 +178,57 @@ try {
 			
 				//Using mobile number to look for data	
 			case 5:
-				System.out.println("Enter 10 digits mobile number to look for data");
+				print.info("Enter 10 digits mobile number to look for data");
 				int l4=0;
-				Integer n5=sc.nextInt();
+				final Integer n5=sca.nextInt();
 				for(Pbook o4:list)
 				{
 					if(o4.phoneno.equals(n5))
 					{
-						System.out.println("First name: "+o4.fname+", "+"Last name: "+o4.lname+", "+"Phone no. : "+o4.phoneno+", "+"Id : "+o4.id);
+						print.info("First name: "+o4.fname+", "+"Last name: "+o4.lname+", "+"Phone no. : "+o4.phoneno+", "+"Id : "+o4.id);
 					l4++;
 					}
 				}
 				if(l4==0)
 				{
-					System.out.println("Data not found");
+					print.info("Data not found");
 					
 				}
 				break;
 			//Sorting List in ascending order	
 			case 6:
-				System.out.println("Sorted List->");
+				print.info("Sorted List->");
 				if(list.size()>0)
 				{
 					Collections.sort(list, new Sortbyname());
 					 
 			        //System.out.println("\nSorted by name");
 			        for (int i1=0; i1<list.size(); i1++)
-			            System.out.println(list.get(i1));
+			        	print.info(list.get(i1));
 					
 					
 				}
 				else
 				{
-					   System.out.println("Empty List");
+					print.info("Empty List");
 
 				}
 				break;
             default :
-            	System.out.println("Invalid Input");
+            	print.info("Invalid Input");
 
 				
 
 		}
              		
-		System.out.println("If you want to continue enter(Y/y)");
-		a1=sc.next().charAt(0);
+		print.info("If you want to continue enter(Y/y)");
+		a1=sca.next().charAt(0);
 		
 	}while(a1=='y' ||a1=='Y');
    }catch (InputMismatchException e) {
-	    System.out.print("Enter write input, try again");
+	   print.info("Enter write input, try again");
    }
-
+sca.close();
 }
 	
 	
