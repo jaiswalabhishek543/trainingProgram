@@ -12,7 +12,7 @@ public class MyCalculator {
 	 */
       
 	//Method to find out the power
-	public static long power(long base,long power) throws Exception
+	public static long power1(long base,long power) throws Exception
 	{   long val=1;
 		if(base==0 || power==0)
 		{
@@ -53,7 +53,7 @@ public class MyCalculator {
 		}
 		else 
 		{
-		long c=power(a,b);
+		long c=power1(a,b);
 		System.out.println(c);
 		}
 		
