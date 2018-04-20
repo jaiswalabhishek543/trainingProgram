@@ -16,12 +16,12 @@ public class SortArrayGenTest {
 	 * Writing test case for SortArrayGeneric program
 	 * 
 	 */
-	
+	final SortArrayGeneric sag=new SortArrayGeneric();
 	//Test case 1
 	@Test
 	public void testSort()
 	{
-		final SortArrayGeneric sag=new SortArrayGeneric();
+		
 
 		final String[] arr2 = new String[] {"Apple", "Banana", "Orange", "Grapes"};
 		final Integer ab1=arr2.length;
@@ -33,8 +33,7 @@ public class SortArrayGenTest {
 	@Test
 	public void testSort1()
 	{
-		final SortArrayGeneric sag1=new SortArrayGeneric();
-
+		
 
 		final Integer[] arr4 = new Integer[]{ 1,2,3,4,5,6,7,8,9,10 }; 
 		final Integer ab2=arr4.length;
@@ -42,14 +41,14 @@ public class SortArrayGenTest {
 		final Integer ab3=0;
 
 
-		assertEquals("check length", ab2, sag1.printArray(arr4));
+		assertEquals("check length", ab2, sag.printArray(arr4));
 
 	}
 	//Test case 3
 	@Test
 	public void testSort2()
 	{
-		final SortArrayGeneric sag=new SortArrayGeneric();
+		
 
 
 		final Integer[] arr4 = new Integer[]{ 1,2,3,4,5,6,7,8,9,10 }; 
