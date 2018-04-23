@@ -1,30 +1,43 @@
 package bankingsystem;
 
-public class Account {
+import java.util.List;
+
+public class Account extends Bank {
 	
 	
-	Integer money;
-	Integer interestRate;
-	Integer interestPeriod;
-	public Integer getMoney() {
+	private double money;
+	private double interestRate=1.8;
+	private Integer interestPeriod;
+	private List<Statement> statementList;
+	
+	public Account(final double mon,final Integer time,final List<Statement> stateList)
+	{
+		money=mon;
+		interestPeriod=time;
+		statementList=stateList;
+		
+	}
+
+	public double getMoney() {
 		return money;
 	}
-	public void setMoney(Integer money) {
-		this.money = money;
-	}
-	public Integer getInterestRate() {
-		return interestRate;
-	}
-	public void setInterestRate(Integer interestRate) {
-		this.interestRate = interestRate;
-	}
+
+	
+
 	public Integer getInterestPeriod() {
 		return interestPeriod;
 	}
-	public void setInterestPeriod(Integer interestPeriod) {
-		this.interestPeriod = interestPeriod;
+
+
+	public List getStatementList() {
+		return statementList;
 	}
+
 	
+	
+	
+	
+		
 	
 
 }
