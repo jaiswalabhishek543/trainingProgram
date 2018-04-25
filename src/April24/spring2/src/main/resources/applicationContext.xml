@@ -32,7 +32,7 @@
 	</bean>
 
 	<bean id="accunt" class="service.SavingAccount">
-		<constructor-arg value="10000" index="0" type="Double">
+		<constructor-arg value="10000" index="0" type="double">
 		</constructor-arg>
 
 		<constructor-arg value="5" index="1" type="Integer"></constructor-arg>
