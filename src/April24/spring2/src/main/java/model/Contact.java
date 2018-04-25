@@ -51,18 +51,6 @@ public class Contact {
 	}
 
 	
-	public static boolean addContact(Object obj)
-	{
-		
-		if (obj == null)
-		{
-			return false;
-		} 
-		else 
-		{
-			return true;
-		}
-	}
 	
 		
 

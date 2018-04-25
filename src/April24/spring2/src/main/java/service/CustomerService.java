@@ -9,6 +9,6 @@ import model.Statement;
 public interface CustomerService {
 	
 	
-	void getStatementList(List<Statement> statementlist);
+	public void getStatementList(List<Statement> statementlist);
 
 }
