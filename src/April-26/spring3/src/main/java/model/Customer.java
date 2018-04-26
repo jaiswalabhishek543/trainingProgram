@@ -14,7 +14,7 @@ public class Customer {
 	private Integer customerId;
 	
 	
-	public Customer(String firstname, String surname, Contact contobj, List<Account> accunlist, Integer customerId) {
+	public Customer(final String firstname,final String surname,final Contact contobj,final List<Account> accunlist,final Integer customerId) {
 		this.firstname = firstname;
 		this.surname = surname;
 		this.contobj = contobj;
@@ -25,31 +25,31 @@ public class Customer {
 	public String getFirstname() {
 		return firstname;
 	}
-	public void setFirstname(String firstname) {
+	public void setFirstname(final String firstname) {
 		this.firstname = firstname;
 	}
 	public String getSurname() {
 		return surname;
 	}
-	public void setSurname(String surname) {
+	public void setSurname(final String surname) {
 		this.surname = surname;
 	}
 	public Contact getContobj() {
 		return contobj;
 	}
-	public void setContobj(Contact contobj) {
+	public void setContobj(final Contact contobj) {
 		this.contobj = contobj;
 	}
 	public List<Account> getAccunlist() {
 		return accunlist;
 	}
-	public void setAccunlist(List<Account> accunlist) {
+	public void setAccunlist(final List<Account> accunlist) {
 		this.accunlist = accunlist;
 	}
 	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(Integer customerId) {
+	public void setCustomerId(final Integer customerId) {
 		this.customerId = customerId;
 	}
 

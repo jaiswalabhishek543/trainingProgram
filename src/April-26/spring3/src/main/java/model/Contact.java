@@ -19,7 +19,7 @@ public class Contact {
 	
 	
 	
-	public Contact(Integer phoneNumber, int mobileNumber, String email, Address addr) {
+	public Contact(final Integer phoneNumber,final int mobileNumber,final String email,final Address addr) {
 		super();
 		this.phoneNumber = phoneNumber;
 		this.mobileNumber = mobileNumber;
@@ -30,25 +30,25 @@ public class Contact {
 	public Integer getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(final Integer phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public int getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(int mobileNumber) {
+	public void setMobileNumber(final int mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 	public Address getAddr() {
 		return addr;
 	}
-	public void setAddr(Address addr) {
+	public void setAddr(final Address addr) {
 		this.addr = addr;
 	}
 	

@@ -20,8 +20,8 @@ public class Account {
 	
 	
 	
-	public Account(String accountNo, int interestRate, double money, int interestPeriod, List<Statement> statementList,
-			String typeOfAccount) {
+	public Account(final String accountNo,final int interestRate,final double money,final int interestPeriod,final List<Statement> statementList,
+			final String typeOfAccount) {
 		this.accountNo = accountNo;
 		this.interestRate = interestRate;
 		this.money = money;
@@ -34,37 +34,37 @@ public class Account {
 	public String getAccountNo() {
 		return accountNo;
 	}
-	public void setAccountNo(String accountNo) {
+	public void setAccountNo(final String accountNo) {
 		this.accountNo = accountNo;
 	}
 	public int getInterestRate() {
 		return interestRate;
 	}
-	public void setInterestRate(int interestRate) {
+	public void setInterestRate(final int interestRate) {
 		this.interestRate = interestRate;
 	}
 	public double getMoney() {
 		return money;
 	}
-	public void setMoney(double money) {
+	public void setMoney(final double money) {
 		this.money = money;
 	}
 	public int getInterestPeriod() {
 		return interestPeriod;
 	}
-	public void setInterestPeriod(int interestPeriod) {
+	public void setInterestPeriod(final int interestPeriod) {
 		this.interestPeriod = interestPeriod;
 	}
 	public List<Statement> getStatementList() {
 		return statementList;
 	}
-	public void setStatementList(List<Statement> statementList) {
+	public void setStatementList(final List<Statement> statementList) {
 		this.statementList = statementList;
 	}
 	public String getTypeOfAccount() {
 		return typeOfAccount;
 	}
-	public void setTypeOfAccount(String typeOfAccount) {
+	public void setTypeOfAccount(final String typeOfAccount) {
 		this.typeOfAccount = typeOfAccount;
 	}
 	

@@ -25,14 +25,14 @@ public class BankingTest {
 	@Test
 	public void check1()
 	{
-		Address addr=new Address("abc","def","ghi","hkl");
-		Contact cont=new Contact(1234,5678,"ab@gmail.com",addr);
-		Statement stat=new Statement("Saving account created");
-		List<Statement> list2=new ArrayList<>();
-		Account acc=new Account("007",11,4000,5,list2,"Saving");
-		List<Account> list3=new ArrayList<>();
+		final Address addr=new Address("abc","def","ghi","hkl");
+		final Contact cont=new Contact(1234,5678,"ab@gmail.com",addr);
+		final Statement stat=new Statement("Saving account created");
+		final List<Statement> list2=new ArrayList<>();
+		final Account acc=new Account("007",11,4000,5,list2,"Saving");
+		final List<Account> list3=new ArrayList<>();
 		list3.add(acc);
-		Customer cust1=new Customer("Abhi","Jais",cont,list3,1);
+		final Customer cust1=new Customer("Abhi","Jais",cont,list3,1);
 		
 		
 		
@@ -49,14 +49,14 @@ public class BankingTest {
 	@Test
 	public void check2()
 	{
-		Address addr=new Address("abc","def","ghi","hkl");
-		Contact cont=new Contact(1234,5678,"ab@gmail.com",addr);
-		Statement stat=new Statement("Saving account created");
-		List<Statement> list2=new ArrayList<>();
-		Account acc=new Account("007",11,4000,5,list2,"Saving");
-		List<Account> list3=new ArrayList<>();
+		final Address addr=new Address("abc","def","ghi","hkl");
+		final Contact cont=new Contact(1234,5678,"ab@gmail.com",addr);
+		final Statement stat=new Statement("Saving account created");
+		final List<Statement> list2=new ArrayList<>();
+		final Account acc=new Account("007",11,4000,5,list2,"Saving");
+		final List<Account> list3=new ArrayList<>();
 		list3.add(acc);
-		Customer cust1=new Customer("Abhi","Jais",cont,list3,1);
+		final Customer cust1=new Customer("Abhi","Jais",cont,list3,1);
             
 			accObj.update(cust1, "007", 000001);
 			assertEquals(000001, cont.getMobileNumber());;
