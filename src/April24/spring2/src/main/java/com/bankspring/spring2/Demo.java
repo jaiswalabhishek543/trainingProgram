@@ -29,7 +29,7 @@ public class Demo {
 	 */
 	public static void main(String[] args) {
 	    
-		
+		BasicConfigurator.configure();
 		final Logger printf=Logger.getLogger(Demo.class.getName());
         final ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         
