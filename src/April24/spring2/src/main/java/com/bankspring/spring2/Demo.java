@@ -11,12 +11,14 @@ import model.Address;
 import model.Contact;
 import model.Customer;
 import model.Statement;
+
+import service.Account;
+import service.SavingAccount;
+
 /*
  * 
  * @abhi
  */
-import service.Account;
-import service.SavingAccount;
 
 
 public class Demo {
