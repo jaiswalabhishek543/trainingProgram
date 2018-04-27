@@ -50,12 +50,7 @@ public class Address {
 	
 	
 	
-	@Override
-	public String toString() {
-		return "Address [street=" + street + ", houseNumber=" + houseNumber + ", zopCode=" + zopCode + ", city=" + city
-				+ "]";
-	}
-
+	
 	
 	
 

@@ -6,7 +6,7 @@ package model;
  */
 public class Contact {
 	/*
-	 *Initializing contact details
+	 *Creating Contact clsass for initializing contact details 
 	 * 
 	 */
 	
@@ -52,13 +52,7 @@ public class Contact {
 		this.addr = addr;
 	}
 	
-	@Override
-	public String toString() {
-		return "Contact [phoneNumber=" + phoneNumber + ", mobileNumber=" + mobileNumber + ", email=" + email + ", addr="
-				+ addr + "]";
-	}
-	
-	
+		
 
 
 

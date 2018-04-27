@@ -7,7 +7,10 @@ import java.util.List;
  */
 
 public class Account {
-
+/*
+ * Creating account for customer
+ * 
+ */
 	
 	private String accountNo;
 	private int interestRate;
