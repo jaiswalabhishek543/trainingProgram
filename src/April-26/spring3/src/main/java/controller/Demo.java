@@ -14,7 +14,7 @@ public class Demo {
 	
 	public void method1(List<Customer> list7)
 	{
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		//ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		Bank ban=(Bank) context.getBean("bank1");
 		
