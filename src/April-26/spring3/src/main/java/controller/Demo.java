@@ -16,9 +16,9 @@ public class Demo {
 	{
 		//ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-		Bank ban=(Bank) context.getBean("bank1");
+		//Bank ban=(Bank) context.getBean("bank1");
 		
-		ban.setCustom(list7);
+		//ban.setCustom(list7);
 		
 		
 		
