@@ -7,24 +7,30 @@ import dao.SupplierDaoImpl;
 public class SupplierServiceImpl implements SupplierServiceInterface {
 
 	
-	SupplierDaoImpl suppl1;
+	private SupplierDaoImpl supply01;
+	
+	
+
+	public void setSupply01(SupplierDaoImpl supply01) {
+		this.supply01 = supply01;
+	}
+
 	@Override
-	public String addSupplier(String sId, String sName, String sAddress, int qunat, String orderId, int amount1,
-			List<String> list6) {
+	public String addSupplier(String sId, String sName, String sAddress, int qunat, String orderId, int amount1) {
 		
-		return suppl1.addSupplier(sId, sName, sAddress, qunat, orderId, amount1, list6);
+		return supply01.addSupplier(sId, sName, sAddress, qunat, orderId, amount1);
 	}
 
 	@Override
 	public String removeSupplier(String sId) {
 		
-		return suppl1.removeSupplier(sId);
+		return supply01.removeSupplier(sId);
 	}
 
 	@Override
 	public String updateSupplier(String sId) {
 		
-		return suppl1.updateSupplier(sId);
+		return supply01.updateSupplier(sId);
 	}
 
 }

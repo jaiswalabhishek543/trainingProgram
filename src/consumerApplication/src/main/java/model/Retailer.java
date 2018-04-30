@@ -6,28 +6,36 @@ public class Retailer {
 
 	private String retailerName;
 	private String retailerAddress;
-	private List<String> list3;  //Goods Id
-	
-	
-	public List<String> getList3() {
-		return list3;
+	private String retailerId;
+
+	public Retailer(String retailerName, String retailerAddress, String retailerId) {
+		this.retailerName = retailerName;
+		this.retailerAddress = retailerAddress;
+		this.retailerId = retailerId;
 	}
-	public void setList3(List<String> list3) {
-		this.list3 = list3;
+
+	public String getRetailerId() {
+		return retailerId;
 	}
+
+	public void setRetailerId(String retailerId) {
+		this.retailerId = retailerId;
+	}
+
 	public String getRetailerName() {
 		return retailerName;
 	}
+
 	public void setRetailerName(String retailerName) {
 		this.retailerName = retailerName;
 	}
+
 	public String getRetailerAddress() {
 		return retailerAddress;
 	}
+
 	public void setRetailerAddress(String retailerAddress) {
 		this.retailerAddress = retailerAddress;
 	}
 
-	
-	
 }

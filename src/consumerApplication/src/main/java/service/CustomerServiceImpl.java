@@ -7,23 +7,28 @@ import dao.CustomerDaoImpl;
 public class CustomerServiceImpl implements CustomerServiceInterface {
 
 	
-	CustomerDaoImpl cust1;
+	private CustomerDaoImpl customer01;
+	
+	public void setCustomer01(CustomerDaoImpl customer01) {
+		this.customer01 = customer01;
+	}
+
 	@Override
-	public String addCustomer(String cId, String cName, String cAddress, String payMode, List<String> list5) {
+	public String addCustomer(String cId, String cName, String cAddress, String payMode) {
 		
-		return cust1.addCustomer(cId, cName, cAddress, payMode, list5);
+		return customer01.addCustomer(cId, cName, cAddress, payMode);
 	}
 
 	@Override
 	public String removeCustomer(String cId) {
 		
-		return cust1.removeCustomer(cId);
+		return customer01.removeCustomer(cId);
 	}
 
 	@Override
 	public String updateCustomer(String cId) {
 		
-		return cust1.updateCustomer(cId);
+		return customer01.updateCustomer(cId);
 	}
 
 }
