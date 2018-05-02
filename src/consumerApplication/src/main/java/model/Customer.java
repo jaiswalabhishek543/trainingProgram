@@ -1,15 +1,19 @@
 package model;
-
-import java.util.List;
-
+/*
+ * @abhi
+ */
 public class Customer {
-
+/*
+ * Customer Class
+ */
 	private String customerId;
 	private String customerName;
 	private String customerAddress;
 	private String paymentMode;
 
-	public Customer(String customerId, String customerName, String customerAddress, String paymentMode) {
+	public Customer(){}
+	
+	public Customer(final String customerId,final String customerName,final String customerAddress,final String paymentMode) {
 		this.customerId = customerId;
 		this.customerName = customerName;
 		this.customerAddress = customerAddress;
@@ -26,7 +30,7 @@ public class Customer {
 		return customerId;
 	}
 
-	public void setCustomerId(String customerId) {
+	public void setCustomerId(final String customerId) {
 		this.customerId = customerId;
 	}
 
@@ -34,7 +38,7 @@ public class Customer {
 		return customerName;
 	}
 
-	public void setCustomerName(String customerName) {
+	public void setCustomerName(final String customerName) {
 		this.customerName = customerName;
 	}
 
@@ -42,7 +46,7 @@ public class Customer {
 		return customerAddress;
 	}
 
-	public void setCustomerAddress(String customerAddress) {
+	public void setCustomerAddress(final String customerAddress) {
 		this.customerAddress = customerAddress;
 	}
 

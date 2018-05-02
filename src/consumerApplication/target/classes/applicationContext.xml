@@ -40,7 +40,7 @@
 	<bean id="retail1" class="service.RetailerServiceImpl">
 	
 	<property name="retailer01" ref="retailer01"></property>
-	</bean>
+	</bean> 
 	
 	
 

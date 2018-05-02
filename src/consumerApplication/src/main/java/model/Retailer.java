@@ -1,14 +1,21 @@
 package model;
 
-import java.util.List;
-
+/*
+ * @abhi
+ */
 public class Retailer {
+	/*
+	 * Retailer class
+	 */
 
 	private String retailerName;
 	private String retailerAddress;
 	private String retailerId;
 
-	public Retailer(String retailerName, String retailerAddress, String retailerId) {
+	public Retailer() {
+	}
+
+	public Retailer(final String retailerName, final String retailerAddress, final String retailerId) {
 		this.retailerName = retailerName;
 		this.retailerAddress = retailerAddress;
 		this.retailerId = retailerId;
@@ -18,7 +25,7 @@ public class Retailer {
 		return retailerId;
 	}
 
-	public void setRetailerId(String retailerId) {
+	public void setRetailerId(final String retailerId) {
 		this.retailerId = retailerId;
 	}
 
@@ -26,7 +33,7 @@ public class Retailer {
 		return retailerName;
 	}
 
-	public void setRetailerName(String retailerName) {
+	public void setRetailerName(final String retailerName) {
 		this.retailerName = retailerName;
 	}
 
@@ -34,7 +41,7 @@ public class Retailer {
 		return retailerAddress;
 	}
 
-	public void setRetailerAddress(String retailerAddress) {
+	public void setRetailerAddress(final String retailerAddress) {
 		this.retailerAddress = retailerAddress;
 	}
 

@@ -2,8 +2,13 @@ package model;
 
 import java.util.List;
 
+/*
+ * @abhi
+ */
 public class Supplier {
-
+	/*
+	 * Supplier class
+	 */
 	private String supplierId;
 	private String supplierName;
 	private String supplierAddress;
@@ -11,8 +16,11 @@ public class Supplier {
 	private String orderId;
 	private Integer amount;
 
-	public Supplier(String supplierId, String supplierName, String supplierAddress, int quantityOrder, String orderId,
-			Integer amount) {
+	public Supplier() {
+	}
+
+	public Supplier(final String supplierId, final String supplierName, final String supplierAddress,
+			final int quantityOrder, final String orderId, final Integer amount) {
 		this.supplierId = supplierId;
 		this.supplierName = supplierName;
 		this.supplierAddress = supplierAddress;
@@ -26,7 +34,7 @@ public class Supplier {
 		return amount;
 	}
 
-	public void setAmount(Integer amount) {
+	public void setAmount(final Integer amount) {
 		this.amount = amount;
 	}
 
@@ -34,7 +42,7 @@ public class Supplier {
 		return supplierId;
 	}
 
-	public void setSupplierId(String supplierId) {
+	public void setSupplierId(final String supplierId) {
 		this.supplierId = supplierId;
 	}
 
@@ -42,7 +50,7 @@ public class Supplier {
 		return supplierName;
 	}
 
-	public void setSupplierName(String supplierName) {
+	public void setSupplierName(final String supplierName) {
 		this.supplierName = supplierName;
 	}
 
@@ -50,7 +58,7 @@ public class Supplier {
 		return supplierAddress;
 	}
 
-	public void setSupplierAddress(String supplierAddress) {
+	public void setSupplierAddress(final String supplierAddress) {
 		this.supplierAddress = supplierAddress;
 	}
 

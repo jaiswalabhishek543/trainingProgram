@@ -1,33 +1,35 @@
 package dao;
 
-import java.util.List;
-
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import controller.CreateConnection;
+/*
+ * @abhi
+ * 
+ */
 
 public class CustomerDaoImpl implements CustomerDao {
 
-	//CreateConnection conObj;
-
+	
 	private DataSource dataSource;
-
+	
+	//Instantiating datasource
 	public void setDataSource(DataSource dataSource) 
 	{
 		this.dataSource = dataSource;
 	}
-
+	
+	//Implementing addCustomer method to add details
 	@Override
 	public String addCustomer(String cId, String cName, String cAddress, String payMode) {
 
 		try {
 
-			JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+			final JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
 
-			String str1="Insert into customer (customerId,customerName,customerAddress,paymentMode)values(?,?,?,?)";
+			final String str1="Insert into customer (customerId,customerName,customerAddress,paymentMode)values(?,?,?,?)";
 			jdbcTemplate.update(str1,cId,cName,cAddress,payMode);
 
 		}
@@ -42,12 +44,13 @@ public class CustomerDaoImpl implements CustomerDao {
 
 		return "Customer added";
 	}
-
+	
+	//Implementing removeCustomer method to remove details
 	@Override
 	public String removeCustomer(String cId) {
 		try {
-			JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-			String str1="Delete from customer where customerId=?";
+			final JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+			final String str1="Delete from customer where customerId=?";
 			jdbcTemplate.update(str1,cId);
 
 		}
@@ -59,14 +62,15 @@ public class CustomerDaoImpl implements CustomerDao {
 
 		return "Customer removed";
 	}
-
+	
+	//Implementing updateCustomer method to update details
 	@Override
-	public String updateCustomer(String cId) {
+	public String updateCustomer(final String cId) {
 
 		try {
 
-			JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-			String str1="Update customer set customerName=? where customerId=?";
+			final JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+			final String str1="Update customer set customerName=? where customerId=?";
 			jdbcTemplate.update(str1,"sun",cId);
 
 		}

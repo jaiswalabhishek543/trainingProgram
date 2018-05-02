@@ -14,6 +14,9 @@ import model.Goods;
 import model.Supplier;
 import service.RetailerServiceInterface;
 
+/*
+ * @abhi
+ */
 public class RetailerDaoImpl implements RetailerDaoInterface {
 
 	private DataSource dataSource;
@@ -22,75 +25,82 @@ public class RetailerDaoImpl implements RetailerDaoInterface {
 		this.dataSource = dataSource;
 	}
 
+	/*
+	 * 
+	 * @see dao.RetailerDaoInterface#viewGoods()
+	 */
 	@Override
 	public List<Goods> viewGoods() {
-		List<Goods> gud=null;
+		List<Goods> gud = null;
 		try {
-			String sqlSelect="select * from goods";
+			String sqlSelect = "select * from goods";
 			JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-			gud = jdbcTemplate.query(sqlSelect,new BeanPropertyRowMapper(Goods.class));
-			
+			gud = jdbcTemplate.query(sqlSelect, new BeanPropertyRowMapper(Goods.class));
+
 		}
 
-		catch(DataAccessException e)
-		{
-			System.out.println("Exception occured- Sql exception"+e);
+		catch (DataAccessException e) {
+			System.out.println("Exception occured- Sql exception" + e);
 			return null;
 		}
-		
+
 		return gud;
 
-
 	}
 
+	/*
+	 * 
+	 * @see dao.RetailerDaoInterface#viewCustomer()
+	 */
 	@Override
 	public List<Customer> viewCustomer() {
-		List<Customer> customers=null;
+		List<Customer> customers = null;
 		try {
-			String sqlSelect="select * from customer";
+			String sqlSelect = "select * from customer";
 			JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-			customers  = jdbcTemplate.query(sqlSelect,new BeanPropertyRowMapper(Customer.class));
-			
+			customers = jdbcTemplate.query(sqlSelect, new BeanPropertyRowMapper(Customer.class));
+
 		}
 
-		catch(DataAccessException e)
-		{
-			System.out.println("Exception occured- Sql exception"+e);
+		catch (DataAccessException e) {
+			System.out.println("Exception occured- Sql exception" + e);
 			return null;
 		}
-		
+
 		return customers;
 
-		
-		
-		
-		
-		
 	}
 
+	/*
+	 * 
+	 * @see dao.RetailerDaoInterface#viewSupplier()
+	 */
 	@Override
 	public List<Supplier> viewSupplier() {
-		
-		
-		
-		List<Supplier> supply1=null;
+
+		List<Supplier> supply1 = null;
 		try {
-			String sqlSelect="select * from supplier";
+			String sqlSelect = "select * from supplier";
 			JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-			supply1  = jdbcTemplate.query(sqlSelect,new BeanPropertyRowMapper(Supplier.class));
-			
+			supply1 = jdbcTemplate.query(sqlSelect, new BeanPropertyRowMapper(Supplier.class));
+
 		}
 
-		catch(DataAccessException e)
-		{
-			System.out.println("Exception occured- Sql exception"+e);
+		catch (DataAccessException e) {
+			System.out.println("Exception occured- Sql exception" + e);
 			return null;
 		}
-		
+
 		return supply1;
 
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see dao.RetailerDaoInterface#addRetailer(java.lang.String, java.lang.String,
+	 * java.lang.String)
+	 */
 	@Override
 	public String addRetailer(String rId, String rName, String rAddr) {
 

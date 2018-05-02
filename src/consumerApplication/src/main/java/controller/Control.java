@@ -13,76 +13,108 @@ import model.Supplier;
 import service.CustomerServiceImpl;
 import service.GoodsServiceImpl;
 import service.RetailerServiceImpl;
-
+import service.SupplierServiceImpl;
+/*
+ * @abhi
+ * 
+ */
 public class Control {
+
+	//Getting objects of classes
 	
-	public static void main(String args[])
-	{
-		
-		ApplicationContext app=new ClassPathXmlApplicationContext("applicationContext.xml");
-		
-		/*
-		GoodsServiceImpl gud4=(GoodsServiceImpl) app.getBean("gud3");
-		String str1=gud4.addGoods("g3", "Pavan", 11, 1100);
-	    System.out.println(str1);
-		*/
-		
-		/*
-		CustomerServiceImpl custom=(CustomerServiceImpl) app.getBean("custom1");
-		String str2=custom.addCustomer("c3", "Pappu", "sec 10, Airoli", "Card");
-		System.out.println(str2);
-		*/
-		
-		/*
-		RetailerServiceImpl ret=(RetailerServiceImpl) app.getBean("retail1");
-		String str3=ret.addRetailer("r1", "Raju", "Mumbai");
-		System.out.println(str3);
-		*/
-		
-		
-		/*
-		RetailerServiceImpl ret=(RetailerServiceImpl) app.getBean("retail1");
-		List<Customer> custList=ret.viewCustomer();
-		
-		for(Customer cust:custList)
-		{
-			System.out.println(cust);
-		}
-		
-		*/
-		
-		
-		/*
-		RetailerServiceImpl ret=(RetailerServiceImpl) app.getBean("retail1");
-		List<Supplier> supplierList=ret.viewSupplier();
-		
-		for(Supplier sup:supplierList)
-		{
-			System.out.println(sup);
-		}
-		
-		*/
-		
-		
-		RetailerServiceImpl ret=(RetailerServiceImpl) app.getBean("retail1");
-		List<Goods> gud6=ret.viewGoods();
-		
-		for(Goods gud2:gud6)
-		{
-			System.out.println(gud2);
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	ApplicationContext app=new ClassPathXmlApplicationContext("applicationContext.xml");
+	CustomerServiceImpl custom=(CustomerServiceImpl) app.getBean("custom1");
+	GoodsServiceImpl gud=(GoodsServiceImpl) app.getBean("gud3");
+	RetailerServiceImpl ret=(RetailerServiceImpl) app.getBean("retail1");
+	SupplierServiceImpl sup=(SupplierServiceImpl) app.getBean("supply1");
+
+	//Customer class methods using for getting calls from Testing class
+	public String addCustomer(final String cId,final String cName,final String cAddress,final String payMode) {
+
+		return custom.addCustomer(cId, cName, cAddress, payMode);
 	}
+
+
+	public String removeCustomer(final String cId) {
+
+		return custom.removeCustomer(cId);
+	}
+
+
+	public String updateCustomer(final String cId) {
+
+		return custom.updateCustomer(cId);
+	}
+
 	
+	//Goods class methods using for getting calls from Testing class
+	public String addGoods(final String gId,final String gName,final int gQuant,final double gPrice) {
+
+		return gud.addGoods(gId, gName, gQuant, gPrice);
+	}
+
+
+	public String removeGoods(final String gId) {
+
+		return gud.removeGoods(gId);
+	}
+
+
+
+
+
+	public String updateGoods(final String gId) {
+
+		return gud.updateGoods(gId);
+	}
+
+	//Retailer class methods using for getting calls from Testing class
+	public List<Goods> viewGoods() {
+
+		return ret.viewGoods();
+	}
+
+
+	public List<Customer> viewCustomer() {
+
+		return ret.viewCustomer();
+	}
+
+
+	public List<Supplier> viewSupplier() {
+
+		return ret.viewSupplier();
+	}
+
+	public String addRetailer(final String rId,final String rName,final String rAddr) {
+
+		return ret.addRetailer(rId, rName, rAddr);
+	}
+
+	
+	//Supply class methods using for getting calls from Testing class
+	
+	public String addSupplier(final String sId, final String sName,final  String sAddress,final int qunat,final String orderId,final int amount1) {
+
+		return sup.addSupplier(sId, sName, sAddress, qunat, orderId, amount1);
+	}
+
+	
+	public String removeSupplier(final String sId) {
+
+		return sup.removeSupplier(sId);
+	}
+
+
+	public String updateSupplier(final String sId) {
+
+		return sup.updateSupplier(sId);
+	}
+
+
+
+
+
+
 
 }

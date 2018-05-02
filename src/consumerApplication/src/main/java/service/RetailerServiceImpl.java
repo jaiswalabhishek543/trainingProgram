@@ -12,7 +12,7 @@ public class RetailerServiceImpl implements RetailerServiceInterface {
 
 	private RetailerDaoImpl retailer01;
 	
-	public void setRetailer01(RetailerDaoImpl retailer01) {
+	public void setRetailer01(final RetailerDaoImpl retailer01) {
 		this.retailer01 = retailer01;
 	}
 
@@ -35,7 +35,7 @@ public class RetailerServiceImpl implements RetailerServiceInterface {
 	}
 
 	@Override
-	public String addRetailer(String rId, String rName, String rAddr) {
+	public String addRetailer(final String rId,final String rName,final String rAddr) {
 		
 		return retailer01.addRetailer(rId, rName, rAddr);
 	}
