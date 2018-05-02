@@ -16,19 +16,8 @@ public class Supplier {
 	private String orderId;
 	private Integer amount;
 
-	public Supplier() {
-	}
+	public Supplier() {}
 
-	public Supplier(final String supplierId, final String supplierName, final String supplierAddress,
-			final int quantityOrder, final String orderId, final Integer amount) {
-		this.supplierId = supplierId;
-		this.supplierName = supplierName;
-		this.supplierAddress = supplierAddress;
-		this.quantityOrder = quantityOrder;
-		this.orderId = orderId;
-		this.amount = amount;
-
-	}
 
 	public Integer getAmount() {
 		return amount;

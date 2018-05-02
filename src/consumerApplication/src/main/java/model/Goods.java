@@ -13,15 +13,6 @@ public class Goods {
 	private int goodsQuantity;
 	private double goodsPrice;
 
-	public Goods() {
-	}
-
-	public Goods(final String goodsId, final String goodsName, final int goodsQuantity, final double goodsPrice) {
-		this.goodsId = goodsId;
-		this.goodsName = goodsName;
-		this.goodsQuantity = goodsQuantity;
-		this.goodsPrice = goodsPrice;
-	}
 
 	public String getGoodsId() {
 		return goodsId;

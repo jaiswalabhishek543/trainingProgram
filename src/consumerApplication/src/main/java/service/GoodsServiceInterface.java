@@ -10,7 +10,7 @@ public interface GoodsServiceInterface {
 
 	public String removeGoods(String gId);
 
-	public String orderGoods(String gId);
+//	public String orderGoods(String gId);
 
 	public String updateGoods(String gId);
 

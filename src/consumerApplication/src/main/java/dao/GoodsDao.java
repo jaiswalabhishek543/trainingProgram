@@ -16,7 +16,6 @@ public class GoodsDao implements GoodsDaoInterface {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 * 
 	 * @see dao.GoodsDaoInterface#addGoods(java.lang.String, java.lang.String, int,
 	 * double)
@@ -58,14 +57,13 @@ public class GoodsDao implements GoodsDaoInterface {
 		return "Removed";
 	}
 
-	@Override
+	/*@Override
 	public String orderGoods(String gId) {
 
 		return null;
 	}
-
+*/
 	/*
-	 * (non-Javadoc)
 	 * 
 	 * @see dao.GoodsDaoInterface#updateGoods(java.lang.String)
 	 */

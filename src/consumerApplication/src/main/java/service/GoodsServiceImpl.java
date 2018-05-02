@@ -32,15 +32,18 @@ public class GoodsServiceImpl implements GoodsServiceInterface {
 		return goods01.removeGoods(gId);
 	}
 
+
 	/*
 	 * @see service.GoodsServiceInterface#orderGoods(java.lang.String)
 	 */
-	@Override
+	/*@Override
 	public String orderGoods(final String gId) {
 
 		return goods01.orderGoods(gId);
 	}
-
+*/
+	
+	
 	/*
 	 * @see service.GoodsServiceInterface#updateGoods(java.lang.String)
 	 */

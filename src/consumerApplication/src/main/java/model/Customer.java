@@ -11,14 +11,8 @@ public class Customer {
 	private String customerAddress;
 	private String paymentMode;
 
-	public Customer(){}
+	public Customer() {}
 	
-	public Customer(final String customerId,final String customerName,final String customerAddress,final String paymentMode) {
-		this.customerId = customerId;
-		this.customerName = customerName;
-		this.customerAddress = customerAddress;
-		this.paymentMode = paymentMode;
-	}
 
 	@Override
 	public String toString() {

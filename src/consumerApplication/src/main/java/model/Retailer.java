@@ -15,11 +15,7 @@ public class Retailer {
 	public Retailer() {
 	}
 
-	public Retailer(final String retailerName, final String retailerAddress, final String retailerId) {
-		this.retailerName = retailerName;
-		this.retailerAddress = retailerAddress;
-		this.retailerId = retailerId;
-	}
+	
 
 	public String getRetailerId() {
 		return retailerId;
