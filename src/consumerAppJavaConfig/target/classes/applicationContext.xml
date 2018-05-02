@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost/dbcustom" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+	<bean id="goods01" class="dao.GoodsDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="customers01" class="dao.CustomerDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="supply01" class="dao.SupplierDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="custom1" class="service.CustomerServiceImpl">
+	<property name="customer01" ref="customers01"></property>
+    </bean>
+	<bean id="gud3" class="service.GoodsServiceImpl" >
+		<property name="goods01" ref="goods01" />
+	</bean>	
+	<bean id="supply1" class="service.SupplierServiceImpl" >
+	<property name="supply01" ref="supply01"></property>
+	</bean>
+	
+	<bean id="retailer01" class="dao.RetailerDaoImpl">
+	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean id="retail1" class="service.RetailerServiceImpl">
+	
+	<property name="retailer01" ref="retailer01"></property>
+	</bean>
+	
+	
+
+
+<!--  
+	<bean id="gud1" class="model.Goods" />
+
+	
+	<bean id="custom2" class="model.Customer" />
+	<bean id="gud0" class="dao.GoodsDao" />
+-->
+
+
+
+</beans>
