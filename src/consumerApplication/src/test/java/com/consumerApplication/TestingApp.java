@@ -4,14 +4,21 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 
+import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.Test;
+import org.junit.runners.MethodSorters;
 
 import controller.Control;
+
 /*
  * @abhi
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestingApp {
 
+	/*
+	 * Creating object of Control class
+	 */
 	Control con = new Control();
 
 	@Test
@@ -24,13 +31,13 @@ public class TestingApp {
 	@Test
 	public void test2() {
 
-		assertEquals("Customer removed", con.removeCustomer("c7"));
+		assertEquals("Test case","Customer removed", con.removeCustomer("c7"));
 
 	}
 
 	@Test
 	public void test3() {
-		assertEquals("Customer updated", con.updateCustomer("c5"));
+		assertEquals("Test case","Customer updated", con.updateCustomer("c5"));
 	}
 
 	@Test
@@ -43,14 +50,14 @@ public class TestingApp {
 	@Test
 	public void test5() {
 
-		assertEquals("Removed", con.removeGoods("g5"));
+		assertEquals("Test Case","Removed", con.removeGoods("g5"));
 
 	}
 
 	@Test
 	public void test6() {
 
-		assertEquals("Updated goods", con.updateGoods("g14"));
+		assertEquals("Test Case","Updated goods", con.updateGoods("g14"));
 
 	}
 
@@ -78,33 +85,56 @@ public class TestingApp {
 	@Test
 	public void test10() {
 
-		assertNotEquals("Supplier Updated", con.addSupplier("s21", "S4 Traders", "Kanpur", 400, "O20", 60000));
+		assertNotEquals("Test Case","Supplier Updated", con.addSupplier("s21", "S4 Traders", "Kanpur", 400, "O20", 60000));
 	}
 
 	@Test
 	public void test11() {
-		assertEquals("Supplier removed", con.removeSupplier("s20"));
+		assertEquals("Test Case","Supplier removed", con.removeSupplier("s20"));
 	}
 
 	@Test
 	public void test12() {
 
-		assertEquals("Supplier Updated", con.updateSupplier("s21"));
+		assertEquals("Test Case","Supplier Updated", con.updateSupplier("s21"));
 	}
 
 	@Test
 	public void test() {
 
-		assertNotEquals("Retailer added", con.addRetailer("r1", "Rama", "Panji"));
+		assertNotEquals("Test Case","Retailer added", con.addRetailer("r1", "Rama", "Panji"));
 
 	}
-	
+
+	@Test
+	public void test14() {
+		assertNotEquals("Test Case","Retailer added", con.addRetailer("r9", "Radhe", "Ramnagar"));
+	}
+
+	@Test
+	public void test15() {
+		assertEquals("Test Case","Customer added", con.addCustomer("c19", "Vaibhav", "Delhi", "Card"));
+	}
+
+	@Test
+	public void test16() {
+		assertEquals("Test Case","Customer removed", con.removeCustomer("c19"));
+	}
 	
 	@Test
-	public void test15()
+	public void test17() {
+		assertEquals("Test Case","Goods added", con.addGoods("g17", "Candy",40, 5));
+	}
+
+	@Test
+	public void test18() {
+		assertEquals("Test Case","Removed", con.removeGoods("g17"));
+	}
+
+	@Test
+	public void test19()
 	{
-		assertNotEquals("Retailer added", con.addRetailer("r9", "Radhe", "Ramnagar"));
+	   assertNotEquals("Test Case","Retailer added", con.addRetailer("r7", "Ray", "Bengal"));	
 	}
 	
-
 }

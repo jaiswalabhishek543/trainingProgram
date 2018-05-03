@@ -96,7 +96,6 @@ public class RetailerDaoImpl implements RetailerDaoInterface {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 * 
 	 * @see dao.RetailerDaoInterface#addRetailer(java.lang.String, java.lang.String,
 	 * java.lang.String)
