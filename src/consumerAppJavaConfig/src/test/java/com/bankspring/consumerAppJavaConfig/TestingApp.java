@@ -13,33 +13,41 @@ import controller.Control;
  */
 public class TestingApp {
 
-	//Creating object of Control class
+	// Creating object of Control class
 	Control con = new Control();
 
-	
 	/*
 	 * First 3 test cases based on Customer's methods
 	 */
 	@Test
 	public void test1() {
-		final String str4 = new String("Customer added");
-		assertNotEquals(str4, con.addCustomer("c40", "Chotu", "Begal", "Cash"));
+		
+		assertNotEquals("Customer added", con.addCustomer("c40", "Chotu", "Begal", "Cash"));
 
 	}
 
 	@Test
 	public void test2() {
 
-		assertEquals("Customer removed", con.removeCustomer("c7"));
+		assertEquals("Test case","Customer removed", con.removeCustomer("c7"));
 
 	}
 
 	@Test
 	public void test3() {
-		assertEquals("Customer updated", con.updateCustomer("c5"));
+		assertEquals("Test case","Customer updated", con.updateCustomer("c5"));
 	}
 
-	
+	@Test
+	public void test16() {
+		assertEquals("Test case","Customer added", con.addCustomer("c19", "Vaibhav", "Delhi", "Card"));
+	}
+
+	@Test
+	public void test17() {
+		assertEquals("Test case","Customer removed", con.removeCustomer("c19"));
+	}
+
 	/*
 	 * Test cases based on Goods's methods
 	 */
@@ -54,18 +62,27 @@ public class TestingApp {
 	@Test
 	public void test5() {
 
-		assertEquals("Removed", con.removeGoods("g5"));
+		assertEquals("Test case","Removed", con.removeGoods("g5"));
 
 	}
 
 	@Test
 	public void test6() {
 
-		assertEquals("Updated goods", con.updateGoods("g14"));
+		assertEquals("Test case","Updated goods", con.updateGoods("g14"));
 
 	}
 
-	
+	@Test
+	public void test18() {
+		assertEquals("Test case","Goods added", con.addGoods("g17", "Candy", 40, 5));
+	}
+
+	@Test
+	public void test19() {
+		assertEquals("Test case","Removed", con.removeGoods("g17"));
+	}
+
 	/*
 	 * Test cases based on retailer's methods
 	 */
@@ -91,11 +108,10 @@ public class TestingApp {
 	}
 
 	@Test
-	public void test15()
-	{
+	public void test15() {
 		assertNotEquals("Retailer added", con.addRetailer("r9", "Radhe", "Ramnagar"));
 	}
-	
+
 	/*
 	 * Test cases based on Supplier'S methods
 	 */
@@ -107,13 +123,13 @@ public class TestingApp {
 
 	@Test
 	public void test11() {
-		assertEquals("Supplier removed", con.removeSupplier("s20"));
+		assertEquals("Test case","Supplier removed", con.removeSupplier("s20"));
 	}
 
 	@Test
 	public void test12() {
 
-		assertEquals("Supplier Updated", con.updateSupplier("s21"));
+		assertEquals("Test case","Supplier Updated", con.updateSupplier("s21"));
 	}
 
 }
