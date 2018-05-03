@@ -2,8 +2,11 @@ package controller;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import dao.CustomerDaoImpl;
@@ -19,20 +22,20 @@ import service.SupplierServiceImpl;
  * @abhi
  */
 @Configuration
+@PropertySource("classpath:application.properties")
 public class AppConfig {
 
+	@Autowired
+	Environment env;
+	
 	@Bean
 	public DataSource datasource() {
 		DriverManagerDataSource datasource = new DriverManagerDataSource();
-		final String URL = "jdbc:mysql://localhost/dbcustom";
-		final String username = "root";
-		final String password = "root";
-		final String driver = "com.mysql.jdbc.Driver";
-
-		datasource.setUrl(URL);
-		datasource.setUsername(username);
-		datasource.setPassword(password);
-		datasource.setDriverClassName(driver);
+	
+		datasource.setUrl(env.getProperty("url"));
+		datasource.setUsername(env.getProperty("user"));
+		datasource.setPassword(env.getProperty("pass"));
+		datasource.setDriverClassName(env.getProperty("driver"));
 
 		return datasource;
 
