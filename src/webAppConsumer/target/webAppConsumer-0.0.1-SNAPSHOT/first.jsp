@@ -8,18 +8,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Demp Project</title>
+<title>Demo Project</title>
 </head>
 <body>
 <p>
+<h2><center>Customer's Details</center></h2><br />
 <%  
 
 ArrayList<Customer> list =(ArrayList<Customer>) request.getAttribute("listServlet");
 
 for(Customer category : list) {
-    out.println(category.getCustomerId());
-    out.println(category.getCustomerName());
-    out.println(category.getCustomerAddress());
+    out.println(category.getCustomerId()+" "+category.getCustomerName()+" "+category.getCustomerAddress());
+    
+    
 }
 
 %>

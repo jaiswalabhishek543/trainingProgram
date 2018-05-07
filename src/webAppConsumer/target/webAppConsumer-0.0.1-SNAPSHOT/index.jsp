@@ -12,7 +12,14 @@
 </head>
 <body>
 <form action="ServletDemo" method="get">
-<input type="submit" value="click" />
+<input type="submit" name="btn1" value="click to view customers" />
+<br />
+<br />
+<input type="text" name="field1" placeholder="Enter the id to be deleted" />
+<input type="submit" name="btn3" value="click to delete customer" />
 </form>
+<br />
+<a href="add1.jsp"><input type="submit" value="click to add customer" /></a>
+
 </body>
 </html>
