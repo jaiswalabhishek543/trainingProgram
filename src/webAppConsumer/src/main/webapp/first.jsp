@@ -11,6 +11,7 @@
 <title>Demo Project</title>
 </head>
 <body>
+<a href="index.jsp"><button value="Home">Home</button></a>
 	<p>
 	<h2>
 		<center>Customer's Details</center>
