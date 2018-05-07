@@ -16,12 +16,18 @@ import model.Customer;
 import service.CustomerServiceImpl;
 import service.RetailerServiceImpl;
 
+/*
+ *@abhi
+ */
+
 public class ServletDemo extends HttpServlet {
 
+	//Initializing servlet
 	public void init() throws ServletException {
 
 	}
 
+	//Get method
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		ServletContext context = getServletContext();
@@ -30,6 +36,9 @@ public class ServletDemo extends HttpServlet {
 		response.setContentType("text/html");
 
 		if (request.getParameter("btn1") != null) {
+			
+			//Viewing Customer Details
+			
 			RetailerServiceImpl ret = (RetailerServiceImpl) ctx.getBean(RetailerServiceImpl.class);
 			ArrayList<Customer> list1 = (ArrayList<Customer>) ret.viewCustomer();
 
@@ -40,6 +49,8 @@ public class ServletDemo extends HttpServlet {
 
 		else if (request.getParameter("btn3") != null) {
 
+			//Deleting customer using Id
+			
 			String str1 = request.getParameter("field1");
 			CustomerServiceImpl cust1 = (CustomerServiceImpl) ctx.getBean(CustomerServiceImpl.class);
 
@@ -51,6 +62,8 @@ public class ServletDemo extends HttpServlet {
 			getServletConfig().getServletContext().getRequestDispatcher("/first.jsp").forward(request, response);
 
 		} else if (request.getParameter("btn2") != null) {
+			
+			//Adding new customer
 			String str3 = request.getParameter("id");
 			String str4 = request.getParameter("name1");
 			String str5 = request.getParameter("addr");

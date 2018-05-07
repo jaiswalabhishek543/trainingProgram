@@ -23,6 +23,7 @@
 			out.println(category.getCustomerId() + " " + category.getCustomerName() + " "
 					+ category.getCustomerAddress());
 
+			out.println("<br>");
 		}
 	%>
 
