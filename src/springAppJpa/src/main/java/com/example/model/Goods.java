@@ -34,6 +34,11 @@ public class Goods {
 		this.goodsPrice = goodsPrice;
 	}
 
+	public Goods()
+	{
+		
+	}
+	
 	@Column(name="goodsPrice")
 	private double goodsPrice;
 

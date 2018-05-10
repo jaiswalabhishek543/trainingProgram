@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.example.model.Customer;
 
-public interface customerServiceInterface {
+public interface CustomerServiceInterface {
 	
 	
 	// Methods to be implemented

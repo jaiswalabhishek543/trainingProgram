@@ -10,7 +10,7 @@ import com.example.model.Customer;
 import com.example.repository.CustomerDaoInt;
 
 @Service
-public class CustomerServiceImpl implements customerServiceInterface {
+public class CustomerServiceImpl implements CustomerServiceInterface {
 
 	
 	@Autowired

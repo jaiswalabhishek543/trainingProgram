@@ -4,21 +4,29 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.Customer;
-import com.example.service.customerServiceInterface;
+import com.example.model.Goods;
+import com.example.service.CustomerServiceInterface;
+import com.example.service.GoodsServiceInterface;
+import com.example.service.RetailerServiceInterface;
 
-@Controller
+
 @RestController
 public class Controller1 {
 
 	@Autowired
-	private customerServiceInterface custServ;
+	private CustomerServiceInterface custServ;
+	
+	@Autowired
+	private RetailerServiceInterface ret1;
+	
+	@Autowired
+	private GoodsServiceInterface gusInt;
 	
 	
 	Customer cust4=new Customer("Abhishek" ,"Delhi", "Cash");
@@ -56,6 +64,62 @@ public class Controller1 {
 	public Customer update(@PathVariable("custI") Integer custI)
 	{
 		return custServ.update(custI);
+	}
+	
+
+	
+	
+	@RequestMapping(value="/viewallcust",method=RequestMethod.GET)
+	public List<Customer> view12()
+	{
+		return ret1.viewcus();
+	}
+
+	@RequestMapping(value="/viewallgud",method=RequestMethod.GET)
+	public List<Goods> view14()
+	{
+		return ret1.viewG();
+	}
+
+
+
+	
+	
+	Goods gud1=new Goods("Soap", 50, 400);
+	Goods gud2=new Goods("Bottle", 40, 600);
+	Goods gud3=new Goods("Detergent", 150, 200);
+	Goods gud4=new Goods("Clothes", 500, 100);
+	
+	
+	
+	@RequestMapping(value="/addgoods",method=RequestMethod.POST)
+	public Goods adding()
+	{
+		gusInt.addGoods(gud3);
+		return gud3;
+		
+	}
+	
+	@RequestMapping(value="/viewgoods",method=RequestMethod.GET)
+	public List<Goods> view1()
+	{
+		
+		return gusInt.viewGud(); 
+	}
+	
+	@RequestMapping(value="/deletegoods/{gudI}",method=RequestMethod.GET)
+	public Optional<Goods> deleteGud(@PathVariable("gudI") Integer gudI)
+	{
+		return gusInt.removeGoods(gudI);
+		
+	}
+	
+	
+	@RequestMapping(value="/updategoods/{gudd}",method=RequestMethod.GET)
+	public Goods updateGood(@PathVariable("gudd") Integer gudd)
+	{
+		Goods gud3=gusInt.updateGoods(gudd);
+		return gud3;
 	}
 	
 	
