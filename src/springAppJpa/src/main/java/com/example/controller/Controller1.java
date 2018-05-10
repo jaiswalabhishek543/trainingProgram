@@ -4,11 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.exceptions.MyException;
 import com.example.model.Customer;
 import com.example.model.Goods;
 import com.example.service.CustomerServiceInterface;
@@ -58,6 +62,24 @@ public class Controller1 {
 		return custServ.delete(custId);
 		
 	}
+	
+	
+	@RequestMapping(value="/deletecust1/{custId1}")
+	public ResponseEntity<Customer> delete4(@PathVariable("custId1") Integer cusId1) throws MyException
+	{
+		Customer cust10;
+		try{
+		cust10= custServ.del(cusId1);
+		}
+		catch(MyException f)
+		{
+			return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND) ;
+		}
+		
+		return new ResponseEntity<Customer>(cust10,HttpStatus.ACCEPTED) ;
+	}
+	
+	
 	
 	
 	@RequestMapping(value="/updatecust/{custI}",method=RequestMethod.GET)

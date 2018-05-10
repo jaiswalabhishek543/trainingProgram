@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.example.exceptions.MyException;
 import com.example.model.Customer;
 import com.example.repository.CustomerDaoInt;
 
@@ -44,6 +47,20 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		cust2.setPaymentMode("Card");
 		return cust2;
 	}
+	@Override
+	public Customer del(Integer id2) throws MyException {
+		// TODO Auto-generated method stub
+		
+		Customer cust16;
+		Optional<Customer> cust5=cust.findById(id2);
+		cust16=cust5.get();
+		cust.deleteById(id2);
+	
+		
+		return cust16;
+	}
 
+	
+	
 
 }

@@ -14,8 +14,9 @@ public class Supplier {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer supplierId;
 	@Column(name="supplierId")
+	private Integer supplierId;
+	@Column(name="supplierName")
 	private String supplierName;
 	@Column(name="supplierAddress")
 	private String supplierAddress;
