@@ -1,5 +1,6 @@
 package com.example.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,7 +19,11 @@ public interface CustomerServiceInterface {
 		
 		public Optional<Customer> delete(Integer id1);
 
-		public Customer update(Integer id2);
+		public Customer update(Integer id2) throws MyException;
+		
+		public List<Customer> update2(List<Customer> lis2) throws MyException;
 		
 		public Customer del(Integer id2) throws MyException;
+		
+		public HashMap<Integer, String> del2(List<Integer> lisd);
 }
