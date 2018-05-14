@@ -75,7 +75,7 @@ public class Controller1 {
 
 	}
 
-	@RequestMapping(value = "/deletecust/{custId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/deletecust/{custId}", method = RequestMethod.DELETE)
 	public Optional<Customer> delete(@PathVariable("custId") Integer custId) {
 		return custServ.delete(custId);
 
