@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GeneratorType;
+
+import lombok.Data;
+
 
 
 @Entity
@@ -16,6 +20,7 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	
 	@Column(name = "customerId")
 	private Integer customerId;
 	@Column(name = "customerName")

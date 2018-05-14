@@ -1,0 +1,135 @@
+2018-05-14 10:47:08.881  INFO 7852 --- [main] com.example.SpringAppJpaApplication      : Starting SpringAppJpaApplication on MININT-9I29NKI with PID 7852 (C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\springAppJpa\target\classes started by trainee in C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\springAppJpa)
+2018-05-14 10:47:08.884  INFO 7852 --- [main] com.example.SpringAppJpaApplication      : No active profile set, falling back to default profiles: default
+2018-05-14 10:47:08.939  INFO 7852 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@29176cc1: startup date [Mon May 14 10:47:08 IST 2018]; root of context hierarchy
+2018-05-14 10:47:10.026  INFO 7852 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d5537d7c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-14 10:47:10.218  INFO 7852 --- [main] org.eclipse.jetty.util.log               : Logging initialized @2496ms to org.eclipse.jetty.util.log.Slf4jLog
+2018-05-14 10:47:10.301  INFO 7852 --- [main] o.s.b.w.e.j.JettyServletWebServerFactory : Server initialized with port: 8080
+2018-05-14 10:47:10.303  INFO 7852 --- [main] org.eclipse.jetty.server.Server          : jetty-9.4.9.v20180320; built: 2018-03-20T17:51:10+05:30; git: 1f8159b1e4a42d3f79997021ea1609f2fbac6de5; jvm 1.8.0_161-b12
+2018-05-14 10:47:10.420  INFO 7852 --- [main] org.eclipse.jetty.server.session         : DefaultSessionIdManager workerName=node0
+2018-05-14 10:47:10.420  INFO 7852 --- [main] org.eclipse.jetty.server.session         : No SessionScavenger set, using defaults
+2018-05-14 10:47:10.426  INFO 7852 --- [main] org.eclipse.jetty.server.session         : Scavenging every 600000ms
+2018-05-14 10:47:10.434  INFO 7852 --- [main] o.e.j.s.h.ContextHandler.application     : Initializing Spring embedded WebApplicationContext
+2018-05-14 10:47:10.434  INFO 7852 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1495 ms
+2018-05-14 10:47:10.544  INFO 7852 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-14 10:47:10.548  INFO 7852 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-14 10:47:10.548  INFO 7852 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-14 10:47:10.548  INFO 7852 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-14 10:47:10.549  INFO 7852 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-14 10:47:10.552  INFO 7852 --- [main] o.e.jetty.server.handler.ContextHandler  : Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@667e34b1{/,[file:///C:/Users/trainee/AppData/Local/Temp/jetty-docbase.589591627057927900.8080/],AVAILABLE}
+2018-05-14 10:47:10.553  INFO 7852 --- [main] org.eclipse.jetty.server.Server          : Started @2832ms
+2018-05-14 10:47:10.700  INFO 7852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-05-14 10:47:10.857  INFO 7852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-05-14 10:47:10.907  INFO 7852 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-14 10:47:10.921  INFO 7852 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-14 10:47:11.005  INFO 7852 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.16.Final}
+2018-05-14 10:47:11.008  INFO 7852 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-14 10:47:11.078  INFO 7852 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-14 10:47:11.319  INFO 7852 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-05-14 10:47:11.647  INFO 7852 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.example.model.Supplier (class must be instantiated by Interceptor)
+2018-05-14 10:47:11.770  INFO 7852 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-14 10:47:12.134  INFO 7852 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-14 10:47:12.409  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@29176cc1: startup date [Mon May 14 10:47:08 IST 2018]; root of context hierarchy
+2018-05-14 10:47:12.440  WARN 7852 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-05-14 10:47:12.497  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatecust/{custI}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.Controller1.update(java.lang.Integer)
+2018-05-14 10:47:12.499  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deletecust/{custId}],methods=[GET]}" onto public java.util.Optional<com.example.model.Customer> com.example.controller.Controller1.delete(java.lang.Integer)
+2018-05-14 10:47:12.499  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addgoods],methods=[POST]}" onto public com.example.model.Goods com.example.controller.Controller1.adding()
+2018-05-14 10:47:12.500  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addcust],methods=[POST]}" onto public com.example.model.Customer com.example.controller.Controller1.added()
+2018-05-14 10:47:12.500  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addlistcust],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.example.model.Customer>> com.example.controller.Controller1.addList()
+2018-05-14 10:47:12.500  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewcust],methods=[GET]}" onto public java.util.List<com.example.model.Customer> com.example.controller.Controller1.viewCustomer()
+2018-05-14 10:47:12.501  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deletecust1/{custId1}]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.Controller1.delete4(java.lang.Integer) throws com.example.exceptions.MyException
+2018-05-14 10:47:12.501  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deletelistcust],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.util.HashMap<java.lang.Integer, java.lang.String>> com.example.controller.Controller1.delcustlis()
+2018-05-14 10:47:12.502  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatebulk],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.example.model.Customer>> com.example.controller.Controller1.bulkupdate(java.util.List<com.example.model.Customer>) throws com.example.exceptions.MyException
+2018-05-14 10:47:12.502  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewallcust],methods=[GET]}" onto public java.util.List<com.example.model.Customer> com.example.controller.Controller1.view12()
+2018-05-14 10:47:12.502  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewallgud],methods=[GET]}" onto public java.util.List<com.example.model.Goods> com.example.controller.Controller1.view14()
+2018-05-14 10:47:12.503  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewgoods],methods=[GET]}" onto public java.util.List<com.example.model.Goods> com.example.controller.Controller1.view1()
+2018-05-14 10:47:12.503  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deletegoods/{gudI}],methods=[GET]}" onto public java.util.Optional<com.example.model.Goods> com.example.controller.Controller1.deleteGud(java.lang.Integer)
+2018-05-14 10:47:12.503  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updategoods/{gudd}],methods=[GET]}" onto public com.example.model.Goods com.example.controller.Controller1.updateGood(java.lang.Integer)
+2018-05-14 10:47:12.508  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-14 10:47:12.509  INFO 7852 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-14 10:47:12.542  INFO 7852 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-14 10:47:12.543  INFO 7852 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-14 10:47:12.840  INFO 7852 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-14 10:47:12.842  INFO 7852 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-14 10:47:12.853  INFO 7852 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-14 10:47:12.877  INFO 7852 --- [main] o.e.j.s.h.ContextHandler.application     : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-14 10:47:12.877  INFO 7852 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-14 10:47:12.897  INFO 7852 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2018-05-14 10:47:12.936  INFO 7852 --- [main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@5df7e31b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+2018-05-14 10:47:12.941  INFO 7852 --- [main] o.s.b.web.embedded.jetty.JettyWebServer  : Jetty started on port(s) 8080 (http/1.1) with context path '/'
+2018-05-14 10:47:12.946  INFO 7852 --- [main] com.example.SpringAppJpaApplication      : Started SpringAppJpaApplication in 4.439 seconds (JVM running for 5.225)
+2018-05-14 10:47:12.952  INFO 7852 --- [main] com.example.SpringAppJpaApplication      : Project name is : Spring Jpa App
+2018-05-14 10:49:27.943  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-05-14 10:49:27.943  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@29176cc1: startup date [Mon May 14 10:47:08 IST 2018]; root of context hierarchy
+2018-05-14 10:49:27.946  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-14 10:49:27.946  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-14 10:49:27.950  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-14 10:49:27.950  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-05-14 10:49:27.957  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-05-14 10:49:27.963  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@5df7e31b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+2018-05-14 10:49:27.963  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] org.eclipse.jetty.server.session         : Stopped scavenging
+2018-05-14 10:49:27.965  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] o.e.j.s.h.ContextHandler.application     : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2018-05-14 10:49:27.966  INFO 7852 --- [RMI TCP Connection(2)-127.0.0.1] o.e.jetty.server.handler.ContextHandler  : Stopped o.s.b.w.e.j.JettyEmbeddedWebAppContext@667e34b1{/,[file:///C:/Users/trainee/AppData/Local/Temp/jetty-docbase.589591627057927900.8080/],UNAVAILABLE}
+2018-05-14 10:49:31.816  INFO 9104 --- [main] com.example.SpringAppJpaApplication      : Starting SpringAppJpaApplication on MININT-9I29NKI with PID 9104 (C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\springAppJpa\target\classes started by trainee in C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\springAppJpa)
+2018-05-14 10:49:31.819  INFO 9104 --- [main] com.example.SpringAppJpaApplication      : No active profile set, falling back to default profiles: default
+2018-05-14 10:49:31.884  INFO 9104 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@309e345f: startup date [Mon May 14 10:49:31 IST 2018]; root of context hierarchy
+2018-05-14 10:49:32.921  INFO 9104 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6ea8a107] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-14 10:49:33.108  INFO 9104 --- [main] org.eclipse.jetty.util.log               : Logging initialized @2426ms to org.eclipse.jetty.util.log.Slf4jLog
+2018-05-14 10:49:33.187  INFO 9104 --- [main] o.s.b.w.e.j.JettyServletWebServerFactory : Server initialized with port: 8080
+2018-05-14 10:49:33.189  INFO 9104 --- [main] org.eclipse.jetty.server.Server          : jetty-9.4.9.v20180320; built: 2018-03-20T17:51:10+05:30; git: 1f8159b1e4a42d3f79997021ea1609f2fbac6de5; jvm 1.8.0_161-b12
+2018-05-14 10:49:33.301  INFO 9104 --- [main] org.eclipse.jetty.server.session         : DefaultSessionIdManager workerName=node0
+2018-05-14 10:49:33.302  INFO 9104 --- [main] org.eclipse.jetty.server.session         : No SessionScavenger set, using defaults
+2018-05-14 10:49:33.304  INFO 9104 --- [main] org.eclipse.jetty.server.session         : Scavenging every 600000ms
+2018-05-14 10:49:33.311  INFO 9104 --- [main] o.e.j.s.h.ContextHandler.application     : Initializing Spring embedded WebApplicationContext
+2018-05-14 10:49:33.311  INFO 9104 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1427 ms
+2018-05-14 10:49:33.421  INFO 9104 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-14 10:49:33.425  INFO 9104 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-14 10:49:33.426  INFO 9104 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-14 10:49:33.426  INFO 9104 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-14 10:49:33.426  INFO 9104 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-14 10:49:33.430  INFO 9104 --- [main] o.e.jetty.server.handler.ContextHandler  : Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@988246e{/,[file:///C:/Users/trainee/AppData/Local/Temp/jetty-docbase.3653380458329318805.8080/],AVAILABLE}
+2018-05-14 10:49:33.431  INFO 9104 --- [main] org.eclipse.jetty.server.Server          : Started @2750ms
+2018-05-14 10:49:33.560  INFO 9104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-05-14 10:49:33.704  INFO 9104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-05-14 10:49:33.748  INFO 9104 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-14 10:49:33.760  INFO 9104 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-14 10:49:33.833  INFO 9104 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.16.Final}
+2018-05-14 10:49:33.836  INFO 9104 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-14 10:49:33.880  INFO 9104 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-14 10:49:34.129  INFO 9104 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-05-14 10:49:34.452  INFO 9104 --- [main] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.example.model.Supplier (class must be instantiated by Interceptor)
+2018-05-14 10:49:34.570  INFO 9104 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-14 10:49:34.919  INFO 9104 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-14 10:49:35.190  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@309e345f: startup date [Mon May 14 10:49:31 IST 2018]; root of context hierarchy
+2018-05-14 10:49:35.221  WARN 9104 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-05-14 10:49:35.275  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatecust/{custI}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.Controller1.update(java.lang.Integer)
+2018-05-14 10:49:35.280  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deletecust/{custId}],methods=[GET]}" onto public java.util.Optional<com.example.model.Customer> com.example.controller.Controller1.delete(java.lang.Integer)
+2018-05-14 10:49:35.280  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addgoods],methods=[POST]}" onto public com.example.model.Goods com.example.controller.Controller1.adding()
+2018-05-14 10:49:35.281  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addcust],methods=[POST]}" onto public com.example.model.Customer com.example.controller.Controller1.added()
+2018-05-14 10:49:35.281  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addlistcust],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.example.model.Customer>> com.example.controller.Controller1.addList()
+2018-05-14 10:49:35.281  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewcust],methods=[GET]}" onto public java.util.List<com.example.model.Customer> com.example.controller.Controller1.viewCustomer()
+2018-05-14 10:49:35.282  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deletecust1/{custId1}]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.Controller1.delete4(java.lang.Integer) throws com.example.exceptions.MyException
+2018-05-14 10:49:35.282  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deletelistcust],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.util.HashMap<java.lang.Integer, java.lang.String>> com.example.controller.Controller1.delcustlis()
+2018-05-14 10:49:35.282  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatebulk],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.example.model.Customer>> com.example.controller.Controller1.bulkupdate(java.util.List<com.example.model.Customer>) throws com.example.exceptions.MyException
+2018-05-14 10:49:35.283  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewallcust],methods=[GET]}" onto public java.util.List<com.example.model.Customer> com.example.controller.Controller1.view12()
+2018-05-14 10:49:35.283  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewallgud],methods=[GET]}" onto public java.util.List<com.example.model.Goods> com.example.controller.Controller1.view14()
+2018-05-14 10:49:35.283  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewgoods],methods=[GET]}" onto public java.util.List<com.example.model.Goods> com.example.controller.Controller1.view1()
+2018-05-14 10:49:35.283  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/deletegoods/{gudI}],methods=[GET]}" onto public java.util.Optional<com.example.model.Goods> com.example.controller.Controller1.deleteGud(java.lang.Integer)
+2018-05-14 10:49:35.284  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updategoods/{gudd}],methods=[GET]}" onto public com.example.model.Goods com.example.controller.Controller1.updateGood(java.lang.Integer)
+2018-05-14 10:49:35.295  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-14 10:49:35.296  INFO 9104 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-14 10:49:35.329  INFO 9104 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-14 10:49:35.330  INFO 9104 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-14 10:49:35.620  INFO 9104 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-14 10:49:35.623  INFO 9104 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-14 10:49:35.630  INFO 9104 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-14 10:49:35.650  INFO 9104 --- [main] o.e.j.s.h.ContextHandler.application     : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-14 10:49:35.651  INFO 9104 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-14 10:49:35.664  INFO 9104 --- [main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2018-05-14 10:49:35.693  INFO 9104 --- [main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@365afe87{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+2018-05-14 10:49:35.698  INFO 9104 --- [main] o.s.b.web.embedded.jetty.JettyWebServer  : Jetty started on port(s) 8080 (http/1.1) with context path '/'
+2018-05-14 10:49:35.703  INFO 9104 --- [main] com.example.SpringAppJpaApplication      : Started SpringAppJpaApplication in 4.245 seconds (JVM running for 5.021)
+2018-05-14 10:49:35.709  INFO 9104 --- [main] com.example.SpringAppJpaApplication      : Project name is : Spring Jpa App
