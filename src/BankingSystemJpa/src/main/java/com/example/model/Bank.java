@@ -38,8 +38,12 @@ public class Bank {
 	private List<Customer> listCustomer;
 	
 	
-	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="bankId",referencedColumnName="bankId")
+	private List<ATM> listATM;
 
-	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="bankId",referencedColumnName="bankId")
+	private List<Account> listAccount;
 	
 }

@@ -1,9 +1,6 @@
 package com.example.model;
-/*
- * @abhishek
- * 
- */
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,37 +14,32 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
-@Table(name="customer")
+
 @Entity
+@Table(name="account")
 @Data
-public class Customer {
-	
+public class Account {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="accountId")
+	private Integer accountId;
+	
+	
 	@Column(name="customerId")
 	private Integer customerId;
 	
 	
-	@Column(name="name")
-	private String name;
-	
-	@Column(name="pin")
-	private String pin;
-	
+	@Column(name="amount")
+	private BigDecimal amount;
 	
 	@Column(name="bankId")
 	private Integer bankId;
-
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="customerId",referencedColumnName="customerId")
-	private List<Account> listAccount;
+	
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="customerId",referencedColumnName="customerId")
+	@JoinColumn(name="accountId",referencedColumnName="accountId")
 	private List<Transaction> listTransaction;
 	
 	
-	
-	
-
 }

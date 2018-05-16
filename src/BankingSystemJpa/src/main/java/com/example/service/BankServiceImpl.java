@@ -1,6 +1,6 @@
 package com.example.service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,11 +22,18 @@ public class BankServiceImpl implements BankServiceInterface {
 	}
 
 	@Override
-	public List<Bank> getBankDetails() {
+	public Optional<Bank> getBankDetails(Integer id1) {
 		
-		List<Bank> ban3=bank1.findAll();
+		Optional<Bank> ban3=bank1.findById(id1);
 		
 		return ban3;
+	}
+
+	@Override
+	public Bank getBankObj(Integer id0) {
+		Optional<Bank> bak=bank1.findById(id0);
+		Bank bak1=bak.get();
+		return bak1;
 	}
 
 }
