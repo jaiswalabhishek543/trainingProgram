@@ -15,31 +15,30 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+/*
+ * @abhishek
+ */
 @Entity
-@Table(name="account")
+@Table(name = "account")
 @Data
 public class Account {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="accountId")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "accountId")
 	private Integer accountId;
-	
-	
-	@Column(name="customerId")
+
+	@Column(name = "customerId")
 	private Integer customerId;
-	
-	
-	@Column(name="amount")
+
+	@Column(name = "amount")
 	private BigDecimal amount;
-	
-	@Column(name="bankId")
+
+	@Column(name = "bankId")
 	private Integer bankId;
-	
-	
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="accountId",referencedColumnName="accountId")
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "accountId", referencedColumnName = "accountId")
 	private List<Transaction> listTransaction;
-	
-	
+
 }

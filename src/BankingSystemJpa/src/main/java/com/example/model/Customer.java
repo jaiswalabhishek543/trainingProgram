@@ -17,37 +17,32 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
-@Table(name="customer")
+
+@Table(name = "customer")
 @Entity
 @Data
 public class Customer {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="customerId")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "customerId")
 	private Integer customerId;
-	
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;
-	
-	@Column(name="pin")
+
+	@Column(name = "pin")
 	private String pin;
-	
-	
-	@Column(name="bankId")
+
+	@Column(name = "bankId")
 	private Integer bankId;
 
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="customerId",referencedColumnName="customerId")
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "customerId", referencedColumnName = "customerId")
 	private List<Account> listAccount;
-	
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="customerId",referencedColumnName="customerId")
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "customerId", referencedColumnName = "customerId")
 	private List<Transaction> listTransaction;
-	
-	
-	
-	
 
 }

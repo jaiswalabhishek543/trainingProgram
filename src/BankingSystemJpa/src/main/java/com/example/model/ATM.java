@@ -11,26 +11,23 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+/*
+ * @abhishek
+ */
 @Entity
-@Table(name="ATM")
+@Table(name = "ATM")
 @Data
 public class ATM {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="ATMId")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ATMId")
 	private Integer ATMId;
-	
-	@Column(name="amount")
+
+	@Column(name = "amount")
 	private BigDecimal amount;
-	
-	@Column(name="bankId")
+
+	@Column(name = "bankId")
 	private Integer bankId;
-	
-	
-	
-	
-	
-	
-	
+
 }

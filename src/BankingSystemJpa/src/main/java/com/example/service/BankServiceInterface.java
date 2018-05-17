@@ -1,16 +1,18 @@
 package com.example.service;
 
-import java.math.BigDecimal;
-import java.util.List;
+/*
+ * @abhishek
+ */
 import java.util.Optional;
 
 import com.example.model.Bank;
 
 public interface BankServiceInterface {
-	
-	
-	public Bank createBank(Bank ban1);
-	public Optional<Bank> getBankDetails(Integer id1);
-	public Bank getBankObj(Integer id0);
-	
+
+	Bank createBank(Bank ban1);
+
+	Optional<Bank> getBankDetails(Integer id1);
+
+	Bank getBankObj(Integer id0);
+
 }

@@ -34,7 +34,7 @@ public class Bank {
 
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="bankId",referencedColumnName="bankId")
+	@JoinColumn(name = "bankId", referencedColumnName = "bankId")
 	private List<Customer> listCustomer;
 	
 	
