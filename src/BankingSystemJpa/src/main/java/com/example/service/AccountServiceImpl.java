@@ -35,6 +35,8 @@ public class AccountServiceImpl implements AccountServiceInterface {
 	private ATMServiceInterface atmS;
 	@Autowired
 	private ATMDaoInterface atmD;
+	@Autowired
+	private BankServiceInterface bank12;
 
 	/*
 	 * (non-Javadoc)
@@ -44,11 +46,14 @@ public class AccountServiceImpl implements AccountServiceInterface {
 	 * Account)
 	 */
 	@Override
+	@Transactional
 	public Account createAccount(Account acc) throws MyException {
 		final Integer cust11 = acc.getCustomerId();
 		final Integer bank11 = acc.getBankId();
 		if (custom.findById(cust11).isPresent() && bank1.findById(bank11).isPresent()) {
 			if (custom.findById(cust11).get().getBankId() == bank1.findById(bank11).get().getBankId()) {
+				bank1.findById(bank11).get().getAmount().add(acc.getAmount());
+				bank1.save(bank1.findById(bank11).get());
 				final Account acc2 = acc1.save(acc);
 				return acc2;
 			} else {
@@ -103,7 +108,7 @@ public class AccountServiceImpl implements AccountServiceInterface {
 	public Account withdrawMoney(final BigDecimal amunt2, final Integer acId, final Integer flag, final Integer atmId)
 			throws MyException {
 		/*
-		 * When withdrawing money fro bank
+		 * When withdrawing money from bank
 		 */
 		if (flag == 0) {
 

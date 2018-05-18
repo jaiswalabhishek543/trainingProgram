@@ -26,11 +26,10 @@ public class Controller_Account {
 	private AccountServiceInterface accun1;
 
 	@RequestMapping(value = "/createAcc", method = RequestMethod.POST)
-	public ResponseEntity<String> createAccunt(@RequestBody final Account acc1) {
+	public ResponseEntity<?> createAccunt(@RequestBody final Account acc1) {
 		try {
 			final Account acc2 = accun1.createAccount(acc1);
-			return new ResponseEntity<String>("Account with id: " + acc2.getAccountId() + " craeted",
-					HttpStatus.CREATED);
+			return new ResponseEntity<Account>(acc2, HttpStatus.CREATED);
 		} catch (MyException e) {
 			return new ResponseEntity<String>(e.toString(), HttpStatus.BAD_REQUEST);
 		}
@@ -61,11 +60,10 @@ public class Controller_Account {
 	}
 
 	@RequestMapping(value = "/depoMoney/{amou}/{aid1}")
-	public ResponseEntity<String> deposMony(@PathVariable BigDecimal amou, @PathVariable Integer aid1) {
+	public ResponseEntity<?> deposMony(@PathVariable BigDecimal amou, @PathVariable Integer aid1) {
 		try {
 			final Account aacc = accun1.depositMoney(amou, aid1);
-			return new ResponseEntity<String>(aacc.getAmount() + " added into account id " + aacc.getAccountId(),
-					HttpStatus.OK);
+			return new ResponseEntity<Account>(aacc, HttpStatus.OK);
 		} catch (MyException e) {
 			return new ResponseEntity<String>(" Money not deposited ", HttpStatus.BAD_REQUEST);
 		}

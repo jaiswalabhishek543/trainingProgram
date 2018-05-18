@@ -25,14 +25,14 @@ public class Controller_Cust {
 	private CustomerServiceInterface custom;
 
 	@RequestMapping(value = "/addCust", method = RequestMethod.POST)
-	public ResponseEntity<String> addCust(@RequestBody Customer cust4) {
+	public ResponseEntity<?> addCust(@RequestBody Customer cust4) {
 
 		try {
 			final Customer cust00 = custom.createCustomer(cust4);
-			return new ResponseEntity<String>("Customer with id  " + cust00.getCustomerId() + " is created",
-					HttpStatus.CREATED);
+			return new ResponseEntity<Customer>(cust00, HttpStatus.CREATED);
 
 		} catch (MyException e) {
+			
 			return new ResponseEntity<String>(e.toString(), HttpStatus.BAD_REQUEST);
 
 		}

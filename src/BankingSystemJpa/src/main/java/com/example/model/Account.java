@@ -22,6 +22,9 @@ import lombok.Data;
 @Table(name = "account")
 @Data
 public class Account {
+	public Account() {
+
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

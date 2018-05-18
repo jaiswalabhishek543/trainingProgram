@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.exception.MyException;
 import com.example.model.Account;
 import com.example.model.Transaction;
 import com.example.repository.TransactionDaoInterface;
@@ -35,10 +36,14 @@ public class TransactionServiceImpl implements TransactionServiceInterface {
 	}
 
 	@Override
-	public List<Transaction> TransactionReport() {
+	public List<Transaction> TransactionReport() throws MyException {
 
 		final List<Transaction> list1 = transD.findAll();
-
+		if(list1.isEmpty())
+		{
+		throw new MyException(" Trabsaction list is empty ");	
+		}
+		else
 		return list1;
 	}
 

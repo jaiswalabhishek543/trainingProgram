@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.exception.MyException;
 import com.example.model.Transaction;
 import com.example.service.TransactionServiceInterface;
 
@@ -22,8 +23,13 @@ public class ControllerTransaction {
 	private TransactionServiceInterface trans;
 
 	@RequestMapping(value = "/transReport", method = RequestMethod.GET)
-	public ResponseEntity<List<Transaction>> viewTransReport() {
-		return new ResponseEntity<List<Transaction>>(trans.TransactionReport(), HttpStatus.OK);
+	public ResponseEntity<String> viewTransReport() {
+		try {
+			List<Transaction> list1 = trans.TransactionReport();
+			return new ResponseEntity<String>(list1.toString(), HttpStatus.OK);
+		} catch (MyException e) {
+			return new ResponseEntity<String>(e.toString(), HttpStatus.NOT_FOUND);
+		}
 
 	}
 

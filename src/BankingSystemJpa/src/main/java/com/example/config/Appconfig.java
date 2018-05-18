@@ -18,6 +18,6 @@ public class Appconfig {
 	
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
+		return new RestTemplate();
 	}
 }
