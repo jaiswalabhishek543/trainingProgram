@@ -25,7 +25,7 @@ public class ControllerTransaction {
 	@RequestMapping(value = "/transReport", method = RequestMethod.GET)
 	public ResponseEntity<String> viewTransReport() {
 		try {
-			List<Transaction> list1 = trans.TransactionReport();
+			final List<Transaction> list1 = trans.TransactionReport();
 			return new ResponseEntity<String>(list1.toString(), HttpStatus.OK);
 		} catch (MyException e) {
 			return new ResponseEntity<String>(e.toString(), HttpStatus.NOT_FOUND);
