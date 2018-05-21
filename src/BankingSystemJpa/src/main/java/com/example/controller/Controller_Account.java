@@ -65,7 +65,7 @@ public class Controller_Account {
 			final Account aacc = accun1.depositMoney(amou, aid1);
 			return new ResponseEntity<Account>(aacc, HttpStatus.OK);
 		} catch (MyException e) {
-			return new ResponseEntity<String>(" Money not deposited ", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>(e.toString(), HttpStatus.BAD_REQUEST);
 		}
 
 	}

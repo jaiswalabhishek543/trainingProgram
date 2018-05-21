@@ -37,6 +37,8 @@ public class AccountServiceImpl implements AccountServiceInterface {
 	private ATMDaoInterface atmD;
 	@Autowired
 	private BankServiceInterface bank12;
+	@Autowired
+	private DenominationServiceInterface denoS;
 
 	/*
 	 * (non-Javadoc)
@@ -77,11 +79,14 @@ public class AccountServiceImpl implements AccountServiceInterface {
 
 		if (acc1.findById(acId).isPresent()) {
 
-			// Call method to initialize denomination
 
 			final Account accOb = acc1.findById(acId).get();
 			final Integer int6 = accOb.getBankId();
 			final Bank bankOb = bank1.findById(int6).get();
+			// Call method to initialize denomination
+
+			denoS.denom(amunt2, int6);
+			
 			bankOb.setAmount(bankOb.getAmount().add(amunt2));
 			bank1.save(bankOb);
 			accOb.setAmount(accOb.getAmount().add(amunt2));
@@ -117,13 +122,15 @@ public class AccountServiceImpl implements AccountServiceInterface {
 				final Account aac2 = aac1.get();
 				final Bank bankobj = bank1.findById(aac2.getBankId()).get();
 				if (bankobj.getAmount().compareTo(amunt2) == 1 && aac2.getAmount().compareTo(amunt2) == 1) {
-
+					
+					denoS.denom2(amunt2, aac2.getBankId());        // Setting Denomination
 					final BigDecimal int1 = bankobj.getAmount().subtract(amunt2);
 					bankobj.setAmount(int1);
 					bank1.save(bankobj);
 					aac2.setAmount(aac2.getAmount().subtract(amunt2));
 					acc1.save(aac2);
 					trasac.createTransaction(aac2, " Debit ");
+					
 					return aac2;
 				} else {
 

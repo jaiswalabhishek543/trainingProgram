@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.exception.MyException;
 import com.example.model.Bank;
 import com.example.model.Customer;
 import com.example.service.BankServiceInterface;
@@ -25,6 +26,29 @@ public class ControllerBank {
 	@Autowired
 	private BankServiceInterface bank1;
 
+	@RequestMapping(value = "/addBank", method = RequestMethod.POST)
+	public ResponseEntity<?> addBank1(@RequestBody final Bank ban) {
+
+		try {
+			final Bank ban2 = bank1.createBank(ban);
+
+			return new ResponseEntity<Bank>(ban2, HttpStatus.CREATED);
+		} catch (MyException e) {
+			return new ResponseEntity<String>(e.toString(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/viewBank/{big}", method = RequestMethod.GET)
+	public ResponseEntity<?> viewBank1(@PathVariable final Integer big) {
+		try {
+			final Optional<Bank> ban3 = bank1.getBankDetails(big);
+			final Bank ban4 = ban3.get();
+			return new ResponseEntity<Bank>(ban4, HttpStatus.OK);
+		} catch (MyException e) {
+			return new ResponseEntity<String>(e.toString(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
 	@RequestMapping(value = "/viewCustList/{bId}", method = RequestMethod.GET)
 	public ResponseEntity<List<Customer>> listBank(@PathVariable final Integer bId) {
 
@@ -32,22 +56,6 @@ public class ControllerBank {
 
 		return new ResponseEntity<List<Customer>>(baa.getListCustomer(), HttpStatus.OK);
 
-	}
-
-	@RequestMapping(value = "/addBank", method = RequestMethod.POST)
-	public ResponseEntity<Bank> addBank1(@RequestBody final Bank ban) {
-
-		final Bank ban2 = bank1.createBank(ban);
-
-		return new ResponseEntity<Bank>(ban2, HttpStatus.CREATED);
-
-	}
-
-	@RequestMapping(value = "/viewBank/{big}", method = RequestMethod.GET)
-	public ResponseEntity<Bank> viewBank1(@PathVariable final Integer big) {
-		final Optional<Bank> ban3 = bank1.getBankDetails(big);
-		final Bank ban4 = ban3.get();
-		return new ResponseEntity<Bank>(ban4, HttpStatus.OK);
 	}
 
 }

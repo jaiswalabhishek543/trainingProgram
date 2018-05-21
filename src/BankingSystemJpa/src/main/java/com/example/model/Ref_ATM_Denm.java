@@ -1,23 +1,25 @@
 package com.example.model;
 
-/*
- * @abhishek
- */
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.context.annotation.Configuration;
-
 import lombok.Data;
 
 @Entity
-@Table(name = "RefMoney")
+@Table(name="Ref_Atm_Denm")
 @Data
-public class RefMoney {
-	@Id
-	@Column(name = "denomination")
-	private Integer denomination;
+public class Ref_ATM_Denm {
 
+	
+	@Id
+	@Column(name="denomination")
+	private Integer denomination;
+	
+	@Column(name="noOfDenomination")
+	private Integer noOfDenomination;
+	
+	@Column(name="ATMId")
+	private Integer ATMId;
 }
