@@ -14,6 +14,6 @@ public interface BankServiceInterface {
 
 	Optional<Bank> getBankDetails(Integer id1) throws MyException;
 
-	Bank getBankObj(Integer id0);
+	//Bank getBankObj(Integer id0);
 
 }

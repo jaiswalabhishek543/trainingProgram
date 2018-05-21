@@ -18,6 +18,12 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 	@Autowired
 	private DenominationRepo denomR;
 
+/*	@Autowired
+	private RefMoney refMo;*/
+	
+	@Autowired
+	private RefServiceInterface refSer;
+	
 	ArrayList<Integer> arry1 = new ArrayList<>();
 	Random rand = new Random();
 
@@ -33,6 +39,16 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 
 		if (num1.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
 
+			
+			/*
+			 List<RefMoney> listRef=refSer.returnAll();
+			
+			Integer max=listRef.size();
+			Integer min=0;
+			System.out.println(listRef);
+			*/
+			
+			
 			Integer num = num1.intValue();
 			arry1.add(2000);
 			arry1.add(500);

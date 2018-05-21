@@ -50,11 +50,11 @@ public class BankServiceImpl implements BankServiceInterface {
 
 	}
 
-	@Override
+	/*@Override
 	public Bank getBankObj(Integer id0) {
 		final Optional<Bank> bak = bank1.findById(id0);
 		final Bank bak1 = bak.get();
 		return bak1;
-	}
+	}*/
 
 }

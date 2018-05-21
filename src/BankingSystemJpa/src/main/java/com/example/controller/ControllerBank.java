@@ -49,13 +49,13 @@ public class ControllerBank {
 		}
 	}
 
-	@RequestMapping(value = "/viewCustList/{bId}", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/viewCustList/{bId}", method = RequestMethod.GET)
 	public ResponseEntity<List<Customer>> listBank(@PathVariable final Integer bId) {
 
 		final Bank baa = bank1.getBankObj(bId);
 
 		return new ResponseEntity<List<Customer>>(baa.getListCustomer(), HttpStatus.OK);
 
-	}
+	}*/
 
 }
