@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.example.exception.MyException;
@@ -48,6 +49,14 @@ public class BankServiceImpl implements BankServiceInterface {
 			throw new MyException(" Id is not present");
 		}
 
+	}
+
+	@Override
+	public void savinBankObj(Bank obj) {
+
+		
+		Bank bankObj=bank1.save(obj);
+		
 	}
 
 	/*@Override

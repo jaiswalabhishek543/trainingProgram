@@ -9,11 +9,21 @@ import com.example.exception.MyException;
 import com.example.model.Bank;
 
 public interface BankServiceInterface {
-
+	/*
+	 * Creating Bank first time
+	 */
 	Bank createBank(Bank ban1) throws MyException;
 
+	/*
+	 * Fetching details of bank
+	 */
 	Optional<Bank> getBankDetails(Integer id1) throws MyException;
 
-	//Bank getBankObj(Integer id0);
+	/*
+	 * Saving bank obj
+	 */
+	void savinBankObj(Bank obj);
+
+	// Bank getBankObj(Integer id0);
 
 }

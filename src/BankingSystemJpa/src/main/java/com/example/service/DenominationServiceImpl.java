@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.Random;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +20,15 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 	@Autowired
 	private DenominationRepo denomR;
 
-/*	@Autowired
-	private RefMoney refMo;*/
-	
 	@Autowired
-	private RefServiceInterface refSer;
-	
+	private RefATMDenmServiceInterface refAtmS;
+
+	/*
+	 * @Autowired private RefMoney refMo;
+	 * 
+	 * 
+	 * @Autowired private RefServiceInterface refSer;
+	 */
 	ArrayList<Integer> arry1 = new ArrayList<>();
 	Random rand = new Random();
 
@@ -35,20 +40,18 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 	 * java.lang.Integer)
 	 */
 
+	@Transactional
 	public void denom(BigDecimal num1, Integer bId) throws MyException {
 
 		if (num1.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
 
-			
+			System.out.println();
 			/*
-			 List<RefMoney> listRef=refSer.returnAll();
-			
-			Integer max=listRef.size();
-			Integer min=0;
-			System.out.println(listRef);
-			*/
-			
-			
+			 * List<RefMoney> listRef=refSer.returnAll();
+			 * 
+			 * Integer max=listRef.size(); Integer min=0; System.out.println(listRef);
+			 */
+
 			Integer num = num1.intValue();
 			arry1.add(2000);
 			arry1.add(500);
@@ -62,9 +65,9 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 
 					final Integer chck = arry1.get(a);
 
-					if (num > 100) {
+					if (num >= 100) {
 
-						if (num > chck) {
+						if (num >= chck) {
 							final Integer n1 = num / chck;
 							num = num % chck;
 							Optional<Denomination> den = denomR.findById(chck);
@@ -101,10 +104,16 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 	 * com.example.service.DenominationServiceInterface#denom2(java.math.BigDecimal,
 	 * java.lang.Integer)
 	 */
-
+	@Transactional
 	public void denom2(BigDecimal num1, Integer bId) throws MyException {
 
 		if (num1.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
+
+			/*
+			 * List<RefMoney> listRef=refSer.returnAll();
+			 * 
+			 * Integer max=listRef.size(); Integer min=0; System.out.println(listRef);
+			 */
 
 			Integer num = num1.intValue();
 			arry1.add(2000);
@@ -119,9 +128,9 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 
 					final Integer chck = arry1.get(a);
 
-					if (num > 100) {
+					if (num >= 100) {
 
-						if (num > chck) {
+						if (num >= chck) {
 
 							final Integer n1 = num / chck;
 							num = num % chck;
@@ -162,7 +171,7 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 	 */
 	public void createBankDenm(Integer banId) {
 		final Denomination denom1 = new Denomination(2000, banId, 0);
-		final Denomination denom2 = new Denomination(400, banId, 0);
+		final Denomination denom2 = new Denomination(500, banId, 0);
 		final Denomination denom3 = new Denomination(200, banId, 0);
 		final Denomination denom4 = new Denomination(100, banId, 0);
 
@@ -170,6 +179,68 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 		denomR.save(denom2);
 		denomR.save(denom3);
 		denomR.save(denom4);
+
+	}
+
+	@Transactional
+	@Override
+	public void denom3(BigDecimal num1, Integer bankId6, Integer atmId7) throws MyException {
+
+		if (num1.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
+
+			/*
+			 * List<RefMoney> listRef=refSer.returnAll();
+			 * 
+			 * Integer max=listRef.size(); Integer min=0; System.out.println(listRef);
+			 */
+
+			Integer num = num1.intValue();
+			arry1.add(2000);
+			arry1.add(500);
+			arry1.add(200);
+			arry1.add(100);
+
+			if (num > 0) {
+
+				while (num != 0) {
+					final Integer a = 0 + (int) (Math.random() * ((4 - 0)));
+
+					final Integer chck = arry1.get(a);
+
+					if (num >= 100) {
+
+						if (num >= chck) {
+
+							final Integer n1 = num / chck;
+							
+							final Optional<Denomination> den = denomR.findById(chck);
+							final Denomination denObj = den.get();
+							num = num % chck;
+							if (denObj.getNoOfDenomination() >= n1) {
+								denObj.setNoOfDenomination(denObj.getNoOfDenomination() - n1);
+
+								refAtmS.iniDenom(chck, n1, atmId7);
+								denomR.save(denObj);
+							} else {
+								num = num * chck;
+							}
+						}
+
+					} else {
+						throw new MyException(" Not a valid amount");
+					}
+
+				}
+
+			} else {
+				throw new MyException(" Amount can not be negative value ");
+			}
+
+		} else {
+
+			throw new MyException(" It is not integer amount ");
+
+		}
 
 	}
 

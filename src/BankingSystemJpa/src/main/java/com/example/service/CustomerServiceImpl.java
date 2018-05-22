@@ -38,8 +38,9 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		if (!liss.isPresent()) {
 			throw new MyException(" Bank id is not present ");
 		} else {
-			Customer cust2 = cust.save(cust1);
+			final Customer cust2 = cust.save(cust1);
 			return cust2;
+
 		}
 	}
 

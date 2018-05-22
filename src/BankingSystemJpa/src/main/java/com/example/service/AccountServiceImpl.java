@@ -39,6 +39,8 @@ public class AccountServiceImpl implements AccountServiceInterface {
 	private BankServiceInterface bank12;
 	@Autowired
 	private DenominationServiceInterface denoS;
+	@Autowired
+	private RefATMDenmServiceInterface refAtmS;
 
 	/*
 	 * (non-Javadoc)
@@ -54,9 +56,12 @@ public class AccountServiceImpl implements AccountServiceInterface {
 		final Integer bank11 = acc.getBankId();
 		if (custom.findById(cust11).isPresent() && bank1.findById(bank11).isPresent()) {
 			if (custom.findById(cust11).get().getBankId() == bank1.findById(bank11).get().getBankId()) {
-				bank1.findById(bank11).get().getAmount().add(acc.getAmount());
-				bank1.save(bank1.findById(bank11).get());
+				bank1.findById(bank11).get().setAmount(bank1.findById(bank11).get().getAmount().add(acc.getAmount()));
+
+				
+				bank12.savinBankObj(bank1.findById(bank11).get());
 				final Account acc2 = acc1.save(acc);
+				denoS.denom(acc.getAmount(), bank11);
 				return acc2;
 			} else {
 				throw new MyException(" Customer's bankId does not match the given bankId ");
@@ -77,8 +82,8 @@ public class AccountServiceImpl implements AccountServiceInterface {
 	@Transactional
 	public Account depositMoney(BigDecimal amunt2, Integer acId) throws MyException {
 
+		
 		if (acc1.findById(acId).isPresent()) {
-
 
 			final Account accOb = acc1.findById(acId).get();
 			final Integer int6 = accOb.getBankId();
@@ -86,9 +91,10 @@ public class AccountServiceImpl implements AccountServiceInterface {
 			// Call method to initialize denomination
 
 			denoS.denom(amunt2, int6);
-			
+
 			bankOb.setAmount(bankOb.getAmount().add(amunt2));
-			bank1.save(bankOb);
+			//bank1.save(bankOb);
+			bank12.savinBankObj(bankOb);
 			accOb.setAmount(accOb.getAmount().add(amunt2));
 			acc1.save(accOb);
 
@@ -122,15 +128,16 @@ public class AccountServiceImpl implements AccountServiceInterface {
 				final Account aac2 = aac1.get();
 				final Bank bankobj = bank1.findById(aac2.getBankId()).get();
 				if (bankobj.getAmount().compareTo(amunt2) == 1 && aac2.getAmount().compareTo(amunt2) == 1) {
-					
-					denoS.denom2(amunt2, aac2.getBankId());        // Setting Denomination
+
+					denoS.denom2(amunt2, aac2.getBankId()); // Setting Denomination
 					final BigDecimal int1 = bankobj.getAmount().subtract(amunt2);
 					bankobj.setAmount(int1);
-					bank1.save(bankobj);
+					//bank1.save(bankobj);
+					bank12.savinBankObj(bankobj);
 					aac2.setAmount(aac2.getAmount().subtract(amunt2));
 					acc1.save(aac2);
 					trasac.createTransaction(aac2, " Debit ");
-					
+
 					return aac2;
 				} else {
 
@@ -155,15 +162,21 @@ public class AccountServiceImpl implements AccountServiceInterface {
 					final ATM atm6 = atm5.get();
 					if (atm6.getAmount().compareTo(amunt2) == 1 && aac2.getAmount().compareTo(amunt2) == 1) {
 
+						
 						final BigDecimal int02 = aac2.getAmount().subtract(amunt2);
 						final BigDecimal int03 = atm6.getAmount().subtract(amunt2);
 						atm6.setAmount(int03);
 						aac2.setAmount(int02);
 
-						atmD.save(atm6);
+						
+						refAtmS.withdrawFromAtm(amunt2, atmId);
+						atmS.savingAtmObj(atm6);
+						//atmD.save(atm6);
 						acc1.save(aac2);
+						
 
 						trasac.createTransaction(aac2, " Debit ");
+
 						return aac2;
 
 					} else {
