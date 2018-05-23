@@ -56,8 +56,6 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 	@Override
 	public void iniDenom(final Integer currency, final Integer noOfCurrency, final Integer atmId9) {
 
-		System.out.println("----------------iniDenom--------------");
-		
 		final Ref_ATM_Denm ref4 = refRepo.findById(currency).get();
 		ref4.setNoOfDenomination(ref4.getNoOfDenomination() + noOfCurrency);
 		refRepo.save(ref4);
@@ -71,7 +69,7 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 	 * com.example.service.RefATMDenmServiceInterface#withdrawFromAtm(java.math.
 	 * BigDecimal, java.lang.Integer)
 	 */
-	
+
 	@Transactional
 	@Override
 	public void withdrawFromAtm(final BigDecimal amount, final Integer atmId11) throws MyException {
@@ -94,7 +92,6 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 					if (num >= 100) {
 
 						if (num >= chck) {
-System.out.println(" ------------------wthdrawl atm---------------");
 							final Integer n1 = num / chck;
 							num = num % chck;
 							final Optional<Ref_ATM_Denm> den = refRepo.findById(chck);
@@ -103,7 +100,7 @@ System.out.println(" ------------------wthdrawl atm---------------");
 								denObj.setNoOfDenomination(denObj.getNoOfDenomination() - n1);
 								refRepo.save(denObj);
 							} else {
-								num = num * chck;
+								num = (n1 * chck) + num;
 							}
 						}
 
@@ -123,7 +120,6 @@ System.out.println(" ------------------wthdrawl atm---------------");
 
 		}
 
-		
 	}
 
 }

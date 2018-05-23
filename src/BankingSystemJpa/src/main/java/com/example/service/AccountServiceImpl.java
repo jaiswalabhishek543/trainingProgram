@@ -58,7 +58,6 @@ public class AccountServiceImpl implements AccountServiceInterface {
 			if (custom.findById(cust11).get().getBankId() == bank1.findById(bank11).get().getBankId()) {
 				bank1.findById(bank11).get().setAmount(bank1.findById(bank11).get().getAmount().add(acc.getAmount()));
 
-				
 				bank12.savinBankObj(bank1.findById(bank11).get());
 				final Account acc2 = acc1.save(acc);
 				denoS.denom(acc.getAmount(), bank11);
@@ -82,30 +81,34 @@ public class AccountServiceImpl implements AccountServiceInterface {
 	@Transactional
 	public Account depositMoney(BigDecimal amunt2, Integer acId) throws MyException {
 
-		
-		if (acc1.findById(acId).isPresent()) {
+		BigDecimal amun20 = new BigDecimal(100);
+		if (amunt2.remainder(amun20).compareTo(BigDecimal.ZERO) == 0) {
 
-			final Account accOb = acc1.findById(acId).get();
-			final Integer int6 = accOb.getBankId();
-			final Bank bankOb = bank1.findById(int6).get();
-			// Call method to initialize denomination
+			if (acc1.findById(acId).isPresent()) {
 
-			denoS.denom(amunt2, int6);
+				final Account accOb = acc1.findById(acId).get();
+				final Integer int6 = accOb.getBankId();
+				final Bank bankOb = bank1.findById(int6).get();
+				// Call method to initialize denomination
 
-			bankOb.setAmount(bankOb.getAmount().add(amunt2));
-			//bank1.save(bankOb);
-			bank12.savinBankObj(bankOb);
-			accOb.setAmount(accOb.getAmount().add(amunt2));
-			acc1.save(accOb);
+				denoS.denom(amunt2, int6);
 
-			trasac.createTransaction(accOb, " Credit ");
+				bankOb.setAmount(bankOb.getAmount().add(amunt2));
+				// bank1.save(bankOb);
+				bank12.savinBankObj(bankOb);
+				accOb.setAmount(accOb.getAmount().add(amunt2));
+				acc1.save(accOb);
 
-			return accOb;
+				trasac.createTransaction(accOb, " Credit ");
 
+				return accOb;
+
+			} else {
+				throw new MyException(" Account Id is not present");
+			}
 		} else {
-			throw new MyException(" Account Id is not present");
+			throw new MyException(" Amount is not valid, please enter valid amount");
 		}
-
 	}
 
 	/*
@@ -121,80 +124,84 @@ public class AccountServiceImpl implements AccountServiceInterface {
 		/*
 		 * When withdrawing money from bank
 		 */
-		if (flag == 0) {
 
-			final Optional<Account> aac1 = acc1.findById(acId);
-			if (aac1.isPresent()) {
-				final Account aac2 = aac1.get();
-				final Bank bankobj = bank1.findById(aac2.getBankId()).get();
-				if (bankobj.getAmount().compareTo(amunt2) == 1 && aac2.getAmount().compareTo(amunt2) == 1) {
+		BigDecimal amun20 = new BigDecimal(100);
+		if (amunt2.remainder(amun20).compareTo(BigDecimal.ZERO) == 0) {
+			if (flag == 0) {
 
-					denoS.denom2(amunt2, aac2.getBankId()); // Setting Denomination
-					final BigDecimal int1 = bankobj.getAmount().subtract(amunt2);
-					bankobj.setAmount(int1);
-					//bank1.save(bankobj);
-					bank12.savinBankObj(bankobj);
-					aac2.setAmount(aac2.getAmount().subtract(amunt2));
-					acc1.save(aac2);
-					trasac.createTransaction(aac2, " Debit ");
+				final Optional<Account> aac1 = acc1.findById(acId);
+				if (aac1.isPresent()) {
+					final Account aac2 = aac1.get();
+					final Bank bankobj = bank1.findById(aac2.getBankId()).get();
+					if (bankobj.getAmount().compareTo(amunt2) == 1 && aac2.getAmount().compareTo(amunt2) == 1) {
 
-					return aac2;
-				} else {
-
-					throw new MyException(" Requested amount is not present ");
-				}
-
-			} else {
-				throw new MyException(" Account Id is not found ");
-			}
-
-		}
-		/*
-		 * When withdrawing money from ATM
-		 */
-		else if (flag == 1) {
-			final Optional<Account> aac1 = acc1.findById(acId);
-			if (aac1.isPresent()) {
-				final Account aac2 = aac1.get();
-				final Optional<ATM> atm5 = atmD.findById(atmId);
-				if (atm5.isPresent()) {
-
-					final ATM atm6 = atm5.get();
-					if (atm6.getAmount().compareTo(amunt2) == 1 && aac2.getAmount().compareTo(amunt2) == 1) {
-
-						
-						final BigDecimal int02 = aac2.getAmount().subtract(amunt2);
-						final BigDecimal int03 = atm6.getAmount().subtract(amunt2);
-						atm6.setAmount(int03);
-						aac2.setAmount(int02);
-
-						
-						refAtmS.withdrawFromAtm(amunt2, atmId);
-						atmS.savingAtmObj(atm6);
-						//atmD.save(atm6);
+						denoS.denom2(amunt2, aac2.getBankId()); // Setting Denomination
+						final BigDecimal int1 = bankobj.getAmount().subtract(amunt2);
+						bankobj.setAmount(int1);
+						// bank1.save(bankobj);
+						bank12.savinBankObj(bankobj);
+						aac2.setAmount(aac2.getAmount().subtract(amunt2));
 						acc1.save(aac2);
-						
-
 						trasac.createTransaction(aac2, " Debit ");
 
 						return aac2;
-
 					} else {
+
 						throw new MyException(" Requested amount is not present ");
 					}
 
 				} else {
-					throw new MyException(" ATM Id is not found ");
+					throw new MyException(" Account Id is not found ");
+				}
 
+			}
+			/*
+			 * When withdrawing money from ATM
+			 */
+			else if (flag == 1) {
+				final Optional<Account> aac1 = acc1.findById(acId);
+				if (aac1.isPresent()) {
+					final Account aac2 = aac1.get();
+					final Optional<ATM> atm5 = atmD.findById(atmId);
+					if (atm5.isPresent()) {
+
+						final ATM atm6 = atm5.get();
+						if (atm6.getAmount().compareTo(amunt2) == 1 && aac2.getAmount().compareTo(amunt2) == 1) {
+
+							final BigDecimal int02 = aac2.getAmount().subtract(amunt2);
+							final BigDecimal int03 = atm6.getAmount().subtract(amunt2);
+							atm6.setAmount(int03);
+							aac2.setAmount(int02);
+
+							refAtmS.withdrawFromAtm(amunt2, atmId);
+							atmS.savingAtmObj(atm6);
+							// atmD.save(atm6);
+							acc1.save(aac2);
+
+							trasac.createTransaction(aac2, " Debit ");
+
+							return aac2;
+
+						} else {
+							throw new MyException(" Requested amount is not present ");
+						}
+
+					} else {
+						throw new MyException(" ATM Id is not found ");
+
+					}
+
+				} else {
+					throw new MyException(" Account Id is not found ");
 				}
 
 			} else {
-				throw new MyException(" Account Id is not found ");
+				throw new MyException(" Enter write value to select to take money from Bank and ATM ");
+
 			}
 
 		} else {
-			throw new MyException(" Enter write value to select to take money from Bank and ATM ");
-
+			throw new MyException(" Amount is not valid, please enter valid amount");
 		}
 
 	}

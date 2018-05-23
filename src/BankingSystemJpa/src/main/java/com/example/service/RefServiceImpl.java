@@ -19,7 +19,7 @@ public class RefServiceImpl implements RefServiceInterface {
 	public String addDenomination(Integer deno1) throws MyException {
 
 		if (!refR.findById(deno1).isPresent()) {
-			RefMoney refM = new RefMoney();
+			final RefMoney refM = new RefMoney();
 			refM.setDenomination(deno1);
 			refR.save(refM);
 			return "Denomination added";
@@ -31,7 +31,7 @@ public class RefServiceImpl implements RefServiceInterface {
 	@Override
 	public List<RefMoney> returnAll() throws MyException {
 		
-		List<RefMoney> ref1=refR.findAll();
+		final List<RefMoney> ref1=refR.findAll();
 		if(ref1.isEmpty())
 		{
 			throw new MyException("Denomination not present");

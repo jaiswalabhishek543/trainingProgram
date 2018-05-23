@@ -64,42 +64,48 @@ public class ATMServiceImpl implements ATMServiceInterface {
 	 * @see com.example.service.ATMServiceInterface#addMoneyFromBank(java.math.
 	 * BigDecimal, java.lang.Integer)
 	 */
-	
+
 	@Override
 	@Transactional
 	public ATM addMoneyFromBank(BigDecimal addit, Integer aId) throws MyException {
-		Optional<ATM> ab1 = atm1.findById(aId);
-		if (ab1.isPresent()) {
-			final ATM ab2 = ab1.get();
-			final Integer num = ab2.getBankId();
-			final Optional<Bank> ab3 = bww.findById(num);
-			if (ab3.isPresent()) {
-				final Bank bab = ab3.get();
-				if (addit.compareTo(bab.getAmount()) == -1) {
-					final BigDecimal it1 = addit.add(ab2.getAmount());
-					ab2.setAmount(it1);
-					atm1.save(ab2);
-					final BigDecimal bigg = bab.getAmount().subtract(addit);
 
-					bab.setAmount(bigg);
-					bww.save(bab);
-					//bankServ.savinBankObj(bab);
+		BigDecimal amun20 = new BigDecimal(100);
+		if (addit.remainder(amun20).compareTo(BigDecimal.ZERO) == 0) {
 
-					denom.denom3(addit, num, aId);
-					return ab2;
-				} else {
-					throw new MyException(" Requested amount is  more than present amount");
+			Optional<ATM> ab1 = atm1.findById(aId);
+			if (ab1.isPresent()) {
+				final ATM ab2 = ab1.get();
+				final Integer num = ab2.getBankId();
+				final Optional<Bank> ab3 = bww.findById(num);
+				if (ab3.isPresent()) {
+					final Bank bab = ab3.get();
+					if (addit.compareTo(bab.getAmount()) == -1) {
+						final BigDecimal it1 = addit.add(ab2.getAmount());
+						ab2.setAmount(it1);
+						atm1.save(ab2);
+						final BigDecimal bigg = bab.getAmount().subtract(addit);
+
+						bab.setAmount(bigg);
+						bww.save(bab);
+						// bankServ.savinBankObj(bab);
+
+						denom.denom3(addit, num, aId);
+						return ab2;
+					} else {
+						throw new MyException(" Requested amount is  more than present amount");
+					}
 				}
-			}
 
-			else {
-				throw new MyException(" ATM with this bank id not present ");
-			}
+				else {
+					throw new MyException(" ATM with this bank id not present ");
+				}
 
+			} else {
+				throw new MyException(" ATM with this id not present");
+			}
 		} else {
-			throw new MyException(" ATM with this id not present");
+			throw new MyException(" Amount is not valid, please enter valid amount");
 		}
-
 	}
 
 	/*

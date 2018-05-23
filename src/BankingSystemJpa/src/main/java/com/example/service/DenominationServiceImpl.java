@@ -45,7 +45,6 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 
 		if (num1.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
 
-			System.out.println();
 			/*
 			 * List<RefMoney> listRef=refSer.returnAll();
 			 * 
@@ -112,7 +111,9 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 			/*
 			 * List<RefMoney> listRef=refSer.returnAll();
 			 * 
-			 * Integer max=listRef.size(); Integer min=0; System.out.println(listRef);
+			 * Integer max=listRef.size(); 
+			 * 
+			 * Integer min=0; System.out.println(listRef);
 			 */
 
 			Integer num = num1.intValue();
@@ -124,23 +125,28 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 			if (num > 0) {
 
 				while (num != 0) {
-					final Integer a = 0 + (int) (Math.random() * ((4 - 0)));
-
-					final Integer chck = arry1.get(a);
 
 					if (num >= 100) {
 
+						final Integer a = 0 + (int) (Math.random() * ((4 - 0)));
+
+						final Integer chck = arry1.get(a);
 						if (num >= chck) {
 
 							final Integer n1 = num / chck;
 							num = num % chck;
 							final Optional<Denomination> den = denomR.findById(chck);
 							final Denomination denObj = den.get();
+
 							if (denObj.getNoOfDenomination() >= n1) {
+
 								denObj.setNoOfDenomination(denObj.getNoOfDenomination() - n1);
-								denomR.save(denObj);
+								Denomination denny = denomR.save(denObj);
+
 							} else {
-								num = num * chck;
+
+								num = (n1 * chck) + num;
+
 							}
 						}
 
@@ -212,7 +218,7 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 						if (num >= chck) {
 
 							final Integer n1 = num / chck;
-							
+
 							final Optional<Denomination> den = denomR.findById(chck);
 							final Denomination denObj = den.get();
 							num = num % chck;
@@ -222,7 +228,7 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 								refAtmS.iniDenom(chck, n1, atmId7);
 								denomR.save(denObj);
 							} else {
-								num = num * chck;
+								num = (n1 * chck) + num;
 							}
 						}
 
