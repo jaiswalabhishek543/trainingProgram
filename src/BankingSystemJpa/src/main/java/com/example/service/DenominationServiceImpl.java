@@ -2,6 +2,7 @@ package com.example.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.exception.MyException;
 import com.example.model.Denomination;
+import com.example.model.RefMoney;
 import com.example.repository.DenominationRepo;
 
 @Service
@@ -23,13 +25,15 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 	@Autowired
 	private RefATMDenmServiceInterface refAtmS;
 
+	@Autowired
+	private RefServiceInterface refSer;
+
 	/*
 	 * @Autowired private RefMoney refMo;
 	 * 
 	 * 
 	 * @Autowired private RefServiceInterface refSer;
 	 */
-	ArrayList<Integer> arry1 = new ArrayList<>();
 	Random rand = new Random();
 
 	/*
@@ -45,29 +49,24 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 
 		if (num1.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
 
-			/*
-			 * List<RefMoney> listRef=refSer.returnAll();
-			 * 
-			 * Integer max=listRef.size(); Integer min=0; System.out.println(listRef);
-			 */
+			final List<RefMoney> listRef = refSer.returnAll();
 
+			Integer max = listRef.size();
+			Integer min = 0;
 			Integer num = num1.intValue();
-			arry1.add(2000);
-			arry1.add(500);
-			arry1.add(200);
-			arry1.add(100);
 
 			if (num > 0) {
 
 				while (num != 0) {
-					final Integer a = 0 + (int) (Math.random() * ((4 - 0)));
+					final Integer a = min + (int) (Math.random() * ((max - min)));
 
-					final Integer chck = arry1.get(a);
+					final RefMoney denRef = listRef.get(a);
+					final Integer chck = denRef.getDenomination();
 
 					if (num >= 100) {
 
 						if (num >= chck) {
-							final Integer n1 = num / chck;
+							Integer n1 = num / chck;
 							num = num % chck;
 							Optional<Denomination> den = denomR.findById(chck);
 							Denomination denObj = den.get();
@@ -108,19 +107,14 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 
 		if (num1.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
 
-			/*
-			 * List<RefMoney> listRef=refSer.returnAll();
-			 * 
-			 * Integer max=listRef.size(); 
-			 * 
-			 * Integer min=0; System.out.println(listRef);
-			 */
+			List<RefMoney> listRef = refSer.returnAll();
+
+			Integer max = listRef.size();
+
+			Integer min = 0;
+			System.out.println(listRef);
 
 			Integer num = num1.intValue();
-			arry1.add(2000);
-			arry1.add(500);
-			arry1.add(200);
-			arry1.add(100);
 
 			if (num > 0) {
 
@@ -128,11 +122,12 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 
 					if (num >= 100) {
 
-						final Integer a = 0 + (int) (Math.random() * ((4 - 0)));
-
-						final Integer chck = arry1.get(a);
+						final Integer a = min + (int) (Math.random() * ((max - min)));
+						final RefMoney denRef = listRef.get(a);
+						final Integer chck = denRef.getDenomination();
 						if (num >= chck) {
 
+							
 							final Integer n1 = num / chck;
 							num = num % chck;
 							final Optional<Denomination> den = denomR.findById(chck);
@@ -175,16 +170,18 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 	 * com.example.service.DenominationServiceInterface#createBankDenm(java.lang.
 	 * Integer)
 	 */
-	public void createBankDenm(Integer banId) {
-		final Denomination denom1 = new Denomination(2000, banId, 0);
-		final Denomination denom2 = new Denomination(500, banId, 0);
-		final Denomination denom3 = new Denomination(200, banId, 0);
-		final Denomination denom4 = new Denomination(100, banId, 0);
+	public void createBankDenm(Integer banId) throws MyException {
+		List<RefMoney> listRef = refSer.returnAll();
 
-		denomR.save(denom1);
-		denomR.save(denom2);
-		denomR.save(denom3);
-		denomR.save(denom4);
+		Integer i = 0;
+		Integer j = listRef.size();
+		while (j > i) {
+
+			final Denomination denom1 = new Denomination(listRef.get(i).getDenomination(), banId, 0);
+			denomR.save(denom1);
+			i++;
+
+		}
 
 	}
 
@@ -194,25 +191,20 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 
 		if (num1.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
 
-			/*
-			 * List<RefMoney> listRef=refSer.returnAll();
-			 * 
-			 * Integer max=listRef.size(); Integer min=0; System.out.println(listRef);
-			 */
+			List<RefMoney> listRef = refSer.returnAll();
+
+			Integer max = listRef.size();
+			Integer min = 0;
 
 			Integer num = num1.intValue();
-			arry1.add(2000);
-			arry1.add(500);
-			arry1.add(200);
-			arry1.add(100);
 
 			if (num > 0) {
 
 				while (num != 0) {
-					final Integer a = 0 + (int) (Math.random() * ((4 - 0)));
+					final Integer a = min + (int) (Math.random() * ((max - min)));
 
-					final Integer chck = arry1.get(a);
-
+					final RefMoney denRef = listRef.get(a);
+					final Integer chck = denRef.getDenomination();
 					if (num >= 100) {
 
 						if (num >= chck) {
@@ -247,6 +239,13 @@ public class DenominationServiceImpl implements DenominationServiceInterface {
 			throw new MyException(" It is not integer amount ");
 
 		}
+
+	}
+
+	@Override
+	public void addCurrency(Integer bnkId, Integer denom7) {
+		final Denomination denom1 = new Denomination(denom7, bnkId, 0);
+		denomR.save(denom1);
 
 	}
 

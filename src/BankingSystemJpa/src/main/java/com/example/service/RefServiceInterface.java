@@ -10,4 +10,6 @@ public interface RefServiceInterface {
 	String addDenomination(Integer deno1) throws MyException;
 
 	List<RefMoney> returnAll() throws MyException;
+
+	void addNewDenomination(Integer bkId, Integer atmid, Integer denom) throws MyException;
 }

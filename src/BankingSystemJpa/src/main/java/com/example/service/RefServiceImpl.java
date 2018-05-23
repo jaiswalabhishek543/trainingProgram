@@ -14,6 +14,9 @@ public class RefServiceImpl implements RefServiceInterface {
 
 	@Autowired
 	private RefMoneyRepo refR;
+	
+	@Autowired
+	private RefATMDenmServiceInterface refAtmSer;
 
 	@Override
 	public String addDenomination(Integer deno1) throws MyException {
@@ -41,6 +44,21 @@ public class RefServiceImpl implements RefServiceInterface {
 			return ref1;
 		}
 		
+	}
+
+	
+	@Override
+	public void addNewDenomination(Integer bkId, Integer atmid, Integer denom) throws MyException {
+
+		if(!refR.findById(denom).isPresent())
+		{
+			
+			refAtmSer.addCurrency(atmid, denom);
+		}
+		else
+		{
+			throw new MyException(" Denomination is already preseent");
+		}
 	}
 
 }

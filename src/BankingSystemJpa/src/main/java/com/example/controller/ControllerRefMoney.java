@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +28,18 @@ public class ControllerRefMoney {
 			return new ResponseEntity<String>(e.toString(), HttpStatus.BAD_REQUEST);
 
 		}
-		
+
+	}
+
+	@RequestMapping(value = "/addNewDenom/{denom},{bnkid}/{atmid}", method = RequestMethod.POST)
+	public ResponseEntity<?> addNewDenomination(@PathVariable Integer denom, @PathVariable Integer bnkid,
+			@PathVariable Integer atmid) {
+		try {
+			refS.addNewDenomination(bnkid, atmid, denom);
+			return new ResponseEntity<String>("Added", HttpStatus.OK);
+		} catch (MyException e) {
+			return new ResponseEntity<String>(e.toString(), HttpStatus.BAD_REQUEST);
+		}
 
 	}
 

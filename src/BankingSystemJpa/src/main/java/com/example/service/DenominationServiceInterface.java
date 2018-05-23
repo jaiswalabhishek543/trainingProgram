@@ -3,7 +3,6 @@ package com.example.service;
 import java.math.BigDecimal;
 
 import com.example.exception.MyException;
-import com.example.model.Denomination;
 
 public interface DenominationServiceInterface {
 	/*
@@ -23,5 +22,9 @@ public interface DenominationServiceInterface {
 	/*
 	 * Called at time of bank creation to initialize table
 	 */
-	void createBankDenm(Integer banId);
+	void createBankDenm(Integer banId) throws MyException;
+	/*
+	 * Add currency in bank 
+	 */
+	void addCurrency(Integer bnkId,Integer denom7);
 }

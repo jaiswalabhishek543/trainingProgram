@@ -2,6 +2,7 @@ package com.example.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.exception.MyException;
+import com.example.model.Denomination;
+import com.example.model.RefMoney;
 import com.example.model.Ref_ATM_Denm;
 import com.example.repository.RefATMDenmRepo;
 
@@ -19,6 +22,9 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 
 	@Autowired
 	private RefATMDenmRepo refRepo;
+
+	@Autowired
+	private RefServiceInterface refSer;
 
 	ArrayList<Integer> arry1 = new ArrayList<>();
 	Random rand = new Random();
@@ -31,17 +37,19 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 	 */
 	@Transactional
 	@Override
-	public void iniRefTable(final Integer atmID1) {
+	public void iniRefTable(final Integer atmID1) throws MyException {
 
-		final Ref_ATM_Denm obj1 = new Ref_ATM_Denm(2000, 0, atmID1);
-		final Ref_ATM_Denm obj2 = new Ref_ATM_Denm(500, 0, atmID1);
-		final Ref_ATM_Denm obj3 = new Ref_ATM_Denm(200, 0, atmID1);
-		final Ref_ATM_Denm obj4 = new Ref_ATM_Denm(100, 0, atmID1);
+		List<RefMoney> listRef = refSer.returnAll();
 
-		refRepo.save(obj1);
-		refRepo.save(obj2);
-		refRepo.save(obj3);
-		refRepo.save(obj4);
+		Integer i = 0;
+		Integer j = listRef.size();
+		while (j > i) {
+
+			final Ref_ATM_Denm obj1 = new Ref_ATM_Denm(listRef.get(i).getDenomination(), 0, atmID1);
+			refRepo.save(obj1);
+			i++;
+
+		}
 
 	}
 
@@ -77,17 +85,22 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 		if (amount.remainder(BigDecimal.ONE).compareTo(BigDecimal.ZERO) == 0) {
 
 			Integer num = amount.intValue();
-			arry1.add(2000);
-			arry1.add(500);
-			arry1.add(200);
-			arry1.add(100);
+			final List<RefMoney> listRef = refSer.returnAll();
+
+			Integer max = listRef.size();
+			Integer min = 0;
+
+			/*
+			 * arry1.add(2000); arry1.add(500); arry1.add(200); arry1.add(100);
+			 */
 
 			if (num > 0) {
 
 				while (num != 0) {
-					final Integer a = 0 + (int) (Math.random() * ((4 - 0)));
+					final Integer a = min + (int) (Math.random() * ((max - min)));
 
-					final Integer chck = arry1.get(a);
+					final RefMoney denRef = listRef.get(a);
+					final Integer chck = denRef.getDenomination();
 
 					if (num >= 100) {
 
@@ -120,6 +133,14 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 
 		}
 
+	}
+
+	@Override
+	public void addCurrency(Integer atmId5, Integer denom4) {
+
+		final Ref_ATM_Denm obj1 = new Ref_ATM_Denm(denom4, 0, atmId5);
+		refRepo.save(obj1);
+		
 	}
 
 }
