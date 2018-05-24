@@ -2,8 +2,8 @@ package com.example.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.model.Ref_ATM_Denm;
+import com.example.model.RefATMDenm;
 
-public interface RefATMDenmRepo extends JpaRepository<Ref_ATM_Denm, Integer> {
+public interface RefATMDenmRepo extends JpaRepository<RefATMDenm, Integer> {
 
 }

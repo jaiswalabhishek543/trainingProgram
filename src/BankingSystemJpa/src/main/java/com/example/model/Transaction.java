@@ -20,7 +20,7 @@ import lombok.Data;
 @Table(name = "transaction")
 @Data
 @Component
-public class Transaction {
+public class Transaction extends BaseEntity{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

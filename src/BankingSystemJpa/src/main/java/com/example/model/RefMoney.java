@@ -15,7 +15,7 @@ import lombok.Data;
 @Entity
 @Table(name = "RefMoney")
 @Data
-public class RefMoney {
+public class RefMoney extends BaseEntity {
 	@Id
 	@Column(name = "denomination")
 	private Integer denomination;

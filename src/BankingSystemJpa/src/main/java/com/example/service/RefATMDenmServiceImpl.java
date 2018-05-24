@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import com.example.exception.MyException;
 import com.example.model.Denomination;
 import com.example.model.RefMoney;
-import com.example.model.Ref_ATM_Denm;
+import com.example.model.RefATMDenm;
 import com.example.repository.RefATMDenmRepo;
 
 @Service
@@ -45,7 +45,7 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 		Integer j = listRef.size();
 		while (j > i) {
 
-			final Ref_ATM_Denm obj1 = new Ref_ATM_Denm(listRef.get(i).getDenomination(), 0, atmID1);
+			final RefATMDenm obj1 = new RefATMDenm(listRef.get(i).getDenomination(), 0, atmID1);
 			refRepo.save(obj1);
 			i++;
 
@@ -64,7 +64,7 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 	@Override
 	public void iniDenom(final Integer currency, final Integer noOfCurrency, final Integer atmId9) {
 
-		final Ref_ATM_Denm ref4 = refRepo.findById(currency).get();
+		final RefATMDenm ref4 = refRepo.findById(currency).get();
 		ref4.setNoOfDenomination(ref4.getNoOfDenomination() + noOfCurrency);
 		refRepo.save(ref4);
 
@@ -107,8 +107,8 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 						if (num >= chck) {
 							final Integer n1 = num / chck;
 							num = num % chck;
-							final Optional<Ref_ATM_Denm> den = refRepo.findById(chck);
-							final Ref_ATM_Denm denObj = den.get();
+							final Optional<RefATMDenm> den = refRepo.findById(chck);
+							final RefATMDenm denObj = den.get();
 							if (denObj.getNoOfDenomination() >= n1) {
 								denObj.setNoOfDenomination(denObj.getNoOfDenomination() - n1);
 								refRepo.save(denObj);
@@ -138,7 +138,7 @@ public class RefATMDenmServiceImpl implements RefATMDenmServiceInterface {
 	@Override
 	public void addCurrency(Integer atmId5, Integer denom4) {
 
-		final Ref_ATM_Denm obj1 = new Ref_ATM_Denm(denom4, 0, atmId5);
+		final RefATMDenm obj1 = new RefATMDenm(denom4, 0, atmId5);
 		refRepo.save(obj1);
 		
 	}

@@ -21,7 +21,7 @@ import lombok.Data;
 @Entity
 @Table(name = "account")
 @Data
-public class Account {
+public class Account extends BaseEntity{
 	public Account() {
 
 	}

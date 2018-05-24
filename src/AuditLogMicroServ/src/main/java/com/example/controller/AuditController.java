@@ -20,6 +20,7 @@ public class AuditController {
 	@Autowired
 	private AuditServiceInterface auditServ;
 
+
 	@RequestMapping(value = "/addAudit", method = RequestMethod.POST)
 	public ResponseEntity<?> addAudit1(@RequestBody Audit aud2) {
 		Audit aud3 = auditServ.addAudit(aud2);
@@ -29,7 +30,7 @@ public class AuditController {
 	}
 
 	@RequestMapping(value = "/viewAll", method = RequestMethod.GET)
-	public ResponseEntity<?> addAudit1() {
+	public ResponseEntity<?> addAudit2() {
 		List<Audit> audi = auditServ.viewAll();
 
 		return new ResponseEntity<List<Audit>>(audi, HttpStatus.OK);

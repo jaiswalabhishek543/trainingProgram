@@ -22,7 +22,7 @@ import lombok.Data;
 @Table(name = "bank")
 @Entity
 @Data
-public class Bank {
+public class Bank extends BaseEntity{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

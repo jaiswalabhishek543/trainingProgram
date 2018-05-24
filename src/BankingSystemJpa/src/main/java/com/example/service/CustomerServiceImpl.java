@@ -5,7 +5,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.EnumClass;
+import com.example.controller.ControllerToOtherServ;
 import com.example.exception.MyException;
+import com.example.model.Audit;
 import com.example.model.Bank;
 import com.example.model.Customer;
 import com.example.repository.BankInterface;
@@ -62,6 +65,32 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		}
 
 		return lis1;
+	}
+
+	@Override
+	public Customer updatePin(Integer intId, String userId, String pincode) throws MyException {
+		Audit audObj = new Audit();
+
+		Optional<Customer> custo = cust.findById(intId);
+		if (custo.isPresent()) {
+			audObj.setOldValue(custo.get());
+			Customer cust5 = custo.get();
+			
+			audObj.setEventName(EnumClass.EventName.CUSTOMER.toString());
+			audObj.setEventType(EnumClass.EventType.UPDATED.toString());
+
+			cust5.setPin(pincode);
+			cust5.setUserId(userId);
+			Customer cust6 = cust.save(cust5);
+			audObj.setNewValue(cust6);
+			ControllerToOtherServ con = new ControllerToOtherServ();
+			con.transferAuditDetails(audObj);
+
+			return cust6;
+		} else {
+			throw new MyException(" Id not present");
+		}
+
 	}
 
 }

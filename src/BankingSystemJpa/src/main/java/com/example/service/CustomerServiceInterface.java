@@ -13,5 +13,7 @@ public interface CustomerServiceInterface {
 	Customer createCustomer(Customer cust1) throws MyException;
 
 	Optional<Customer> getCustomerDetails(Integer id1) throws MyException;
+	
+	Customer updatePin(Integer intId,String userId,String pincode) throws MyException;
 
 }

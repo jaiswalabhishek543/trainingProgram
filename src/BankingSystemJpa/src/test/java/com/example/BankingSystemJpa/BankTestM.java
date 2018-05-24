@@ -24,6 +24,7 @@ import com.example.repository.BankInterface;
 import com.example.repository.CustomerDaoInterface;
 import com.example.service.AccountServiceImpl;
 import com.example.service.BankServiceImpl;
+import com.example.service.BankServiceInterface;
 import com.example.service.CustomerServiceImpl;
 import com.example.service.DenominationServiceInterface;
 
@@ -50,6 +51,9 @@ public class BankTestM {
 
 	@InjectMocks
 	AccountServiceImpl accServ;
+	
+	@Mock
+	BankServiceInterface bankServ;
 
 	@Test
 	public void test1() throws MyException {
@@ -183,7 +187,7 @@ public class BankTestM {
 
 		final Account acc1=accServ.createAccount(accou);
 		System.out.println(acc1);
-		assertEquals(accou.getAmount(), acc1.getAmount());
+		assertEquals(accou.getBankId(), acc1.getBankId());
 	
 		
 		

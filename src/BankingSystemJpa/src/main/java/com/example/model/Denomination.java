@@ -12,7 +12,7 @@ import lombok.Data;
 @Table(name = "Bank_Denm")
 @Data
 // @Scope("prototype")
-public class Denomination {
+public class Denomination extends BaseEntity {
 
 	@Id
 	@Column(name = "denomination")

@@ -17,7 +17,7 @@ import lombok.Data;
 @Entity
 @Table(name = "ATM")
 @Data
-public class ATM {
+public class ATM extends BaseEntity{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
