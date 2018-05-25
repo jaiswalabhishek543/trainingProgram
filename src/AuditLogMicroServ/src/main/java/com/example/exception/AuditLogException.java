@@ -4,6 +4,7 @@ package com.example.exception;
  * @author abhishek
  *
  */
+
 public class AuditLogException extends Exception {
 
 	String str;
@@ -16,7 +17,7 @@ public class AuditLogException extends Exception {
 
 	@Override
 	public String toString() {
-		return "AuditLogException [str=" + str + "]";
+		return "AuditLogException : "+str;
 	}
 
 }

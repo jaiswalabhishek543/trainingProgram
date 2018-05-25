@@ -13,7 +13,6 @@ import lombok.Data;
  *
  */
 @Document(collection = "audit")
-@Data
 public class Audit {
 
 	@Id
@@ -25,10 +24,60 @@ public class Audit {
 	Object oldValue;
 	Object newValue;
 
-	@Override
-	public String toString() {
-		return "Audit [userId=" + userId + ", eventId=" + eventId + ", eventName=" + eventName + ", eventType="
-				+ eventType + ", eventDate=" + eventDate + "]";
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public UUID getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(UUID eventId) {
+		this.eventId = eventId;
+	}
+
+	public String getEventName() {
+		return eventName;
+	}
+
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
+	}
+
+	public String getEventType() {
+		return eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+	}
+
+	public Date getEventDate() {
+		return eventDate;
+	}
+
+	public void setEventDate(Date eventDate) {
+		this.eventDate = eventDate;
+	}
+
+	public Object getOldValue() {
+		return oldValue;
+	}
+
+	public void setOldValue(Object oldValue) {
+		this.oldValue = oldValue;
+	}
+
+	public Object getNewValue() {
+		return newValue;
+	}
+
+	public void setNewValue(Object newValue) {
+		this.newValue = newValue;
 	}
 
 }

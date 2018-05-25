@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.exception.AuditLogException;
 import com.example.model.Audit;
 import com.example.repo.AuditInterfaceRepo;
 
@@ -25,9 +26,15 @@ public class AuditServiceImpl implements AuditServiceInterface {
 	 * com.example.service.AuditServiceInterface#addAudit(com.example.model.Audit)
 	 */
 	@Override
-	public Audit addAudit(Audit aud) {
+	public Audit addAudit(final Audit aud) throws AuditLogException {
 
-		return auditRepo.save(aud);
+		if (aud.getEventName() == null || aud.getEventType() == null) {
+			throw new AuditLogException(" Do not leave value as null");
+
+		} else {
+			return auditRepo.save(aud);
+
+		}
 	}
 
 	/*
@@ -36,9 +43,14 @@ public class AuditServiceImpl implements AuditServiceInterface {
 	 * @see com.example.service.AuditServiceInterface#viewAll()
 	 */
 	@Override
-	public List<Audit> viewAll() {
+	public List<Audit> viewAll() throws AuditLogException {
 
-		return auditRepo.findAll();
+		if (!auditRepo.findAll().isEmpty()) {
+
+			return auditRepo.findAll();
+		} else {
+			throw new AuditLogException(" List is empty");
+		}
 	}
 
 	/*
@@ -47,9 +59,16 @@ public class AuditServiceImpl implements AuditServiceInterface {
 	 * @see com.example.service.AuditServiceInterface#findByName1(java.lang.String)
 	 */
 	@Override
-	public Audit findByName1(String name) {
+	public Audit findByName1(String name) throws AuditLogException {
 
-		return auditRepo.findByeventName(name);
+		if (auditRepo.findByeventName(name) != null) {
+
+			return auditRepo.findByeventName(name);
+
+		} else {
+			throw new AuditLogException(" Name is not present ");
+		}
+
 	}
 
 	/*
@@ -59,9 +78,15 @@ public class AuditServiceImpl implements AuditServiceInterface {
 	 * com.example.service.AuditServiceInterface#deleteByName1(java.lang.String)
 	 */
 	@Override
-	public Long deleteByName1(String name) {
+	public Long deleteByName1(String name) throws AuditLogException {
 
-		return auditRepo.deleteByeventName(name);
+		if (auditRepo.findByeventName(name) != null) {
+
+			return auditRepo.deleteByeventName(name);
+
+		} else {
+			throw new AuditLogException(" Name is not present ");
+		}
 	}
 
 	/*
@@ -71,13 +96,16 @@ public class AuditServiceImpl implements AuditServiceInterface {
 	 * String)
 	 */
 	@Override
-	public Audit updateByeventType1(String evntType) {
+	public Audit updateByeventType1(String evntType) throws AuditLogException {
 
-		Audit audi2 = auditRepo.findByeventType(evntType);
-		audi2.setEventType("Nothing");
-		auditRepo.save(audi2);
-
-		return audi2;
+		if (auditRepo.findByeventType(evntType) != null) {
+			final Audit audi2 = auditRepo.findByeventType(evntType);
+			audi2.setEventType("Nothing");
+			auditRepo.save(audi2);
+			return audi2;
+		} else {
+			throw new AuditLogException("Event type is not present");
+		}
 	}
 
 }

@@ -2,8 +2,11 @@ package com.example.service;
 
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.EnumClass;
 import com.example.controller.ControllerToOtherServ;
@@ -12,7 +15,7 @@ import com.example.model.Audit;
 import com.example.model.Bank;
 import com.example.model.Customer;
 import com.example.repository.BankInterface;
-import com.example.repository.CustomerDaoInterface;
+import com.example.repository.CustomerRepo;
 
 /*
  * @abhishek
@@ -20,10 +23,14 @@ import com.example.repository.CustomerDaoInterface;
 @Service
 public class CustomerServiceImpl implements CustomerServiceInterface {
 
-	@Autowired
-	private CustomerDaoInterface cust;
+	/*@Autowired
+	private CustomerDaoInterface customerDaoInterface;*/
 	@Autowired
 	private BankInterface bankk;
+	@Autowired
+	private CustomerRepo repo;
+
+	Logger logg = LoggerFactory.getLogger(CustomerServiceImpl.class);
 
 	/*
 	 * (non-Javadoc)
@@ -41,7 +48,7 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		if (!liss.isPresent()) {
 			throw new MyException(" Bank id is not present ");
 		} else {
-			final Customer cust2 = cust.save(cust1);
+			final Customer cust2 = repo.save(cust1);
 			return cust2;
 
 		}
@@ -57,7 +64,7 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 	@Override
 	public Optional<Customer> getCustomerDetails(Integer id1) throws MyException {
 
-		final Optional<Customer> lis1 = cust.findById(id1);
+		final Optional<Customer> lis1 = repo.findById(id1);
 		if (lis1.isPresent()) {
 			Customer cusot = lis1.get();
 		} else {
@@ -68,25 +75,39 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 	}
 
 	@Override
+	@Transactional
 	public Customer updatePin(Integer intId, String userId, String pincode) throws MyException {
 		Audit audObj = new Audit();
 
-		Optional<Customer> custo = cust.findById(intId);
-		if (custo.isPresent()) {
-			audObj.setOldValue(custo.get());
-			Customer cust5 = custo.get();
-			
+		Customer oldCust = repo.findOneCustomer(intId);
+		Customer cust = new Customer(oldCust.getCustomerId(), oldCust.getName(), oldCust.getPin(), oldCust.getBankId(),
+				oldCust.getListAccount(), oldCust.getListTransaction());
+
+		Optional<Customer> originalCustomerOpt = repo.findById(intId);
+		if (originalCustomerOpt.isPresent()) {
+			Customer originalCustomer = originalCustomerOpt.get();
+
 			audObj.setEventName(EnumClass.EventName.CUSTOMER.toString());
 			audObj.setEventType(EnumClass.EventType.UPDATED.toString());
 
-			cust5.setPin(pincode);
-			cust5.setUserId(userId);
-			Customer cust6 = cust.save(cust5);
-			audObj.setNewValue(cust6);
+			originalCustomer.setPin(pincode);
+			originalCustomer.setUserId(userId);
+			audObj.setOldValue(cust);
+
+			logg.info(oldCust.toString());
+			
+			Customer newCust = repo.save(originalCustomer);
+			audObj.setNewValue(newCust);
+			logg.info(newCust.toString());
+			/*
+			 * System.out.println("original customer  "+cust);
+			 * System.out.println("updated customer  "+originalCustomer);
+			 * System.out.println("Equals "+originalCustomer.equals(newCust));
+			 */
 			ControllerToOtherServ con = new ControllerToOtherServ();
 			con.transferAuditDetails(audObj);
 
-			return cust6;
+			return newCust;
 		} else {
 			throw new MyException(" Id not present");
 		}

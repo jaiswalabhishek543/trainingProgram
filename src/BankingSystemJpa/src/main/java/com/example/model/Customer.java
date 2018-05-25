@@ -16,12 +16,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Table(name = "customer")
 @Entity
 @Data
-public class Customer extends BaseEntity{
+@AllArgsConstructor
+@NoArgsConstructor
+public class Customer extends BaseEntity implements Cloneable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,5 +48,10 @@ public class Customer extends BaseEntity{
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customerId", referencedColumnName = "customerId")
 	private List<Transaction> listTransaction;
+
+	@Override
+	public Customer clone() throws CloneNotSupportedException {
+		return (Customer) super.clone();
+	}
 
 }
