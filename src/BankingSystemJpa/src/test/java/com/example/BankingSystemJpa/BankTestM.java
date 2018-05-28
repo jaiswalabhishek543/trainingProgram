@@ -6,8 +6,6 @@ import static org.mockito.Mockito.when;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import org.hibernate.service.spi.InjectService;
-import org.hibernate.validator.constraints.Currency;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -51,7 +49,7 @@ public class BankTestM {
 
 	@InjectMocks
 	AccountServiceImpl accServ;
-	
+
 	@Mock
 	BankServiceInterface bankServ;
 
@@ -76,6 +74,7 @@ public class BankTestM {
 
 	}
 
+	
 	@Test
 	public void test3() throws MyException {
 
@@ -92,10 +91,28 @@ public class BankTestM {
 
 		when(bnkI.findById(1)).thenReturn(bbb);
 
-		when(custRepo.save(Mockito.any())).thenReturn(cust);
+		when(custRepo.save(Mockito.any(Customer.class))).thenReturn(cust);
 		final Customer cust1 = custServ.createCustomer(cust);
-
 		assertEquals(cust1.getBankId(), cust.getBankId());
+	}
+
+	@Test(expected = MyException.class)
+	public void test10() throws MyException {
+
+		final Customer cust = new Customer();
+		cust.setCustomerId(2);
+		cust.setBankId(1);
+		cust.setName("Abhishek Jaiswal");
+		cust.setPin("201011");
+		final Bank ban = new Bank();
+		ban.setAmount(BigDecimal.ZERO);
+		ban.setBankId(1);
+
+		final Optional<Bank> bbb = Optional.of(ban);
+
+		when(custRepo.save(Mockito.any(Customer.class))).thenReturn(cust);
+		custServ.createCustomer(cust);
+
 	}
 
 	@Test
@@ -110,6 +127,20 @@ public class BankTestM {
 		when(custRepo.findById(2)).thenReturn(cuss);
 		Optional<Customer> cust2 = custServ.getCustomerDetails(2);
 		assertEquals(cust2.get().getBankId(), cust.getBankId());
+	}
+	
+	@Test(expected=MyException.class)
+	public void test11() throws MyException {
+		final Customer cust = new Customer();
+		cust.setCustomerId(2);
+		cust.setBankId(1);
+		cust.setName("Abhishek Jaiswal");
+		cust.setPin("201011");
+		Optional<Customer> cuss = Optional.of(cust);
+
+		//when(custRepo.findById(2)).thenReturn(cuss);
+		custServ.getCustomerDetails(2);
+		
 	}
 
 	@Test(expected = MyException.class)
@@ -151,47 +182,41 @@ public class BankTestM {
 		accou.setBankId(1);
 		accou.setCustomerId(2);
 		Optional<Bank> opt2 = Optional.empty();
-		
+
 		when(bnkI.findById(1)).thenReturn(opt2);
 		accServ.createAccount(accou);
 	}
-	
-	
+
 	@Test
-	public void test9() throws MyException
-	{
+	public void test9() throws MyException {
 		final Bank ban = new Bank(new BigDecimal(0));
 		ban.setBankId(1);
-		
+
 		final Customer cust = new Customer();
 		cust.setCustomerId(2);
 		cust.setBankId(1);
 		cust.setName("Abhishek Jaiswal");
 		cust.setPin("201011");
-		
+
 		Account accou = new Account();
 		accou.setAccountId(5);
 		accou.setAmount(new BigDecimal(10000));
 		accou.setBankId(1);
 		accou.setCustomerId(2);
-		
-		final Optional<Bank> opt2=Optional.of(ban);
-		final Optional<Customer> opt1=Optional.of(cust);
-		
-		
+
+		final Optional<Bank> opt2 = Optional.of(ban);
+		final Optional<Customer> opt1 = Optional.of(cust);
+
 		when(bnkI.findById(Mockito.any())).thenReturn(opt2);
 		when(custRepo.findById(Mockito.any())).thenReturn(opt1);
-		
-		when(accRepo.save(Mockito.any())).thenReturn(accou);
+
+		when(accRepo.save(Mockito.any(Account.class))).thenReturn(accou);
 		System.out.println(accou);
 
-		final Account acc1=accServ.createAccount(accou);
+		final Account acc1 = accServ.createAccount(accou);
 		System.out.println(acc1);
 		assertEquals(accou.getBankId(), acc1.getBankId());
-	
-		
-		
+
 	}
-	
-	
+
 }

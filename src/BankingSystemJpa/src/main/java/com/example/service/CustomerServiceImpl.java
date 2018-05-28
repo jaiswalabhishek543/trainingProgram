@@ -5,17 +5,19 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.EnumClass;
+import com.example.config.RemoteCallService;
 import com.example.controller.ControllerToOtherServ;
 import com.example.exception.MyException;
 import com.example.model.Audit;
 import com.example.model.Bank;
 import com.example.model.Customer;
 import com.example.repository.BankInterface;
-import com.example.repository.CustomerRepo;
+import com.example.repository.CustomerDaoInterface;
 
 /*
  * @abhishek
@@ -23,12 +25,15 @@ import com.example.repository.CustomerRepo;
 @Service
 public class CustomerServiceImpl implements CustomerServiceInterface {
 
+
 	/*@Autowired
 	private CustomerDaoInterface customerDaoInterface;*/
 	@Autowired
 	private BankInterface bankk;
 	@Autowired
-	private CustomerRepo repo;
+	private CustomerDaoInterface repo;
+	@Autowired
+	private RemoteCallService remoteCallService; 
 
 	Logger logg = LoggerFactory.getLogger(CustomerServiceImpl.class);
 
@@ -76,7 +81,7 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 
 	@Override
 	@Transactional
-	public Customer updatePin(Integer intId, String userId, String pincode) throws MyException {
+	public /*Customer Audit*/ResponseEntity<?> updatePin(Integer intId, String userId, String pincode) throws MyException {
 		Audit audObj = new Audit();
 
 		Customer oldCust = repo.findOneCustomer(intId);
@@ -99,15 +104,14 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 			Customer newCust = repo.save(originalCustomer);
 			audObj.setNewValue(newCust);
 			logg.info(newCust.toString());
-			/*
-			 * System.out.println("original customer  "+cust);
-			 * System.out.println("updated customer  "+originalCustomer);
-			 * System.out.println("Equals "+originalCustomer.equals(newCust));
-			 */
-			ControllerToOtherServ con = new ControllerToOtherServ();
-			con.transferAuditDetails(audObj);
-
-			return newCust;
+			repo.save(newCust);
+	
+			//ControllerToOtherServ con = new ControllerToOtherServ();
+			//con.transferAuditDetails(audObj);
+			ResponseEntity<?> returnAudObj=remoteCallService.getAddedAudit(audObj);
+			return returnAudObj;
+			//return newCust;
+			
 		} else {
 			throw new MyException(" Id not present");
 		}

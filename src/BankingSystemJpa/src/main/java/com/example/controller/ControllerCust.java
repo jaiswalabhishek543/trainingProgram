@@ -21,6 +21,7 @@ import com.example.service.CustomerServiceInterface;
 @RestController
 public class ControllerCust {
 
+	
 	@Autowired
 	private CustomerServiceInterface custom;
 
@@ -54,17 +55,18 @@ public class ControllerCust {
 	
 	
 	
-	@RequestMapping(value="/updatePinCode/{idcust}/{userId}/{pincode}",method=RequestMethod.GET)
+/*	@RequestMapping(value="/updatePinCode/{idcust}/{userId}/{pincode}",method=RequestMethod.GET)
 	public ResponseEntity<?> updatePinCode1(@PathVariable Integer idcust,@PathVariable String userId,@PathVariable String pincode)
 	{
 		try{
 		final Customer custom1=custom.updatePin(idcust,userId,pincode);
 		return new ResponseEntity<Customer>(custom1,HttpStatus.OK);
+		
 		}
 		catch(MyException e){
 			
 			return new ResponseEntity<String>(e.toString(),HttpStatus.BAD_REQUEST);
 		}
-	}
+	}*/
 
 }

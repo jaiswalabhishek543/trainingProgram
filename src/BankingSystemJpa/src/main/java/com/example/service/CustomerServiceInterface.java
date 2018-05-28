@@ -2,7 +2,10 @@ package com.example.service;
 
 import java.util.Optional;
 
+import org.springframework.http.ResponseEntity;
+
 import com.example.exception.MyException;
+import com.example.model.Audit;
 import com.example.model.Customer;
 
 /*
@@ -14,6 +17,6 @@ public interface CustomerServiceInterface {
 
 	Optional<Customer> getCustomerDetails(Integer id1) throws MyException;
 	
-	Customer updatePin(Integer intId,String userId,String pincode) throws MyException;
+	/*Customer*/ResponseEntity<?> updatePin(Integer intId,String userId,String pincode) throws MyException;
 
 }

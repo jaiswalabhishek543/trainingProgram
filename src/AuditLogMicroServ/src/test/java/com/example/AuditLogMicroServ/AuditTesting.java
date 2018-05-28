@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.exception.AuditLogException;
@@ -85,7 +85,7 @@ public class AuditTesting {
 		aud.setNewValue(null);
 		aud.setOldValue(null);
 
-		when(auditInterfaceRepo.save(Mockito.any())).thenReturn(aud);
+		when(auditInterfaceRepo.save(Mockito.any(Audit.class))).thenReturn(aud);
 		auditServiceImpl.addAudit(aud);
 		assertEquals("Customer", aud.getEventName());
 
