@@ -8610,3 +8610,4 @@ java.sql.SQLSyntaxErrorException: Unknown column 'customerId' in 'where clause'
 ]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@2f3bfe2b
 2018-05-28 20:21:06.823  INFO 8012 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: AuditLogMicroServ.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
 2018-05-28 20:25:51.443  INFO 8012 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-28 20:30:51.458  INFO 8012 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
