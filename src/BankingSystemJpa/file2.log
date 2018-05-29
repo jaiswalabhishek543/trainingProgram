@@ -8611,3 +8611,1164 @@ java.sql.SQLSyntaxErrorException: Unknown column 'customerId' in 'where clause'
 2018-05-28 20:21:06.823  INFO 8012 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: AuditLogMicroServ.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
 2018-05-28 20:25:51.443  INFO 8012 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2018-05-28 20:30:51.458  INFO 8012 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-28 20:35:51.472  INFO 8012 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-28 20:36:08.231  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-05-28 20:36:08.232  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Mon May 28 20:20:43 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-28 20:36:08.232  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BankingSystemJpa with eureka with status DOWN
+2018-05-28 20:36:08.233  WARN 8012 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527519968233, current=DOWN, previous=UP]
+2018-05-28 20:36:08.233  INFO 8012 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-28 20:36:08.235  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2018-05-28 20:36:08.236  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-28 20:36:08.236  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-28 20:36:08.237  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-05-28 20:36:08.237  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2018-05-28 20:36:08.252  INFO 8012 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-28 20:36:08.336  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - deregister  status: 200
+2018-05-28 20:36:08.352  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2018-05-28 20:36:08.356  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@76167150: startup date [Mon May 28 20:21:05 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-28 20:36:08.365  WARN 8012 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaAutoServiceRegistration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:216) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:283) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:177) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:140) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:991) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:76) [spring-cloud-context-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1032) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1008) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:126) [spring-boot-1.5.13.RELEASE.jar:1.5.13.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:117) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:54) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) [na:1.8.0_161]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:361) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:200) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:197) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_161]
+
+2018-05-28 20:36:08.371  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook removed for: NFLoadBalancer-PingTimer-AuditLogMicroServ
+2018-05-28 20:36:08.380  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@288728e: startup date [Mon May 28 20:20:48 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-28 20:36:08.382  WARN 8012 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaAutoServiceRegistration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:216) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:283) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:177) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:140) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:991) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:76) [spring-cloud-context-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1032) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1008) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:126) [spring-boot-1.5.13.RELEASE.jar:1.5.13.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:117) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:54) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) [na:1.8.0_161]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:361) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:200) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:197) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_161]
+
+2018-05-28 20:36:08.386  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-28 20:36:08.517  INFO 8012 --- [RMI TCP Connection(2)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-28 20:36:08.519  INFO 8012 --- [localhost-startStop-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2018-05-28 20:36:08.524  WARN 8012 --- [localhost-startStop-2] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [PollingServerListUpdater-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2018-05-28 20:36:08.525  WARN 8012 --- [localhost-startStop-2] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [DataPublisher] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2018-05-28 20:36:08.525  WARN 8012 --- [localhost-startStop-2] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [PollingServerListUpdater-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2018-05-28 20:36:08.531  INFO 8012 --- [Thread-11] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+2018-05-29 13:30:51.690  INFO 7908 --- [main] com.example.BankingSystemJpaApplication  : No active profile set, falling back to default profiles: default
+2018-05-29 13:30:51.707  INFO 7908 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:30:51 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:30:52.635  INFO 7908 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1ba9dc06-e03a-3a53-b541-aac20d628b93
+2018-05-29 13:30:52.666  INFO 7908 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:30:52.704  INFO 7908 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.example.config.RemoteCallService' of type [org.springframework.cloud.netflix.feign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:30:52.810  INFO 7908 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71142880] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:30:52.868  INFO 7908 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8d2e2b7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:30:53.186  INFO 7908 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-29 13:30:53.211  INFO 7908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-29 13:30:53.211  INFO 7908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-05-29 13:30:53.385  INFO 7908 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-29 13:30:53.385  INFO 7908 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1678 ms
+2018-05-29 13:30:53.577  INFO 7908 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-29 13:30:53.584  INFO 7908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-29 13:30:53.585  INFO 7908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-29 13:30:53.585  INFO 7908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-29 13:30:53.586  INFO 7908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-29 13:30:54.150  INFO 7908 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:30:54.162  INFO 7908 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-29 13:30:54.222  INFO 7908 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-29 13:30:54.235  INFO 7908 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-29 13:30:54.237  INFO 7908 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-29 13:30:54.286  INFO 7908 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-29 13:30:54.395  INFO 7908 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-05-29 13:30:54.984  INFO 7908 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-05-29 13:30:58.019  INFO 7908 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:30:58.495  INFO 7908 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@288728e: startup date [Tue May 29 13:30:58 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:30:58.516  INFO 7908 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:30:58.893  WARN 7908 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:30:58.894  INFO 7908 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:30:58.898  WARN 7908 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:30:58.899  INFO 7908 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:30:59.084  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:30:51 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:30:59.153  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/wdrawMoney/{amunt}/{aid}/{int9}/{atmId2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.withdrawMon(java.math.BigDecimal,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:30:59.155  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAccDetail/{accID5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.getAccDetails(java.lang.Integer)
+2018-05-29 13:30:59.155  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/createAcc],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.createAccunt(com.example.model.Account)
+2018-05-29 13:30:59.156  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/depoMoney/{amou}/{aid1}]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.deposMony(java.math.BigDecimal,java.lang.Integer)
+2018-05-29 13:30:59.157  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addATM],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.createATM(com.example.model.ATM) throws com.example.exception.MyException
+2018-05-29 13:30:59.157  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addMoneyFromBank/{bb5}/{int5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.addMoneyBank(java.math.BigDecimal,java.lang.Integer) throws com.example.exception.MyException
+2018-05-29 13:30:59.158  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addBank],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.addBank1(com.example.model.Bank)
+2018-05-29 13:30:59.158  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewBank/{big}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.viewBank1(java.lang.Integer)
+2018-05-29 13:30:59.159  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCust],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerCust.addCust(com.example.model.Customer)
+2018-05-29 13:30:59.159  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewCust/{id2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.example.model.Customer> com.example.controller.ControllerCust.viewCust1(java.lang.Integer)
+2018-05-29 13:30:59.160  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatingPincode/{customerId}/{userId}/{pinCode}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerForEureka.updatingPinNo(java.lang.Integer,java.lang.String,java.lang.String)
+2018-05-29 13:30:59.161  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addRefMoney/{int9}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addRef(java.lang.Integer)
+2018-05-29 13:30:59.161  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addNewDenom/{denom},{bnkid}/{atmid}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addNewDenomination(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:30:59.162  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/transReport],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerTransaction.viewTransReport()
+2018-05-29 13:30:59.167  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-29 13:30:59.168  INFO 7908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-29 13:30:59.208  INFO 7908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:30:59.208  INFO 7908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:30:59.256  INFO 7908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:31:00.279  INFO 7908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-29 13:31:00.291  INFO 7908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-05-29 13:31:00.292  INFO 7908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-05-29 13:31:00.293  INFO 7908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-05-29 13:31:00.296  INFO 7908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-05-29 13:31:00.310  INFO 7908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-05-29 13:31:00.321  INFO 7908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=3c9c0d96,type=ConfigurationPropertiesRebinder]
+2018-05-29 13:31:00.342  INFO 7908 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-05-29 13:31:00.351  INFO 7908 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2018-05-29 13:31:00.396  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-05-29 13:31:00.726  INFO 7908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-05-29 13:31:00.726  INFO 7908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-05-29 13:31:00.846  INFO 7908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-05-29 13:31:00.846  INFO 7908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-05-29 13:31:01.053  INFO 7908 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:31:01.136  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-05-29 13:31:01.136  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-05-29 13:31:01.136  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-05-29 13:31:01.136  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-05-29 13:31:01.136  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-05-29 13:31:01.137  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-05-29 13:31:01.137  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-05-29 13:31:01.428  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-05-29 13:31:01.430  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2018-05-29 13:31:01.434  INFO 7908 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-29 13:31:01.438  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1527580861437 with initial instances count: 0
+2018-05-29 13:31:01.446  INFO 7908 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BankingSystemJpa with eureka with status UP
+2018-05-29 13:31:01.447  INFO 7908 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527580861447, current=UP, previous=STARTING]
+2018-05-29 13:31:01.450  INFO 7908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:31:01.505  INFO 7908 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-29 13:31:01.506  INFO 7908 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2018-05-29 13:31:01.512  INFO 7908 --- [main] com.example.BankingSystemJpaApplication  : Started BankingSystemJpaApplication in 11.128 seconds (JVM running for 12.073)
+2018-05-29 13:31:01.616  INFO 7908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:31:31.432  INFO 7908 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-05-29 13:31:31.438  INFO 7908 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-05-29 13:31:31.441  INFO 7908 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-05-29 13:31:31.441  INFO 7908 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-05-29 13:31:31.442  INFO 7908 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-05-29 13:31:31.442  INFO 7908 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-05-29 13:31:31.442  INFO 7908 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-05-29 13:31:31.485  INFO 7908 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-05-29 13:35:46.155  INFO 7908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:35:46.155  INFO 7908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-29 13:35:46.181  INFO 7908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2018-05-29 13:35:46.562  INFO 7908 --- [http-nio-8080-exec-1] com.example.service.CustomerServiceImpl  : Customer(customerId=10, name=Abhishek, pin=123, bankId=6, listAccount=[], listTransaction=[])
+2018-05-29 13:35:46.622  INFO 7908 --- [http-nio-8080-exec-1] com.example.service.CustomerServiceImpl  : Customer(customerId=10, name=Abhishek, pin=123, bankId=6, listAccount=[], listTransaction=[])
+2018-05-29 13:35:46.842  INFO 7908 --- [http-nio-8080-exec-1] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@ab6e346: startup date [Tue May 29 13:35:46 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:35:46.944  INFO 7908 --- [http-nio-8080-exec-1] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:35:47.381  INFO 7908 --- [http-nio-8080-exec-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: AuditLogMicroServ.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-29 13:35:47.425  INFO 7908 --- [http-nio-8080-exec-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-AuditLogMicroServ
+2018-05-29 13:35:47.448  INFO 7908 --- [http-nio-8080-exec-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: AuditLogMicroServ instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=AuditLogMicroServ,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2018-05-29 13:35:47.464  INFO 7908 --- [http-nio-8080-exec-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2018-05-29 13:35:47.510  INFO 7908 --- [http-nio-8080-exec-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: AuditLogMicroServ.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-29 13:35:47.513  INFO 7908 --- [http-nio-8080-exec-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client AuditLogMicroServ initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=AuditLogMicroServ,current list of Servers=[10.58.89.132:8888],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:10.58.89.132:8888;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 05:30:00 IST 1970;	First connection made: Thu Jan 01 05:30:00 IST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@5004760e
+2018-05-29 13:35:48.469  INFO 7908 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: AuditLogMicroServ.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-29 13:36:01.150  INFO 7908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:41:01.163  INFO 7908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:46:01.175  INFO 7908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:46:18.967  INFO 7908 --- [http-nio-8080-exec-5] com.example.service.CustomerServiceImpl  : Customer(customerId=10, name=Abhishek, pin=123, bankId=6, listAccount=[], listTransaction=[])
+2018-05-29 13:46:18.968  INFO 7908 --- [http-nio-8080-exec-5] com.example.service.CustomerServiceImpl  : Customer(customerId=10, name=Abhishek, pin=123, bankId=6, listAccount=[], listTransaction=[])
+2018-05-29 13:46:45.363  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-05-29 13:46:45.364  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:30:51 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:46:45.366  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BankingSystemJpa with eureka with status DOWN
+2018-05-29 13:46:45.366  WARN 7908 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527581805366, current=DOWN, previous=UP]
+2018-05-29 13:46:45.368  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2018-05-29 13:46:45.369  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-29 13:46:45.368  INFO 7908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:46:45.369  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-29 13:46:45.370  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-05-29 13:46:45.370  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2018-05-29 13:46:45.376  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - deregister  status: 200
+2018-05-29 13:46:45.379  INFO 7908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:46:45.389  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2018-05-29 13:46:45.392  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@ab6e346: startup date [Tue May 29 13:35:46 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:46:45.420  WARN 7908 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaAutoServiceRegistration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:216) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:283) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:177) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:140) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:991) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:76) [spring-cloud-context-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1032) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1008) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:126) [spring-boot-1.5.13.RELEASE.jar:1.5.13.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:117) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:54) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) [na:1.8.0_161]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:361) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:200) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:197) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_161]
+
+2018-05-29 13:46:45.422  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook removed for: NFLoadBalancer-PingTimer-AuditLogMicroServ
+2018-05-29 13:46:45.436  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@288728e: startup date [Tue May 29 13:30:58 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:46:45.437  WARN 7908 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaAutoServiceRegistration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:216) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:283) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:177) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:140) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:991) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:76) [spring-cloud-context-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1032) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1008) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:126) [spring-boot-1.5.13.RELEASE.jar:1.5.13.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:117) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:54) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) [na:1.8.0_161]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:361) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:200) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:197) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_161]
+
+2018-05-29 13:46:45.440  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:46:45.557  INFO 7908 --- [RMI TCP Connection(2)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-29 13:46:45.560  INFO 7908 --- [localhost-startStop-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:46:45.574  WARN 7908 --- [localhost-startStop-2] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [PollingServerListUpdater-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2018-05-29 13:46:45.575  WARN 7908 --- [localhost-startStop-2] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [DataPublisher] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2018-05-29 13:46:45.576  WARN 7908 --- [localhost-startStop-2] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [PollingServerListUpdater-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2018-05-29 13:46:45.587  INFO 7908 --- [Thread-11] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+2018-05-29 13:47:44.709  INFO 10096 --- [main] com.example.BankingSystemJpaApplication  : No active profile set, falling back to default profiles: default
+2018-05-29 13:47:44.724  INFO 10096 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3a4621bd: startup date [Tue May 29 13:47:44 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:47:45.635  INFO 10096 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c3b1d121-1452-36a9-b901-3ed90fd50038
+2018-05-29 13:47:45.664  INFO 10096 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:47:45.697  INFO 10096 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.example.config.RemoteCallService' of type [org.springframework.cloud.netflix.feign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:47:45.806  INFO 10096 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ff61cd29] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:47:45.855  INFO 10096 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1b7bd026] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:47:46.155  INFO 10096 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-29 13:47:46.177  INFO 10096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-29 13:47:46.177  INFO 10096 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-05-29 13:47:46.347  INFO 10096 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-29 13:47:46.347  INFO 10096 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1623 ms
+2018-05-29 13:47:46.522  INFO 10096 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-29 13:47:46.528  INFO 10096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-29 13:47:46.529  INFO 10096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-29 13:47:46.529  INFO 10096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-29 13:47:46.530  INFO 10096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-29 13:47:47.249  INFO 10096 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:47:47.261  INFO 10096 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-29 13:47:47.315  INFO 10096 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-29 13:47:47.320  INFO 10096 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-29 13:47:47.321  INFO 10096 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-29 13:47:47.366  INFO 10096 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-29 13:47:47.526  INFO 10096 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-05-29 13:47:48.397  INFO 10096 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-05-29 13:47:51.302  INFO 10096 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:47:51.722  INFO 10096 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@b7d2d51: startup date [Tue May 29 13:47:51 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3a4621bd
+2018-05-29 13:47:51.743  INFO 10096 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:47:52.131  WARN 10096 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:47:52.131  INFO 10096 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:47:52.136  WARN 10096 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:47:52.136  INFO 10096 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:47:52.314  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3a4621bd: startup date [Tue May 29 13:47:44 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:47:52.377  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/wdrawMoney/{amunt}/{aid}/{int9}/{atmId2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.withdrawMon(java.math.BigDecimal,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:47:52.379  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAccDetail/{accID5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.getAccDetails(java.lang.Integer)
+2018-05-29 13:47:52.380  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/createAcc],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.createAccunt(com.example.model.Account)
+2018-05-29 13:47:52.381  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/depoMoney/{amou}/{aid1}]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.deposMony(java.math.BigDecimal,java.lang.Integer)
+2018-05-29 13:47:52.382  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addATM],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.createATM(com.example.model.ATM) throws com.example.exception.MyException
+2018-05-29 13:47:52.382  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addMoneyFromBank/{bb5}/{int5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.addMoneyBank(java.math.BigDecimal,java.lang.Integer) throws com.example.exception.MyException
+2018-05-29 13:47:52.383  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addBank],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.addBank1(com.example.model.Bank)
+2018-05-29 13:47:52.383  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewBank/{big}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.viewBank1(java.lang.Integer)
+2018-05-29 13:47:52.384  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCust],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerCust.addCust(com.example.model.Customer)
+2018-05-29 13:47:52.384  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewCust/{id2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.example.model.Customer> com.example.controller.ControllerCust.viewCust1(java.lang.Integer)
+2018-05-29 13:47:52.386  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatingPincode/{customerId}/{userId}/{pinCode}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerForEureka.updatingPinNo(java.lang.Integer,java.lang.String,java.lang.String)
+2018-05-29 13:47:52.387  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addNewDenom/{denom},{bnkid}/{atmid}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addNewDenomination(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:47:52.387  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addRefMoney/{int9}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addRef(java.lang.Integer)
+2018-05-29 13:47:52.388  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/transReport],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerTransaction.viewTransReport()
+2018-05-29 13:47:52.393  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-29 13:47:52.394  INFO 10096 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-29 13:47:52.434  INFO 10096 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:47:52.434  INFO 10096 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:47:52.479  INFO 10096 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:47:53.470  INFO 10096 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-29 13:47:53.481  INFO 10096 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-05-29 13:47:53.483  INFO 10096 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-05-29 13:47:53.484  INFO 10096 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-05-29 13:47:53.488  INFO 10096 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-05-29 13:47:53.500  INFO 10096 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-05-29 13:47:53.512  INFO 10096 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=3a4621bd,type=ConfigurationPropertiesRebinder]
+2018-05-29 13:47:53.528  INFO 10096 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-05-29 13:47:53.536  INFO 10096 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2018-05-29 13:47:53.577  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-05-29 13:47:53.870  INFO 10096 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-05-29 13:47:53.870  INFO 10096 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-05-29 13:47:53.983  INFO 10096 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-05-29 13:47:53.984  INFO 10096 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-05-29 13:47:54.183  INFO 10096 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:47:54.265  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-05-29 13:47:54.265  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-05-29 13:47:54.265  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-05-29 13:47:54.265  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-05-29 13:47:54.265  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-05-29 13:47:54.265  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-05-29 13:47:54.265  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-05-29 13:47:54.573  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-05-29 13:47:54.575  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2018-05-29 13:47:54.578  INFO 10096 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-29 13:47:54.583  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1527581874583 with initial instances count: 0
+2018-05-29 13:47:54.592  INFO 10096 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BankingSystemJpa with eureka with status UP
+2018-05-29 13:47:54.594  INFO 10096 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527581874594, current=UP, previous=STARTING]
+2018-05-29 13:47:54.597  INFO 10096 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:47:54.653  INFO 10096 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-29 13:47:54.654  INFO 10096 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2018-05-29 13:47:54.660  INFO 10096 --- [main] com.example.BankingSystemJpaApplication  : Started BankingSystemJpaApplication in 11.536 seconds (JVM running for 12.453)
+2018-05-29 13:47:54.742  INFO 10096 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:48:24.576  INFO 10096 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-05-29 13:48:24.579  INFO 10096 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-05-29 13:48:24.582  INFO 10096 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-05-29 13:48:24.584  INFO 10096 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-05-29 13:48:24.587  INFO 10096 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-05-29 13:48:24.589  INFO 10096 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-05-29 13:48:24.591  INFO 10096 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-05-29 13:48:24.636  INFO 10096 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-05-29 13:48:47.433  INFO 10096 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:48:47.434  INFO 10096 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-29 13:48:47.458  INFO 10096 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2018-05-29 13:52:54.278  INFO 10096 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:53:34.565  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-05-29 13:53:34.565  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3a4621bd: startup date [Tue May 29 13:47:44 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:53:34.566  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BankingSystemJpa with eureka with status DOWN
+2018-05-29 13:53:34.566  WARN 10096 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527582214566, current=DOWN, previous=UP]
+2018-05-29 13:53:34.566  INFO 10096 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:53:34.571  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2018-05-29 13:53:34.572  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-29 13:53:34.574  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-29 13:53:34.574  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-05-29 13:53:34.575  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2018-05-29 13:53:34.576  INFO 10096 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:53:34.585  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - deregister  status: 200
+2018-05-29 13:53:34.602  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2018-05-29 13:53:34.607  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@b7d2d51: startup date [Tue May 29 13:47:51 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3a4621bd
+2018-05-29 13:53:34.613  WARN 10096 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaAutoServiceRegistration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:216) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:283) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:177) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:140) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:991) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:76) [spring-cloud-context-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1032) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1008) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:126) [spring-boot-1.5.13.RELEASE.jar:1.5.13.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:117) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:54) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) [na:1.8.0_161]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:361) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:200) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:197) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_161]
+
+2018-05-29 13:53:34.617  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:53:34.734  INFO 10096 --- [RMI TCP Connection(2)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-29 13:53:34.737  INFO 10096 --- [localhost-startStop-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:53:46.719  INFO 8204 --- [main] com.example.BankingSystemJpaApplication  : No active profile set, falling back to default profiles: default
+2018-05-29 13:53:46.736  INFO 8204 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:53:46 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:53:47.594  INFO 8204 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c3b1d121-1452-36a9-b901-3ed90fd50038
+2018-05-29 13:53:47.624  INFO 8204 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:53:47.654  INFO 8204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.example.config.RemoteCallService' of type [org.springframework.cloud.netflix.feign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:53:47.759  INFO 8204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71142880] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:53:47.793  INFO 8204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8d2e2b7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:53:48.066  INFO 8204 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-29 13:53:48.088  INFO 8204 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-29 13:53:48.089  INFO 8204 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-05-29 13:53:48.339  INFO 8204 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-29 13:53:48.340  INFO 8204 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1604 ms
+2018-05-29 13:53:48.497  INFO 8204 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-29 13:53:48.501  INFO 8204 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-29 13:53:48.501  INFO 8204 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-29 13:53:48.502  INFO 8204 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-29 13:53:48.502  INFO 8204 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-29 13:53:48.961  INFO 8204 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:53:48.994  INFO 8204 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-29 13:53:49.057  INFO 8204 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-29 13:53:49.059  INFO 8204 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-29 13:53:49.060  INFO 8204 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-29 13:53:49.104  INFO 8204 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-29 13:53:49.206  INFO 8204 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-05-29 13:53:49.881  INFO 8204 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-05-29 13:53:55.169  INFO 8204 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:53:55.567  INFO 8204 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@288728e: startup date [Tue May 29 13:53:55 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:53:55.588  INFO 8204 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:53:55.951  WARN 8204 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:53:55.951  INFO 8204 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:53:55.956  WARN 8204 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:53:55.956  INFO 8204 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:53:56.130  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:53:46 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:53:56.192  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/wdrawMoney/{amunt}/{aid}/{int9}/{atmId2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.withdrawMon(java.math.BigDecimal,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:53:56.194  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAccDetail/{accID5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.getAccDetails(java.lang.Integer)
+2018-05-29 13:53:56.194  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/createAcc],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.createAccunt(com.example.model.Account)
+2018-05-29 13:53:56.195  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/depoMoney/{amou}/{aid1}]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.deposMony(java.math.BigDecimal,java.lang.Integer)
+2018-05-29 13:53:56.195  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addATM],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.createATM(com.example.model.ATM) throws com.example.exception.MyException
+2018-05-29 13:53:56.195  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addMoneyFromBank/{bb5}/{int5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.addMoneyBank(java.math.BigDecimal,java.lang.Integer) throws com.example.exception.MyException
+2018-05-29 13:53:56.196  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addBank],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.addBank1(com.example.model.Bank)
+2018-05-29 13:53:56.196  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewBank/{big}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.viewBank1(java.lang.Integer)
+2018-05-29 13:53:56.197  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCust],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerCust.addCust(com.example.model.Customer)
+2018-05-29 13:53:56.197  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewCust/{id2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.example.model.Customer> com.example.controller.ControllerCust.viewCust1(java.lang.Integer)
+2018-05-29 13:53:56.198  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatingPincode/{customerId}/{userId}/{pinCode}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerForEureka.updatingPinNo(java.lang.Integer,java.lang.String,java.lang.String)
+2018-05-29 13:53:56.198  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addNewDenom/{denom},{bnkid}/{atmid}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addNewDenomination(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:53:56.200  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addRefMoney/{int9}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addRef(java.lang.Integer)
+2018-05-29 13:53:56.201  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/transReport],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerTransaction.viewTransReport()
+2018-05-29 13:53:56.205  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-29 13:53:56.206  INFO 8204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-29 13:53:56.244  INFO 8204 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:53:56.244  INFO 8204 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:53:56.289  INFO 8204 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:53:57.216  INFO 8204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-29 13:53:57.227  INFO 8204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-05-29 13:53:57.228  INFO 8204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-05-29 13:53:57.229  INFO 8204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-05-29 13:53:57.232  INFO 8204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-05-29 13:53:57.245  INFO 8204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-05-29 13:53:57.256  INFO 8204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=3c9c0d96,type=ConfigurationPropertiesRebinder]
+2018-05-29 13:53:57.271  INFO 8204 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-05-29 13:53:57.281  INFO 8204 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2018-05-29 13:53:57.329  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-05-29 13:53:57.642  INFO 8204 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-05-29 13:53:57.642  INFO 8204 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-05-29 13:53:57.784  INFO 8204 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-05-29 13:53:57.784  INFO 8204 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-05-29 13:53:57.969  INFO 8204 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:53:58.055  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-05-29 13:53:58.055  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-05-29 13:53:58.055  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-05-29 13:53:58.055  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-05-29 13:53:58.056  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-05-29 13:53:58.056  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-05-29 13:53:58.056  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-05-29 13:53:58.217  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-05-29 13:53:58.220  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2018-05-29 13:53:58.224  INFO 8204 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-29 13:53:58.228  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1527582238228 with initial instances count: 3
+2018-05-29 13:53:58.237  INFO 8204 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BankingSystemJpa with eureka with status UP
+2018-05-29 13:53:58.238  INFO 8204 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527582238238, current=UP, previous=STARTING]
+2018-05-29 13:53:58.241  INFO 8204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:53:58.293  INFO 8204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:53:58.297  INFO 8204 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-29 13:53:58.298  INFO 8204 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2018-05-29 13:53:58.302  INFO 8204 --- [main] com.example.BankingSystemJpaApplication  : Started BankingSystemJpaApplication in 12.939 seconds (JVM running for 13.875)
+2018-05-29 13:54:04.492  INFO 8204 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:54:04.492  INFO 8204 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-29 13:54:04.516  INFO 8204 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2018-05-29 13:55:24.938  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-05-29 13:55:24.938  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:53:46 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:55:24.939  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BankingSystemJpa with eureka with status DOWN
+2018-05-29 13:55:24.939  WARN 8204 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527582324939, current=DOWN, previous=UP]
+2018-05-29 13:55:24.940  INFO 8204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:55:24.942  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2018-05-29 13:55:24.942  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-29 13:55:24.943  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-29 13:55:24.945  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-05-29 13:55:24.945  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2018-05-29 13:55:24.950  INFO 8204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:55:24.952  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - deregister  status: 200
+2018-05-29 13:55:24.965  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2018-05-29 13:55:24.968  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@288728e: startup date [Tue May 29 13:53:55 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:55:24.974  WARN 8204 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaAutoServiceRegistration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:216) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:283) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:177) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:140) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:991) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:76) [spring-cloud-context-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1032) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1008) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:126) [spring-boot-1.5.13.RELEASE.jar:1.5.13.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:117) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:54) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) [na:1.8.0_161]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:361) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:200) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:197) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_161]
+
+2018-05-29 13:55:24.977  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:55:25.095  INFO 8204 --- [RMI TCP Connection(2)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-29 13:55:25.098  INFO 8204 --- [localhost-startStop-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:55:37.150  INFO 7980 --- [main] com.example.BankingSystemJpaApplication  : No active profile set, falling back to default profiles: default
+2018-05-29 13:55:37.169  INFO 7980 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:55:37 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:55:38.064  INFO 7980 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c3b1d121-1452-36a9-b901-3ed90fd50038
+2018-05-29 13:55:38.096  INFO 7980 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:55:38.128  INFO 7980 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.example.config.RemoteCallService' of type [org.springframework.cloud.netflix.feign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:55:38.247  INFO 7980 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71142880] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:55:38.286  INFO 7980 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8d2e2b7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:55:38.575  INFO 7980 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-29 13:55:38.598  INFO 7980 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-29 13:55:38.598  INFO 7980 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-05-29 13:55:38.768  INFO 7980 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-29 13:55:38.770  INFO 7980 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1601 ms
+2018-05-29 13:55:38.939  INFO 7980 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-29 13:55:38.943  INFO 7980 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-29 13:55:38.945  INFO 7980 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-29 13:55:38.945  INFO 7980 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-29 13:55:38.945  INFO 7980 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-29 13:55:39.408  INFO 7980 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:55:39.419  INFO 7980 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-29 13:55:39.479  INFO 7980 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-29 13:55:39.481  INFO 7980 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-29 13:55:39.483  INFO 7980 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-29 13:55:39.529  INFO 7980 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-29 13:55:39.635  INFO 7980 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-05-29 13:55:40.194  INFO 7980 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-05-29 13:55:42.841  INFO 7980 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:55:43.243  INFO 7980 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@288728e: startup date [Tue May 29 13:55:43 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:55:43.263  INFO 7980 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:55:43.657  WARN 7980 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:55:43.657  INFO 7980 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:55:43.662  WARN 7980 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:55:43.663  INFO 7980 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:55:43.850  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:55:37 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:55:43.914  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/wdrawMoney/{amunt}/{aid}/{int9}/{atmId2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.withdrawMon(java.math.BigDecimal,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:55:43.916  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAccDetail/{accID5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.getAccDetails(java.lang.Integer)
+2018-05-29 13:55:43.917  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/createAcc],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.createAccunt(com.example.model.Account)
+2018-05-29 13:55:43.918  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/depoMoney/{amou}/{aid1}]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.deposMony(java.math.BigDecimal,java.lang.Integer)
+2018-05-29 13:55:43.919  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addATM],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.createATM(com.example.model.ATM) throws com.example.exception.MyException
+2018-05-29 13:55:43.919  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addMoneyFromBank/{bb5}/{int5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.addMoneyBank(java.math.BigDecimal,java.lang.Integer) throws com.example.exception.MyException
+2018-05-29 13:55:43.920  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addBank],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.addBank1(com.example.model.Bank)
+2018-05-29 13:55:43.921  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewBank/{big}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.viewBank1(java.lang.Integer)
+2018-05-29 13:55:43.922  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCust],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerCust.addCust(com.example.model.Customer)
+2018-05-29 13:55:43.922  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewCust/{id2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.example.model.Customer> com.example.controller.ControllerCust.viewCust1(java.lang.Integer)
+2018-05-29 13:55:43.923  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatingPincode/{customerId}/{userId}/{pinCode}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerForEureka.updatingPinNo(java.lang.Integer,java.lang.String,java.lang.String)
+2018-05-29 13:55:43.924  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addRefMoney/{int9}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addRef(java.lang.Integer)
+2018-05-29 13:55:43.925  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addNewDenom/{denom},{bnkid}/{atmid}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addNewDenomination(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:55:43.926  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/transReport],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerTransaction.viewTransReport()
+2018-05-29 13:55:43.931  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-29 13:55:43.932  INFO 7980 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-29 13:55:43.982  INFO 7980 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:55:43.982  INFO 7980 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:55:44.035  INFO 7980 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:55:45.039  INFO 7980 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-29 13:55:45.051  INFO 7980 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-05-29 13:55:45.052  INFO 7980 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-05-29 13:55:45.053  INFO 7980 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-05-29 13:55:45.055  INFO 7980 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-05-29 13:55:45.068  INFO 7980 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-05-29 13:55:45.079  INFO 7980 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=3c9c0d96,type=ConfigurationPropertiesRebinder]
+2018-05-29 13:55:45.095  INFO 7980 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-05-29 13:55:45.103  INFO 7980 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2018-05-29 13:55:45.149  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-05-29 13:55:45.469  INFO 7980 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-05-29 13:55:45.470  INFO 7980 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-05-29 13:55:45.585  INFO 7980 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-05-29 13:55:45.585  INFO 7980 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-05-29 13:55:45.792  INFO 7980 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:55:45.872  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-05-29 13:55:45.872  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-05-29 13:55:45.872  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-05-29 13:55:45.873  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-05-29 13:55:45.873  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-05-29 13:55:45.873  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-05-29 13:55:45.873  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-05-29 13:55:46.043  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-05-29 13:55:46.045  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2018-05-29 13:55:46.049  INFO 7980 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-29 13:55:46.054  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1527582346054 with initial instances count: 2
+2018-05-29 13:55:46.065  INFO 7980 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BankingSystemJpa with eureka with status UP
+2018-05-29 13:55:46.066  INFO 7980 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527582346066, current=UP, previous=STARTING]
+2018-05-29 13:55:46.069  INFO 7980 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:55:46.116  INFO 7980 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:55:46.126  INFO 7980 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-29 13:55:46.127  INFO 7980 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2018-05-29 13:55:46.133  INFO 7980 --- [main] com.example.BankingSystemJpaApplication  : Started BankingSystemJpaApplication in 10.269 seconds (JVM running for 11.194)
+2018-05-29 13:55:54.127  INFO 7980 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:55:54.128  INFO 7980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-29 13:55:54.150  INFO 7980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2018-05-29 13:56:05.620  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-05-29 13:56:05.621  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:55:37 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:56:05.622  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BankingSystemJpa with eureka with status DOWN
+2018-05-29 13:56:05.622  WARN 7980 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527582365622, current=DOWN, previous=UP]
+2018-05-29 13:56:05.623  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2018-05-29 13:56:05.624  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-29 13:56:05.624  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-29 13:56:05.625  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-05-29 13:56:05.626  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2018-05-29 13:56:05.626  INFO 7980 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:56:05.636  INFO 7980 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:56:05.639  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - deregister  status: 200
+2018-05-29 13:56:05.650  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2018-05-29 13:56:05.654  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@288728e: startup date [Tue May 29 13:55:43 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:56:05.659  WARN 7980 --- [RMI TCP Connection(2)-127.0.0.1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaAutoServiceRegistration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:216) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:283) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:177) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:140) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:991) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:76) [spring-cloud-context-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1032) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1008) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:958) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:126) [spring-boot-1.5.13.RELEASE.jar:1.5.13.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:117) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:54) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) [na:1.8.0_161]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819) [na:1.8.0_161]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401) [na:1.8.0_161]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) [na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:361) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:200) [na:1.8.0_161]
+	at sun.rmi.transport.Transport$1.run(Transport.java:197) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683) [na:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_161]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_161]
+
+2018-05-29 13:56:05.662  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:56:05.783  INFO 7980 --- [RMI TCP Connection(2)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-29 13:56:05.786  INFO 7980 --- [localhost-startStop-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:57:08.117  INFO 8108 --- [main] com.example.BankingSystemJpaApplication  : No active profile set, falling back to default profiles: default
+2018-05-29 13:57:08.133  INFO 8108 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:57:08 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:57:08.990  INFO 8108 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c3b1d121-1452-36a9-b901-3ed90fd50038
+2018-05-29 13:57:09.017  INFO 8108 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:57:09.047  INFO 8108 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.example.config.RemoteCallService' of type [org.springframework.cloud.netflix.feign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:57:09.146  INFO 8108 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71142880] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:57:09.179  INFO 8108 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8d2e2b7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-29 13:57:09.445  INFO 8108 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-29 13:57:09.467  INFO 8108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-29 13:57:09.467  INFO 8108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-05-29 13:57:09.664  INFO 8108 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-29 13:57:09.664  INFO 8108 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1531 ms
+2018-05-29 13:57:09.823  INFO 8108 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-29 13:57:09.827  INFO 8108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-29 13:57:09.828  INFO 8108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-29 13:57:09.828  INFO 8108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-29 13:57:09.829  INFO 8108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-29 13:57:10.308  INFO 8108 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:57:10.320  INFO 8108 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-29 13:57:10.374  INFO 8108 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-29 13:57:10.376  INFO 8108 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-29 13:57:10.377  INFO 8108 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-29 13:57:10.422  INFO 8108 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-29 13:57:10.523  INFO 8108 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-05-29 13:57:11.078  INFO 8108 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-05-29 13:57:13.606  INFO 8108 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-29 13:57:14.053  INFO 8108 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@288728e: startup date [Tue May 29 13:57:14 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 13:57:14.076  INFO 8108 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 13:57:14.484  WARN 8108 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:57:14.484  INFO 8108 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:57:14.488  WARN 8108 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-05-29 13:57:14.489  INFO 8108 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-29 13:57:14.652  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96: startup date [Tue May 29 13:57:08 IST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1d9b7cce
+2018-05-29 13:57:14.715  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/createAcc],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.createAccunt(com.example.model.Account)
+2018-05-29 13:57:14.717  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAccDetail/{accID5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.getAccDetails(java.lang.Integer)
+2018-05-29 13:57:14.717  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/wdrawMoney/{amunt}/{aid}/{int9}/{atmId2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerAccount.withdrawMon(java.math.BigDecimal,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:57:14.718  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/depoMoney/{amou}/{aid1}]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerAccount.deposMony(java.math.BigDecimal,java.lang.Integer)
+2018-05-29 13:57:14.718  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addATM],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.createATM(com.example.model.ATM) throws com.example.exception.MyException
+2018-05-29 13:57:14.719  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addMoneyFromBank/{bb5}/{int5}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerATM.addMoneyBank(java.math.BigDecimal,java.lang.Integer) throws com.example.exception.MyException
+2018-05-29 13:57:14.719  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addBank],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.addBank1(com.example.model.Bank)
+2018-05-29 13:57:14.720  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewBank/{big}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerBank.viewBank1(java.lang.Integer)
+2018-05-29 13:57:14.720  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCust],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerCust.addCust(com.example.model.Customer)
+2018-05-29 13:57:14.721  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/viewCust/{id2}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.example.model.Customer> com.example.controller.ControllerCust.viewCust1(java.lang.Integer)
+2018-05-29 13:57:14.721  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/updatingPincode/{customerId}/{userId}/{pinCode}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerForEureka.updatingPinNo(java.lang.Integer,java.lang.String,java.lang.String)
+2018-05-29 13:57:14.722  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addNewDenom/{denom},{bnkid}/{atmid}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addNewDenomination(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-05-29 13:57:14.722  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addRefMoney/{int9}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.example.controller.ControllerRefMoney.addRef(java.lang.Integer)
+2018-05-29 13:57:14.723  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/transReport],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.example.controller.ControllerTransaction.viewTransReport()
+2018-05-29 13:57:14.728  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-29 13:57:14.728  INFO 8108 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-29 13:57:14.773  INFO 8108 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:57:14.773  INFO 8108 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:57:14.815  INFO 8108 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-29 13:57:15.773  INFO 8108 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-29 13:57:15.785  INFO 8108 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-05-29 13:57:15.786  INFO 8108 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-05-29 13:57:15.787  INFO 8108 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-05-29 13:57:15.789  INFO 8108 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-05-29 13:57:15.806  INFO 8108 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-05-29 13:57:15.817  INFO 8108 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=3c9c0d96,type=ConfigurationPropertiesRebinder]
+2018-05-29 13:57:15.870  INFO 8108 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-05-29 13:57:15.882  INFO 8108 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2018-05-29 13:57:15.935  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-05-29 13:57:16.250  INFO 8108 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-05-29 13:57:16.251  INFO 8108 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-05-29 13:57:16.365  INFO 8108 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-05-29 13:57:16.365  INFO 8108 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-05-29 13:57:16.557  INFO 8108 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 13:57:16.638  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-05-29 13:57:16.638  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-05-29 13:57:16.638  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-05-29 13:57:16.638  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-05-29 13:57:16.638  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-05-29 13:57:16.638  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-05-29 13:57:16.638  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-05-29 13:57:16.807  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-05-29 13:57:16.810  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2018-05-29 13:57:16.814  INFO 8108 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-29 13:57:16.824  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1527582436824 with initial instances count: 1
+2018-05-29 13:57:16.840  INFO 8108 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BankingSystemJpa with eureka with status UP
+2018-05-29 13:57:16.841  INFO 8108 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1527582436841, current=UP, previous=STARTING]
+2018-05-29 13:57:16.844  INFO 8108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa: registering service...
+2018-05-29 13:57:16.898  INFO 8108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKINGSYSTEMJPA/10.58.89.132:BankingSystemJpa - registration status: 204
+2018-05-29 13:57:16.907  INFO 8108 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-29 13:57:16.909  INFO 8108 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2018-05-29 13:57:16.915  INFO 8108 --- [main] com.example.BankingSystemJpaApplication  : Started BankingSystemJpaApplication in 9.978 seconds (JVM running for 10.874)
+2018-05-29 13:57:41.527  INFO 8108 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-29 13:57:41.528  INFO 8108 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-29 13:57:41.553  INFO 8108 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2018-05-29 14:02:16.697  INFO 8108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 14:06:18.916  INFO 8108 --- [http-nio-8080-exec-2] com.example.service.CustomerServiceImpl  : Customer(customerId=10, name=Abhishek, pin=00987600, bankId=6, listAccount=[], listTransaction=[])
+2018-05-29 14:06:18.927  INFO 8108 --- [http-nio-8080-exec-2] com.example.service.CustomerServiceImpl  : Customer(customerId=10, name=Abhishek, pin=00987600, bankId=6, listAccount=[], listTransaction=[])
+2018-05-29 14:06:18.942  INFO 8108 --- [http-nio-8080-exec-2] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4a4dd3d6: startup date [Tue May 29 14:06:18 IST 2018]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c9c0d96
+2018-05-29 14:06:19.006  INFO 8108 --- [http-nio-8080-exec-2] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-29 14:06:19.254  INFO 8108 --- [http-nio-8080-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: Zuul.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-29 14:06:19.277  INFO 8108 --- [http-nio-8080-exec-2] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-Zuul
+2018-05-29 14:06:19.296  INFO 8108 --- [http-nio-8080-exec-2] c.netflix.loadbalancer.BaseLoadBalancer  : Client: Zuul instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=Zuul,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2018-05-29 14:06:19.303  INFO 8108 --- [http-nio-8080-exec-2] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2018-05-29 14:06:19.325  INFO 8108 --- [http-nio-8080-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: Zuul.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-29 14:06:19.327  INFO 8108 --- [http-nio-8080-exec-2] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client Zuul initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=Zuul,current list of Servers=[10.58.89.132:8079],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:10.58.89.132:8079;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 05:30:00 IST 1970;	First connection made: Thu Jan 01 05:30:00 IST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@45e9c142
+2018-05-29 14:06:20.307  INFO 8108 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: Zuul.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-29 14:07:16.709  INFO 8108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 14:09:49.250  INFO 8108 --- [http-nio-8080-exec-5] com.example.service.CustomerServiceImpl  : Customer(customerId=10, name=Abhishek, pin=987, bankId=6, listAccount=[], listTransaction=[])
+2018-05-29 14:09:49.251  INFO 8108 --- [http-nio-8080-exec-5] com.example.service.CustomerServiceImpl  : Customer(customerId=10, name=Abhishek, pin=987, bankId=6, listAccount=[], listTransaction=[])
+2018-05-29 14:12:16.721  INFO 8108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 14:17:16.734  INFO 8108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-05-29 14:22:16.746  INFO 8108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.model.Audit;
 
-@FeignClient("AuditLogMicroServ")
+@FeignClient("Zuul")
 public interface RemoteCallService {
 
-	@RequestMapping(method=RequestMethod.GET, value="/addAudit")
+	@RequestMapping(method=RequestMethod.GET, value="/AuditLogMicroServ/addAudit")
 	public ResponseEntity<?> getAddedAudit(Audit audObj);
 	
 	
