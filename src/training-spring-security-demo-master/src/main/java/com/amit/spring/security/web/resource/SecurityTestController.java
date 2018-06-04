@@ -28,7 +28,7 @@ public class SecurityTestController {
 		
 	}
 	
-	@GetMapping("/admin")
+	/*@GetMapping("/admin")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ExampleClass getAdminRes(HttpServletRequest httpRequest, Principal principal) {
 		
@@ -45,7 +45,34 @@ public class SecurityTestController {
 		
 		
 		return new ExampleClass("ADMIN", "YYYY");
+	}*/
+	
+	
+	
+
+	@GetMapping("/admin")
+	@PreAuthorize("hasAuthority('Read')")
+	public ExampleClass getAdminResth(HttpServletRequest httpRequest, Principal principal) {
+	
+		
+		
+		return new ExampleClass("ADMIN", "YYYY");
 	}
+	
+	
+	@GetMapping("/user")
+	@PreAuthorize("hasAuthority('Read')")
+	public ExampleClass getAdminResthth(HttpServletRequest httpRequest, Principal principal) {
+	
+		
+		
+		return new ExampleClass("User", "YYYY");
+	}
+	
+	
+	
+	
+	
 }
 
 @Data

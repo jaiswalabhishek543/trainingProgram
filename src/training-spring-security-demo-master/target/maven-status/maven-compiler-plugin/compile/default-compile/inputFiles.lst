@@ -1,0 +1,11 @@
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\config\InitialDataLoader.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\repository\PrivilegeRepository.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\repository\UserRepository.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\TrainingSpringSecurityDemoApplication.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\repository\RoleRepository.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\resource\SecurityTestController.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\entity\Privilege.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\entity\Role.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\entity\User.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\config\TrainingSecurityConfiguration.java
+C:\Users\trainee\Documents\workspace-sts-3.9.3.RELEASE\training-spring-security-demo-master\src\main\java\com\amit\spring\security\web\service\TrainingUserDetailsService.java

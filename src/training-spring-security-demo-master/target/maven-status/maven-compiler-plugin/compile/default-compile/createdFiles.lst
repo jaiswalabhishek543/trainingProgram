@@ -1,0 +1,6 @@
+com\amit\spring\security\web\config\TrainingSecurityConfiguration.class
+com\amit\spring\security\web\entity\User.class
+com\amit\spring\security\web\repository\UserRepository.class
+com\amit\spring\security\web\repository\RoleRepository.class
+com\amit\spring\security\web\entity\Privilege.class
+com\amit\spring\security\web\entity\Role.class
