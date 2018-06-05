@@ -60,7 +60,7 @@ public class TrainingUserDetailsService implements UserDetailsService {
 	private List<GrantedAuthority> getGrantedAuthorities(List<String> privileges) {
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		for (String privilege : privileges) {
-			authorities.add(new SimpleGrantedAuthority(privilege));
+			authorities.add(new SimpleGrantedAuthority("ROLE_"+privilege));
 		}
 		return authorities;
 	}

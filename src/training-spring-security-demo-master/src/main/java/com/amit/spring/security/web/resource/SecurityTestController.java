@@ -51,9 +51,9 @@ public class SecurityTestController {
 	
 
 	@GetMapping("/admin")
-	@PreAuthorize("hasAuthority('Read')")
+	@PreAuthorize("hasAuthority('ROLE_Write')")
 	public ExampleClass getAdminResth(HttpServletRequest httpRequest, Principal principal) {
-	
+	System.out.println("Inside admin ----------read-------- ");
 		
 		
 		return new ExampleClass("ADMIN", "YYYY");
@@ -61,7 +61,7 @@ public class SecurityTestController {
 	
 	
 	@GetMapping("/user")
-	@PreAuthorize("hasAuthority('Read')")
+	@PreAuthorize("hasAuthority('ROLE_Read')")
 	public ExampleClass getAdminResthth(HttpServletRequest httpRequest, Principal principal) {
 	
 		
