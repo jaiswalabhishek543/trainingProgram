@@ -5,11 +5,13 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.EnumClass;
+import com.example.config.Producer;
 import com.example.config.RemoteCallService;
 import com.example.controller.ControllerToOtherServ;
 import com.example.exception.MyException;
@@ -34,6 +36,8 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 	private CustomerDaoInterface repo;
 	@Autowired
 	private RemoteCallService remoteCallService; 
+	@Autowired
+	private Producer producer;
 
 	Logger logg = LoggerFactory.getLogger(CustomerServiceImpl.class);
 
@@ -108,8 +112,11 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 	
 			//ControllerToOtherServ con = new ControllerToOtherServ();
 			//con.transferAuditDetails(audObj);
-			ResponseEntity<?> returnAudObj=remoteCallService.getAddedAudit(audObj);
-			return returnAudObj;
+			//ResponseEntity<?> returnAudObj=remoteCallService.getAddedAudit(audObj);
+			producer.produceMsg(audObj);
+			return new ResponseEntity<Audit>(audObj,HttpStatus.OK);
+			//return returnAudObj;
+			
 			//return newCust;
 			
 		} else {
