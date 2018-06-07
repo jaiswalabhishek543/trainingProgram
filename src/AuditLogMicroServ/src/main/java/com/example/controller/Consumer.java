@@ -1,4 +1,4 @@
-package com.example.controller;
+/*package com.example.controller;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,3 +26,4 @@ public class Consumer {
 	
 	
 }
+*/

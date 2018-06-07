@@ -1,4 +1,4 @@
-package com.example.config;
+/*package com.example.config;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,4 +24,4 @@ public class Producer {
 		System.out.println("Send object---------- = " + auditObj);
 
 	}
-}
+}*/
