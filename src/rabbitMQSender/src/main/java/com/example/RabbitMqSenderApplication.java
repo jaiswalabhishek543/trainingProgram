@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class RabbitMqSenderApplication {
 
-	public static final String topicExchangeName = "spring-boot-exchange";
+	public static final String topicExchangeName = "spring-boot";
 
 	@Bean
 	TopicExchange exchange() {

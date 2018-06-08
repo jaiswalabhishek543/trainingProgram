@@ -13,15 +13,19 @@ import com.example.model.Employee;
 public class SendController {
 
 	private RabbitTemplate rabbitTemplate;
+	
+	private static final String ROUTING_KEY = "boot.exchange";
 
 	public SendController(RabbitTemplate rabbitTemplate) {
 		this.rabbitTemplate = rabbitTemplate;
 	}
 
 	@PostMapping
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	public String sendMsg(@RequestBody Employee employee) {
-		rabbitTemplate.convertAndSend(RabbitMqSenderApplication.topicExchangeName, employee);
+		
+		rabbitTemplate.convertAndSend(RabbitMqSenderApplication.topicExchangeName,ROUTING_KEY, employee);
+		System.out.println(employee);
 		return "send";
 	}
 

@@ -17,13 +17,13 @@ import com.example.service.Receiver;
 @SpringBootApplication
 public class RabbitMqReceiverApplication {
 	
-	public static final String topicExchangeName = "spring-boot-exchange";
+	public static final String topicExchangeName = "spring-boot";
 
     static final String queueName = "spring-boot";
 
     @Bean
     Queue queue() {
-        return new Queue(queueName, false);
+        return new Queue(queueName, true);
     }
 
     @Bean
